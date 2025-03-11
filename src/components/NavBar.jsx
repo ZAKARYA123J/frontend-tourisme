@@ -19,15 +19,15 @@ const NavBar = () => {
                 <h1 onClick={handleNav} className={logo ? 'hidden':'black' }>TravelTour</h1>
             </div>
             <ul className="hidden md:flex">
-                <li><Link to="/">Home</Link></li>
-                <li> <Link to="/destination" >Destinations</Link></li>
-                <li> <Link to="/Travel">Travel</Link></li>
-                <li> <Link to="/View" >View</Link></li>
-                <li> <Link to="/Book" >Book</Link></li>
+                <li><Link to="/"  className="hover:text-blue-500">Home</Link></li>
+                <li> <Link to="/destination"  className="hover:text-blue-500" >Destinations</Link></li>
+                <li> <Link to="/travel"  className="hover:text-blue-500">Travel</Link></li>
+                <li> <Link to="/view"  className="hover:text-blue-500">View</Link></li>
+                <li> <Link to="/book"  className="hover:text-blue-500">Book</Link></li>
             </ul>
             <div className="hidden md:flex">
-                <BiSearch className="mr-2" size={20} />
-                <BsPerson size={20} />
+                <BiSearch className="cursor-pointer hover:text-blue-500" size={20} />
+                <BsPerson className="cursor-pointer hover:text-blue-500" size={20} />
             </div>
             <div onClick={handleNav} className="md:hidden z-10">
                 {nav ? <AiOutlineClose className="text-black" size={20} /> : <HiOutlineMenuAlt4 size={20} />}
@@ -44,6 +44,10 @@ const NavBar = () => {
                         <button className="my-6">search</button>
                         <button>account</button>
                     </div>
+                    <div className="mt-6 space-y-3">
+          <button className="w-full bg-gray-200 py-2 rounded-md hover:bg-gray-300">Search</button>
+          <button className="w-full bg-gray-200 py-2 rounded-md hover:bg-gray-300">Account</button>
+        </div>
                     <div className="flex justify-between my-6">
                         <FaFacebook className="icon" />
                         <FaInstagram className="icon" />

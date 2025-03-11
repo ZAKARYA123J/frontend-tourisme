@@ -9,9 +9,13 @@ const Search = () => {
         <div>
           <h2 className="text-2xl font-bold text-center " >WHY CHOOSE AGADIR</h2>
           <p className="py-4 text-lg font-semibold">
-          Agadir is a city of beauty and calm. With its long, sandy beaches and the peaceful Atlas Mountains in the distance, it offers a perfect mix of nature and culture. The warm sun, tasty local food, and friendly people make you feel right at home.
+          Agadir is a city of beauty and calm. With its long,
+           sandy beaches and the peaceful Atlas Mountains in the distance, it offers a perfect mix of nature and culture.
+            The warm sun, tasty local food, and friendly people make you feel right at home.
 
-From lively markets to quiet beachside escapes, we know Agadir well. Let us show your clients the best of this amazing city, where every day feels special and relaxing.
+From lively markets to quiet beachside escapes,
+ we know Agadir well. Let us show your clients the best of this amazing city, 
+where every day feels special and relaxing.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 gap-8 py-4">

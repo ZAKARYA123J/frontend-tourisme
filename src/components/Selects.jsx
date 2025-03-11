@@ -5,6 +5,7 @@ import telefrique from "../assets/telefrique.jpg";
 import soukalhad from "../assets/soukalhad.jpg";
 import SelectCard from "../components/SelectCard";
 import crocodile from "../assets/crocodile.jpg";
+import sandboard from "../assets/sandboard.jpg";
 
 const Selects = () => {
     return (
@@ -14,6 +15,7 @@ const Selects = () => {
             <SelectCard bg={soukalhad} text="souk al7ad" />
             <SelectCard bg={telefrique} text="watch the whole sity from up " />
             <SelectCard bg={breakfast} text="maroccan breakfast " />
+            <SelectCard bg={sandboard} text="Tamri's dunes"/>
         </div>
     );
 

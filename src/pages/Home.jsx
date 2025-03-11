@@ -1,11 +1,23 @@
-import React from "react"
+import React from "react";
+import Hero from "../components/Hero";
+import Destinations from "../components/Destinations";
+import Selects from "../components/Selects";
+import Search from "../components/Search";
+import Carousel from "../components/Carousel";
+import Categories from "../components/Categories";
 
-const Home=()=>{
-    return(
-        <div className="max-w-[1240px] mx-auto py-16 px-4 text-center">
-            <h1>HomePAge</h1>
-            <p>welcome to travel tour</p>
-        </div>
-    );
+const Home = () => {
+  return (
+    <>
+      <Hero />
+      <Carousel />
+      <Destinations />
+      <Selects />
+      <Categories />
+      <Search />
+      
+    </>
+  );
 };
+
 export default Home;

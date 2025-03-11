@@ -1,50 +1,55 @@
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination } from 'swiper/modules';
+import sandboard from '../assets/sandboard.jpg'
+import paradisevalley from '../assets/paradisevalley.jpg'
+import nationalpark from '../assets/nationalpark.jpg'
+import aglou from '../assets/aglou.jpg'
+import concert from '../assets/concert.jpg'
 
- import React, { useState } from 'react';
- import { BsArrowLeftSquareFill, BsArrowRightSquareFill } from 'react-icons/bs';
- 
- const sliderData = [
-   {
-     url: 'https://images.unsplash.com/photo-1515238152791-8216bfdf89a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80',
-   },
-   {
-     url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80',
-   },
-   {
-     url: 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
-   },
- ];
- 
- const Carousel = () => {
-   const [slide, setSlide] = useState(0);
-   const length = sliderData.length;
-   // console.log(length)
- 
-   const prevSlide = () => {
-     setSlide(slide === length - 1 ? 0 : slide + 1);
-   };
-   const nextSlide = () => {
-     setSlide(slide === 0 ? length - 1 : slide - 1);
-   };
- 
-   return (
-     <div className='max-w-[1240px] mx-auto px-4 py-16 relative flex justify-center itmes-center'>
-       <BsArrowLeftSquareFill
-         onClick={prevSlide}
-         className='absolute top-[50%] text-3xl text-white cursor-pointer left-8'
-       />
-       <BsArrowRightSquareFill
-         onClick={nextSlide}
-         className='absolute top-[50%] text-3xl text-white cursor-pointer right-8'
-       />
-       {sliderData.map((item, index) => (
-         <div className={`transition-opacity duration-500 ease-in-out ${index === slide ? 'opacity-100' : 'opacity-0'}`}>
-           {index === slide && (
-             <img className='w-full rounded-md' src={item.url} alt='/' />
-           )}
-         </div>
-       ))}
-     </div>
-   );
- };
- 
- export default Carousel;
+
+
+const CarouselComponent = () => {
+  const images = [
+    sandboard,
+    paradisevalley,
+    nationalpark,
+    aglou,
+    concert
+  
+  ];
+  return (
+    <div className="max-w-5xl mx-auto py-8">
+        <h1 className="text-3xl font-bold text-center mb-2">All Inclusive Resorts</h1>
+        <p className="text-center mb-6 text-gray-500">Agadir Best Destinations</p>
+        <Swiper
+            modules={[Navigation, Pagination]}
+            navigation
+            pagination={{ clickable: true }}
+            spaceBetween={20}
+            slidesPerView={3}
+            loop={true}
+            breakpoints={{
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+            }}
+        >
+            {images.map((src, index) => (
+                    <SwiperSlide key={index}>
+                        <img 
+                            src={src} 
+                            alt={`Destination ${index + 1}`} 
+                            className="w-full h-80 object-cover rounded-2xl"
+                        />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
+    );
+};
+
+export default CarouselComponent;
