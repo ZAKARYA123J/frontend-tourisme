@@ -1,11 +1,11 @@
 import React from "react"
-import vid from "../assets/vid.mp4"
+import vide from "../assets/vide.mp4"
 import { AiOutlineSearch } from "react-icons/ai";
 import {BiSearch} from "react-icons/bi"
 const Hero = () =>{
     return(
         <div className="w-full h-screen relative">
-<video className="w-full h-full object-cover" src={vid} autoPlay loop muted/>
+<video className="w-full h-full object-cover" src={vide} autoPlay loop muted/>
 <div className="absolute w-full h-full top-0 left-0 border-gray-900/30">
         <div className="absolute top-0 w-full h-full flex flex-col justify-center text-center text-white p-4  ">
             <h1 className="text-color p-4">Discover Agadir</h1>
