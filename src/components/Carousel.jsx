@@ -23,7 +23,7 @@ const CarouselComponent = () => {
   ];
   return (
     <div className="max-w-5xl mx-auto py-8">
-        <h1 className="text-3xl font-bold text-center mb-2">All Inclusive Resorts</h1>
+        <h1 className="text-3xl font-bold text-center mb-2">must-see places</h1>
         <p className="text-center mb-6 text-gray-500">Agadir Best Destinations</p>
         <Swiper
             modules={[Navigation, Pagination]}

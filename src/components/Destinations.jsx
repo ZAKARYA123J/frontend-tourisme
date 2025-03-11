@@ -8,7 +8,7 @@ import quad from "../assets/quad.jpg";
 const Destinations = () => {
     return (
         <div className="max-w-[1240px] mx-auto py-16 px-4 text-center">
-            <h1 className="text-4xl font-bold text-gray-900">All Inclusive Resorts</h1>
+            <h1 className="text-4xl font-bold text-gray-900"></h1>
             <p className="py-4">Agadir Best Destinations</p>
             <div className="grid grid-rows-none md:grid-cols-5 py-4 gap-2 md:gap-4">
             {[
