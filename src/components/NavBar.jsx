@@ -1,61 +1,101 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BsPerson } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
-import { FaFacebook, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion"; // ✅ Animations
+
 const NavBar = () => {
     const [nav, setNav] = useState(false);
-    const [logo,setlogo]= useState(false)
+    const [user, setUser] = useState(null);
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    useEffect(() => {
+        const userData = localStorage.getItem("user");
+        if (userData) {
+            setUser(JSON.parse(userData)); // Convert JSON → Object
+        }
+    }, []);
+
     const handleNav = () => {
         setNav(!nav);
-        setlogo(!logo);
+    };
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
     };
 
     return (
-        <div className="flex w-full justify-between items-center h-20 px-4 absolute z-10 text-white  ">
-            <div >
-                <h1 onClick={handleNav} className={logo ? 'hidden':'black' }>TravelTour</h1>
+        <div className="flex w-full justify-between items-center h-20 px-6 absolute z-10 bg-transparent text-white">
+            {/* Logo */}
+            <div>
+                <h1 className="text-2xl font-bold tracking-wide cursor-pointer">
+                    Travel<span className="text-blue-950">Tour</span>
+                </h1>
             </div>
-            <ul className="hidden md:flex">
-                <li><Link to="/"  className="hover:text-blue-500">Home</Link></li>
-                <li> <Link to="/destination"  className="hover:text-blue-500" >Destinations</Link></li>
-                <li> <Link to="/travel"  className="hover:text-blue-500">Travel</Link></li>
-                <li> <Link to="/view"  className="hover:text-blue-500">View</Link></li>
-                <li> <Link to="/book"  className="hover:text-blue-500">Book</Link></li>
+
+            {/* Navigation Links */}
+            <ul className="hidden md:flex space-x-6 text-lg font-medium">
+                <li><Link to="/" className="hover:text-blue-500 transition duration-300">Home</Link></li>
+                <li><Link to="/destination" className="hover:text-blue-500 transition duration-300">Destinations</Link></li>
+                <li><Link to="/travel" className="hover:text-blue-500 transition duration-300">Travel</Link></li>
+                <li><Link to="/view" className="hover:text-blue-500 transition duration-300">View</Link></li>
+                <li><Link to="/book" className="hover:text-blue-500 transition duration-300">Book</Link></li>
             </ul>
-            <div className="hidden md:flex">
-                <BiSearch className="cursor-pointer hover:text-blue-500" size={20} />
-                <BsPerson className="cursor-pointer hover:text-blue-500" size={20} />
+
+            {/* Right Section */}
+            <div className="hidden md:flex items-center space-x-4">
+                <BiSearch className="cursor-pointer hover:text-blue-500 transition duration-300" size={22} />
+
+                {user ? (
+                    <div className="relative">
+                        {/* User Profile */}
+                        <div 
+                            className="flex items-center space-x-3 cursor-pointer bg-white text-gray-700 px-3 py-2 rounded-full shadow-md hover:shadow-lg transition duration-300"
+                            onClick={toggleMenu} 
+                        >
+                            <div className="w-10 h-10 bg-blue-500 text-white flex items-center justify-center rounded-full text-lg font-semibold">
+                                {user.name.charAt(0)}
+                            </div>
+                            <span className="text-lg font-medium">{user.name}</span>
+                        </div>
+
+                        {/* Dropdown Menu */}
+                        <AnimatePresence>
+                            {menuOpen && (
+                                <motion.div 
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    className="absolute right-0 mt-3 w-56 bg-white text-gray-700 shadow-lg rounded-lg py-3 z-20 transition-transform transform origin-top"
+                                >
+                                    <p className="px-4 py-2 font-semibold text-gray-900">{user.name}</p>
+                                    <p className="px-4 py-2 text-gray-500 border-b">{user.email}</p>
+                                    <button 
+                                        className="block w-full text-left px-4 py-2 text-red-500 hover:bg-gray-100 transition duration-300"
+                                        onClick={() => {
+                                            localStorage.removeItem("user");
+                                            localStorage.removeItem("token");
+                                            window.location.reload();
+                                        }}
+                                    >
+                                        Logout
+                                    </button>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+                ) : (
+                    <Link to='/login'>
+                        <BsPerson className="cursor-pointer hover:text-blue-500 transition duration-300" size={26} />
+                    </Link>
+                )}
             </div>
+
+            {/* Mobile Menu Button */}
             <div onClick={handleNav} className="md:hidden z-10">
-                {nav ? <AiOutlineClose className="text-black" size={20} /> : <HiOutlineMenuAlt4 size={20} />}
-            </div>
-            <div className={nav ? 'absolute text-black left-0 top-0 w-full bg-gray-100/90 px-4 py-7 flex flex-col' : 'absolute left-[-100%]'}>
-                <ul>
-                    <h1>TravelTour.</h1>
-                    <li className="border-b"> <Link to="/" onClick={handleNav} >home</Link></li>
-                    <li className="border-b"> <Link to="/Destinations" onClick={handleNav}>destinations</Link></li>
-                    <li className="border-b"> <Link to="/Travel" onClick={handleNav}>travel </Link></li>
-                    <li className="border-b"> <Link to="/View" onClick={handleNav}>view</Link></li>
-                    <li className="border-b"> <Link to="/Book" onClick={handleNav}>Book</Link></li>
-                    <div className="flex flex-col">
-                        <button className="my-6">search</button>
-                        <button>account</button>
-                    </div>
-                    <div className="mt-6 space-y-3">
-          <button className="w-full bg-gray-200 py-2 rounded-md hover:bg-gray-300">Search</button>
-          <button className="w-full bg-gray-200 py-2 rounded-md hover:bg-gray-300">Account</button>
-        </div>
-                    <div className="flex justify-between my-6">
-                        <FaFacebook className="icon" />
-                        <FaInstagram className="icon" />
-                        <FaTwitter className="icon" />
-                        <FaYoutube className="icon" />
-                        <FaPinterest className="icon" />
-                    </div>
-                </ul>
+                {nav ? <AiOutlineClose className="text-white" size={22} /> : <HiOutlineMenuAlt4 size={22} />}
             </div>
         </div>
     );

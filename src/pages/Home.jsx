@@ -5,6 +5,7 @@ import Selects from "../components/Selects";
 import Search from "../components/Search";
 import Carousel from "../components/Carousel";
 import Categories from "../components/Categories";
+import RouterComponent from "../router";
 
 const Home = () => {
   return (
@@ -15,7 +16,7 @@ const Home = () => {
       <Selects />
       <Categories />
       <Search />
-      
+      <RouterComponent/>
     </>
   );
 };
