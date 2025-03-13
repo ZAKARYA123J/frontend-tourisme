@@ -7,7 +7,7 @@ import View from './pages/View'
 import Footer from './components/Footer'
 import Book from './pages/Book'
 import { Routes, Route } from 'react-router-dom'
-import RouterComponent from './router'
+// import RouterComponent from './router'
 
 function App() {
   return (
