@@ -3,7 +3,7 @@ import { BsPerson } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
-import { motion, AnimatePresence } from "framer-motion"; // ✅ Animations
+import { motion, AnimatePresence } from "framer-motion"; 
 
 const NavBar = () => {
     const [nav, setNav] = useState(false);
@@ -13,7 +13,7 @@ const NavBar = () => {
     useEffect(() => {
         const userData = localStorage.getItem("user");
         if (userData) {
-            setUser(JSON.parse(userData)); // Convert JSON → Object
+            setUser(JSON.parse(userData)); 
         }
     }, []);
 
@@ -27,14 +27,14 @@ const NavBar = () => {
 
     return (
         <div className="flex w-full justify-between items-center h-20 px-6 absolute z-10 bg-transparent text-white">
-            {/* Logo */}
+           
             <div>
                 <h1 className="text-2xl font-bold tracking-wide cursor-pointer">
                     Travel<span className="text-blue-950">Tour</span>
                 </h1>
             </div>
 
-            {/* Navigation Links */}
+          
             <ul className="hidden md:flex space-x-6 text-lg font-medium">
                 <li><Link to="/" className="hover:text-blue-500 transition duration-300">Home</Link></li>
                 <li><Link to="/destination" className="hover:text-blue-500 transition duration-300">Destinations</Link></li>
@@ -43,12 +43,12 @@ const NavBar = () => {
                 <li><Link to="/book" className="hover:text-blue-500 transition duration-300">Book</Link></li>
             </ul>
 
-            {/* Right Section */}
+          
             <div className="hidden md:flex items-center space-x-4">
 
                 {user ? (
                     <div className="relative">
-                        {/* User Profile */}
+                       
                         <div 
                             className="flex items-center space-x-3 cursor-pointer bg-white text-gray-700 px-3 py-2 rounded-full shadow-md hover:shadow-lg transition duration-300"
                             onClick={toggleMenu} 
@@ -59,7 +59,7 @@ const NavBar = () => {
                             <span className="text-lg font-medium">{user.name}</span>
                         </div>
 
-                        {/* Dropdown Menu */}
+                        
                         <AnimatePresence>
                             {menuOpen && (
                                 <motion.div 
@@ -91,10 +91,28 @@ const NavBar = () => {
                 )}
             </div>
 
-            {/* Mobile Menu Button */}
+           
             <div onClick={handleNav} className="md:hidden z-10">
                 {nav ? <AiOutlineClose className="text-white" size={22} /> : <HiOutlineMenuAlt4 size={22} />}
             </div>
+
+           
+            <AnimatePresence>
+                {nav && (
+                    <motion.div
+                        initial={{ opacity: 0, x: -300 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -300 }}
+                        className="absolute top-0 left-0 w-full h-screen bg-gray-800 text-white flex flex-col items-center justify-center space-y-6"
+                    >
+                        <Link to="/" className="text-2xl">Home</Link>
+                        <Link to="/destination" className="text-2xl">Destinations</Link>
+                        <Link to="/travel" className="text-2xl">Travel</Link>
+                        <Link to="/view" className="text-2xl">View</Link>
+                        <Link to="/book" className="text-2xl">Book</Link>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };
