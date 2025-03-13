@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import NavBar from "../components/NavBar";
 
 const ResetPassword = () => {
   const [searchParams] = useSearchParams();
@@ -35,7 +36,9 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 to-purple-600 px-4">
+    <>
+    <NavBar/>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br  px-4">
       <div className="bg-white shadow-2xl rounded-2xl p-10 w-full max-w-md transform transition-all duration-700 hover:scale-105">
         <h2 className="text-3xl font-bold text-gray-900 text-center mb-6">Reset Password</h2>
         <form onSubmit={handleSubmit} className="space-y-5">
@@ -70,7 +73,7 @@ const ResetPassword = () => {
         </div>
       </div>
     </div>
-  );
+ </> );
 };
 
 export default ResetPassword;
