@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { BsPerson } from "react-icons/bs";
-import { BiSearch } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link , useLocation} from "react-router-dom";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
@@ -47,7 +46,6 @@ const NavBar = () => {
 
           
             <div className="hidden md:flex items-center space-x-4">
-                <BiSearch className="cursor-pointer hover:text-blue-500 transition duration-300" size={22} />
 
                 {user ? (
                     <div className="relative">
