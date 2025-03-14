@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BsPerson } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link , useLocation} from "react-router-dom";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion"; 
 
@@ -10,7 +10,8 @@ const NavBar = () => {
     const [nav, setNav] = useState(false);
     const [user, setUser] = useState(null);
     const [menuOpen, setMenuOpen] = useState(false);
-
+    const location = useLocation();
+    const isLoginPage = location.pathname === "/login";
     useEffect(() => {
         const userData = localStorage.getItem("user");
         if (userData) {
@@ -27,7 +28,7 @@ const NavBar = () => {
     };
 
     return (
-        <div className="flex w-full justify-between items-center h-20 px-6 absolute z-10 bg-transparent text-white">
+        <div className={`flex w-full justify-between items-center h-20 px-6 absolute z-10 ${isLoginPage ? "bg-gray-200 text-slate-800" : "bg-transparent"}  text-white`}>
            
             <div>
                 <h1 className="text-2xl font-bold tracking-wide cursor-pointer">
