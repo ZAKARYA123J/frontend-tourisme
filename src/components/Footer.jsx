@@ -1,15 +1,8 @@
-import React from 'react';
- import {
-   FaFacebook,
-   FaTwitter,
-   FaInstagram,
-   FaPinterest,
-   FaYoutube,
- } from 'react-icons/fa';
- 
+import { FaFacebook,FaTwitter,FaYoutube,FaPinterest,FaInstagram } from "react-icons/fa";
  const Footer = () => {
-   return (
-     <div className='w-full bg-gray-100 py-16'>
+  return (
+    <footer className="  mt-auto"> 
+      <div className='w-full bg-gray-100 py-16'>
        <div className='max-w-[1240px] mx-auto flex flex-col px-4'>
          <div className='sm:flex text-center justify-between items-center'>
            <h1>TravelTour</h1>
@@ -38,7 +31,12 @@ import React from 'react';
          </div>
        </div>
      </div>
-   );
+     </footer>
+    );
  };
+
+ 
+
+
  
  export default Footer;
