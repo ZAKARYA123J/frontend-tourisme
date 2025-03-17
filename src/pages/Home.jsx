@@ -5,17 +5,21 @@ import Selects from "../components/Selects";
 import Search from "../components/Search";
 import Carousel from "../components/Carousel";
 import Categories from "../components/Categories";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 // import RouterComponent from "../router";
 
 const Home = () => {
   return (
     <>
+    <NavBar/>
       <Hero />
       <Carousel />
       <Destinations />
       <Selects />
       <Categories />
       <Search />
+      <Footer/>
       {/* <RouterComponent/> */}
     </>
   );

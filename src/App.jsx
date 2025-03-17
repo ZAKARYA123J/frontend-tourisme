@@ -1,4 +1,4 @@
-import React from 'react'
+import {React,useState,useEffect} from 'react'
 import NavBar from './components/NavBar'
 import Destinations from './components/Destinations'
 import Home from './pages/Home'
@@ -12,14 +12,24 @@ import ForgotPassword from './Auth/ForgotPassword';
 import ResetPassword from './Auth/ResetPassword';
 
 import { Routes, Route } from 'react-router-dom'
+import Reservation from './Location/Reservation'
 
 
 
 
-function App() {
+const  App=()=> {
+  const [categories, setCategories] = useState([]);
+
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:8000/api/categories')  
+      .then((response) => response.json())
+      .then((data) => setCategories(data))
+      .catch((error) => console.error('Erreur de récupération des catégories:', error));
+  }, []);
   return (
     <>
-      <NavBar />
+     
        <Routes> 
         <Route path='/' element={<Home/>}/>
         <Route path='/destinations' element={<Destinations/>}/>
@@ -32,8 +42,9 @@ function App() {
      
        <Route path="/forgot-password" element={<ForgotPassword />} />
     <Route path="/reset-password" element={<ResetPassword />} />
+    <Route path='/reservation/airbnb'  element={<Reservation categories={categories} />}/>
       </Routes>
-     <Footer/>
+   
       
     </>
   )
