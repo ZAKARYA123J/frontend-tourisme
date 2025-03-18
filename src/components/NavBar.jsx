@@ -16,7 +16,12 @@ const NavBar = () => {
     const menuSections = [
         {
             title: "Cultural",
-            items: ["Festivals", "Exhibitions", "Heritage Tours"],
+            items: [  
+                { name: "Festivals", link: "/festivals" , },
+                { name: "Exhibitions", link: "/exhibitions" },
+                { name: "Heritage Tours", link: "/heritage-tours" }
+
+            ],
             link: "/cultural"
         },
         {
@@ -73,23 +78,26 @@ const NavBar = () => {
                     </li>
                     {menuSections.map((section) => (
                         <li key={section.title} className="group relative py-2">
-                            <Link 
-                                to={section.link}
-                                className="hover:text-blue-500 transition duration-300 flex items-center"
-                            >
+                            <span className="hover:text-blue-500 transition duration-300 flex items-center">
                                 {section.title}
                                 <span className="ml-1 transform transition-transform group-hover:rotate-180">▾</span>
-                            </Link>
+                            </span>
                             <div className="absolute top-full left-0 hidden group-hover:block w-48 bg-white text-gray-700 shadow-lg rounded-lg py-2">
-                                {section.items.map((item) => (
-                                    <Link
-                                        key={item}
-                                        to={`${section.link}/${item.toLowerCase().replace(' ', '-')}`}
-                                        className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600"
-                                    >
-                                        {item}
-                                    </Link>
-                                ))}
+                                {section.items.map((item, index) => {
+                                    const itemName = typeof item === "string" ? item : item.name;
+                                    const itemLink = typeof item === "string" 
+                                        ? `${section.link}/${item.toLowerCase().replace(/\s+/g, '-')}` 
+                                        : item.link;
+                                    return (
+                                        <Link
+                                            key={`${section.title}-${index}`}
+                                            to={itemLink}
+                                            className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600"
+                                        >
+                                            {itemName}
+                                        </Link>
+                                    );
+                                })}
                             </div>
                         </li>
                        
@@ -176,6 +184,7 @@ const NavBar = () => {
                                             Home
                                         </Link>
                                     </li>
+                                   
                                 </ul>
                             </div>
                             
@@ -185,22 +194,20 @@ const NavBar = () => {
                                         {section.title}
                                     </h2>
                                     <ul className="space-y-3 pl-4">
-                                        {section.items.map((item) => (
-                                            <li key={item}>
+                                        {section.items.map((item, index) => (
+                                            <li key={`${section.title}-${index}`}>
                                                 <Link
-                                                    to={`${section.link}/${item.toLowerCase().replace(' ', '-')}`}
+                                                    to={`${section.link}/${typeof item === "string" ? item.toLowerCase().replace(' ', '-') : item.name.toLowerCase().replace(' ', '-')}`}
                                                     className="text-lg hover:text-blue-400 block py-2"
                                                     onClick={() => setNav(false)}
                                                 >
-                                                    {item}
+                                                    {typeof item === "string" ? item : item.name}
                                                 </Link>
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
                             ))}
-                            
-                            
                         </div>
                     </motion.div>
                 )}

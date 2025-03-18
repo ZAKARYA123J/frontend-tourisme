@@ -10,8 +10,19 @@ body {
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;}
-
+    -moz-osx-font-smoothing: grayscale;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;}
+   
+      
+     
+      #root {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
 :root {
     --primary-dark: #5651e5;
     --primary-light: #709dff;
