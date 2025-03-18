@@ -14,7 +14,8 @@ import Exhibitions from './pages/Exhibitions';
 import Heritages from './pages/Heritages';
 import Tournaments from './pages/Tournaments';
 import Marathons from './pages/Marathons';
-
+import Adventures from './pages/Adventures'
+import Feedback from './pages/Feedback'
 import { Routes, Route } from 'react-router-dom'
 
 
@@ -32,12 +33,12 @@ function App() {
         <Route path="/festivals" element={<Festivals/>}/>  
         <Route path="/exhibitions" element={<Exhibitions/>}/>    
         <Route path="/heritages" element={<Heritages/>}/> 
-        <Route path="/tournaments" element={<Tournaments />}/>
-        <Route path="/marathons" element={<Marathons />}/> 
- 
+        <Route path="/adventures" element={<Adventures/>}/> 
+        <Route path="/marathons" element={<Marathons/>}/> 
+        <Route path="/tournaments" element={<Tournaments/>}/> 
+        <Route path="/feedback" element={<Feedback/>}/> 
 
-
-            <Route path='/view/:id' element={<View/>}/>
+       <Route path='/view/:id' element={<View/>}/>
         <Route path='/book' element={<Book/>}/>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaHeart,FaRegHeart } from "react-icons/fa";
 import intermarath from '../assets/intermarath.jpg';
-import volleyball from '../assets/volleyball.jpg';
+import nightrun from '../assets/nightrun.jpg';
 import halfmarath from '../assets/halfmarath.jpg';
 import valleymarath from '../assets/valleymarath.jpg';
 
@@ -42,7 +42,7 @@ const marathons = () =>{
         date:'Usually held in August', 
         description:' A unique nighttime running event along Agadir’s illuminated beaches and promenades. Choose from 5K, 10K, or half marathon distances.',
         price:'Registration starts at 150 MAD', 
-        image: volleyball ,
+        image: nightrun ,
         isFavorite: false ,
         },
             
