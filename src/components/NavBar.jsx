@@ -28,7 +28,7 @@ const NavBar = () => {
             title: "Sports",
             items: [{name:"Tournaments", link:"/tournaments"},
                    {name:"Marathons",link:"/marathons" },
-                   { name:"Adventure Sports",link:"/adventures"}],
+                   { name:"Adventures",link:"/adventures"}],
             link: "/sports"
         },
         {

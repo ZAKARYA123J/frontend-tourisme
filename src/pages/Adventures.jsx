@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { FaHeart,FaRegHeart } from "react-icons/fa";
-import jetski from '../assets/jetski.jpg';
+import jetskim from '../assets/jetskim.jpg';
 import quadbiking from '../assets/quadbiking.jpg';
 import hiking from '../assets/hiking.jpg';
 import balloon from '../assets/balloon.jpg';
 
-const adventures = () =>{
+const Adventures = () =>{
  const [adventures,setadventures] = useState([
     
         {
@@ -14,7 +14,7 @@ const adventures = () =>{
         date:'Available daily', 
         description:'Ride the waves on a jet ski along Agadir’s beaches. A thrilling way to experience the Atlantic Ocean.',
         price:'for 15 min 300 ', 
-        image: jetski ,
+        image: jetskim ,
         isFavorite: false ,
 
         },
@@ -83,7 +83,7 @@ return (
 );
 }
 
-export default adventures;
+export default Adventures;
 
 
 
