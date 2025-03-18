@@ -1,8 +1,54 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
-import voitureImage from '../Location/voiture.jpg';
+import voitureImage from "../Location/voiture.jpg";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+
+const AnimatedSelect = ({ label, options, value, onChange, placeholder }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const selectedLabel = options.find((opt) => opt.value === value)?.label || placeholder;
+
+  return (
+    <div className="w-full">
+      <label className="text-white font-medium mb-1 block">{label}</label>
+      <div
+        className="p-4 text-lg rounded-lg bg-white border border-gray-400 cursor-pointer 
+                   hover:bg-gray-200 transition duration-300 ease-in-out"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {selectedLabel}
+      </div>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className="absolute w-full mt-2 bg-white border border-gray-400 rounded-lg shadow-lg z-10"
+          >
+            {options.map((option) => (
+              <motion.div
+                key={option.value}
+                className="p-4 hover:bg-blue-500 hover:text-white cursor-pointer 
+                           transition-all duration-300 ease-in-out"
+                whileHover={{ scale: 1.05 }}
+                onClick={() => {
+                  onChange(option.value);
+                  setIsOpen(false);
+                }}
+              >
+                {option.label}
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const Reservation = ({ categories = [] }) => {
   const [cars, setCars] = useState([]);
@@ -13,21 +59,18 @@ const Reservation = ({ categories = [] }) => {
   const [prixTotal, setPrixTotal] = useState(0);
   const [emailClient, setEmailClient] = useState("");
   const [nomClient, setNomClient] = useState("");
+  const [num_tele, setNumTele] = useState('');
   const [transmission, setTransmission] = useState("");
   const [filteredCars, setFilteredCars] = useState([]);
   const [selectedCarDetails, setSelectedCarDetails] = useState(null);
-  const [successMessage, setSuccessMessage] = useState(""); 
+  const [successMessage, setSuccessMessage] = useState("");
 
   useEffect(() => {
     if (categoryId) {
       axios
         .get(`http://127.0.0.1:8000/api/cars?category_id=${categoryId}`)
-        .then((response) => {
-          setCars(response.data);
-        })
-        .catch((error) => {
-          console.error("Erreur de récupération des voitures:", error);
-        });
+        .then((response) => setCars(response.data))
+        .catch((error) => console.error("Erreur de récupération des voitures:", error));
     } else {
       setCars([]);
       setFilteredCars([]);
@@ -60,10 +103,7 @@ const Reservation = ({ categories = [] }) => {
         if (startDate >= endDate) {
           setPrixTotal(0);
         } else {
-          const diffInDays = Math.max(
-            (endDate - startDate) / (1000 * 60 * 60 * 24),
-            1
-          );
+          const diffInDays = Math.max((endDate - startDate) / (1000 * 60 * 60 * 24), 1);
           setPrixTotal(diffInDays * car.price_per_day);
         }
       }
@@ -72,188 +112,161 @@ const Reservation = ({ categories = [] }) => {
     }
   }, [selectedCar, dateDebut, dateFin, cars]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (!selectedCar || !dateDebut || !dateFin || !emailClient || !nomClient) {
-      alert("Veuillez remplir tous les champs !");
+
+    if (!categoryId || categoryId === "") {
+      alert("Veuillez sélectionner une catégorie.");
+      return;
+    }
+    if (!selectedCar || selectedCar === "") {
+      alert("Veuillez sélectionner une voiture.");
       return;
     }
 
-    const reservation = {
+    const reservationData = {
+    
       car_id: selectedCar,
-      email_client: emailClient,
-      nom_client: nomClient,
-      date_debut: dateDebut,
-      date_fin: dateFin,
+      date_debut:dateDebut,
+      date_fin:dateFin,
+     
+      nom_client:nomClient,
+      email_client:emailClient,
+      num_tele:num_tele,
     };
 
-    try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/api/reservations",
-        reservation
-      );
-      setSuccessMessage("✅ Réservation réussie ! Votre voiture est réservée.");
-      setTimeout(() => setSuccessMessage(""), 5000); 
-
-      setDateDebut("");
-      setDateFin("");
-      setSelectedCar("");
-      setCategoryId("");
-      setPrixTotal(0);
-      setEmailClient("");
-      setNomClient("");
-      setTransmission("");
-      setCars([]);
-      setFilteredCars([]);
-      setSelectedCarDetails(null);
-    } catch (error) {
-      console.error("Erreur lors de la réservation:", error.response?.data?.message || error.message);
-      alert(error.response?.data?.message || "Une erreur s'est produite");
-    }
+   axios
+    .post("http://127.0.0.1:8000/api/reservations", reservationData)
+    .then((response) => {
+      setSuccessMessage("Réservation réussie !");
+    })
+    .catch((error) => {
+      console.error("Erreur lors de la réservation:", error.response.data);
+    });
   };
+   
+  
+  
+  
 
   return (
-    <><NavBar/> 
-    <div className="flex justify-center w-full p-10  h-screen items-center min-h-screen" style={{ position: 'relative' }}>
-      
-      <div className="absolute inset-0">
-        <img src={voitureImage} alt="Car" className="w-full h-full object-cover opacity-50" />
-      </div>
+    <>
+      <NavBar />
+      <div className="flex justify-center w-full p-10 h-screen bg-black items-center min-h-screen relative">
+        <div className="absolute inset-0">
+          <img src={voitureImage} alt="Car" className="w-full h-full object-cover opacity-50" />
+        </div>
 
-      
-      <div className="max-w-4xl w-full p-8 bg-white rounded-lg shadow-lg z-10">
-        <h2 className="text-4xl font-semibold text-center text-gray-800 mb-6">Réservez votre voiture à Agadir</h2>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-4xl w-full p-8 bg-white rounded-lg bg-opacity-10 backdrop-blur-lg border bg-opacity-35 border-slate-950 border-opacity-30 shadow-xl z-10"
+        >
+          <h2 className="text-4xl font-semibold text-center text-white mb-6">
+            Réservez votre voiture à Agadir
+          </h2>
 
-        {successMessage && (
-          <p className="text-green-500 text-lg font-semibold text-center mb-4">{successMessage}</p>
-        )}
+          <motion.form className="grid grid-cols-2 gap-6 flex flex-col" onSubmit={handleSubmit}>
+            
+            <AnimatedSelect
+              label="Catégorie"
+              options={categories.map(cat => ({ value: cat.id, label: cat.nom }))} 
+              value={categoryId}
+              onChange={setCategoryId}
+              placeholder="Sélectionner une catégorie"
+            />
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-        
-          <div className="grid grid-cols-2 gap-6">
-            <div className="flex flex-col">
-              <label className="text-lg text-gray-800 mb-2">Date de début :</label>
-              <input
-                type="date"
-                value={dateDebut}
-                onChange={(e) => setDateDebut(e.target.value)}
-                className="p-3 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300 hover:border-blue-500"
-                required
-              />
-            </div>
+            <AnimatedSelect
+              label="Transmission"
+              options={[{ value: "Manuelle", label: "Manuelle" }, { value: "Automatique", label: "Automatique" }]}
+              value={transmission}
+              onChange={setTransmission}
+              placeholder="Sélectionner transmission"
+            />
 
-            <div className="flex flex-col">
-              <label className="text-lg text-gray-800 mb-2">Date de fin :</label>
-              <input
-                type="date"
-                value={dateFin}
-                onChange={(e) => setDateFin(e.target.value)}
-                className="p-3 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300 hover:border-blue-500"
-                required
-              />
-            </div>
-          </div>
-
-         
-          <div className="grid grid-cols-2 gap-6">
-            <div className="flex flex-col">
-              <label className="text-lg text-gray-800 mb-2">Choisir une catégorie :</label>
-              <select
-                value={categoryId}
-                onChange={(e) => setCategoryId(e.target.value)}
-                className="p-3 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300 hover:border-blue-500"
-                required
-              >
-                <option value="">Sélectionner une catégorie</option>
-                {categories.map((category) => (
-                  <option key={category.id} value={category.id}>
-                    {category.nom}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="flex flex-col">
-              <label className="text-lg text-gray-800 mb-2">Type de transmission :</label>
-              <select
-                value={transmission}
-                onChange={(e) => setTransmission(e.target.value)}
-                className="p-3 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300 hover:border-blue-500"
-                required
-              >
-                <option value="">Sélectionner</option>
-                <option value="Manuelle">Manuelle</option>
-                <option value="Automatique">Automatique</option>
-              </select>
-            </div>
-          </div>
-
-          <div className="flex flex-col">
-            <label className="text-lg text-gray-800 mb-2">Choisir une voiture :</label>
-            <select
+            <AnimatedSelect
+              label="Voiture"
+              options={filteredCars.map(car => ({
+                value: car.id, 
+                label: `${car.marque} ${car.modele} - ${car.price_per_day} MAD/jour`
+              }))}
               value={selectedCar}
-              onChange={(e) => setSelectedCar(e.target.value)}
-              className="p-3 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300 hover:border-blue-500"
-              required
-            >
-              <option value="">Sélectionner une voiture</option>
-              {filteredCars.map((car) => (
-                <option key={car.id} value={car.id}>
-                  {car.marque} {car.modele} - {car.price_per_day} MAD/jour
-                </option>
-              ))}
-            </select>
-          </div>
+              onChange={setSelectedCar}
+              placeholder="Sélectionner une voiture"
+            />
 
-       
-          {selectedCarDetails && (
-            <div className="flex flex-col mt-4 text-gray-800">
-              <p><strong>Marque :</strong> {selectedCarDetails.marque}</p>
-              <p><strong>Modèle :</strong> {selectedCarDetails.modele}</p>
-              <p><strong>Transmission :</strong> {selectedCarDetails.transmission}</p>
-              <p><strong>Prix par jour :</strong> {selectedCarDetails.price_per_day} MAD</p>
-            </div>
-          )}
+            <motion.div>
+              <label className="text-white font-medium mb-1 block">Date Début</label>
+              <input type="date" value={dateDebut} onChange={(e) => setDateDebut(e.target.value)} className="input-style p-4 rounded-lg w-full" required />
+            </motion.div>
 
-         
-          <div className="grid grid-cols-2 gap-6">
-            <div className="flex flex-col">
-              <label className="text-lg text-gray-800 mb-2">Nom du client :</label>
-              <input
+            <motion.div>
+              <label className="text-white font-medium mb-1 block">Date Fin</label>
+              <input type="date" value={dateFin} onChange={(e) => setDateFin(e.target.value)} className="input-style p-4 rounded-lg w-full" required />
+            </motion.div>
+
+            <div>
+              <label className="text-white font-medium mb-1 block">Nom Complet</label>
+              <motion.input 
                 type="text"
                 value={nomClient}
                 onChange={(e) => setNomClient(e.target.value)}
-                className="p-3 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300 hover:border-blue-500"
+                className="input-style p-4 text-lg rounded-lg w-full border-black"
                 required
-                placeholder="Entrez votre nom"
+                whileFocus={{ scale: 1.05 }}
               />
             </div>
 
-            <div className="flex flex-col">
-              <label className="text-lg text-gray-800 mb-2">Email du client :</label>
-              <input
+            <div>
+              <label className="text-white font-medium mb-1 block">Num de télé</label>
+              <motion.input 
+                type="text"
+                value={num_tele}
+                onChange={(e) => setNumTele(e.target.value)}
+                className="input-style p-4 text-lg rounded-lg w-full border-black"
+                required
+                whileFocus={{ scale: 1.05 }}
+              />
+            </div>
+
+            <div>
+              <label className="text-white font-medium mb-1 block">Email</label>
+              <motion.input 
                 type="email"
                 value={emailClient}
                 onChange={(e) => setEmailClient(e.target.value)}
-                className="p-3 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300 hover:border-blue-500"
+                className="input-style p-4 text-lg rounded-lg w-full border-black"
                 required
-                placeholder="Entrez votre email"
+                whileFocus={{ scale: 1.05 }}
               />
             </div>
-          </div>
 
-          <p className="text-xl font-semibold text-gray-800 text-center my-4">💰 Prix Total : {prixTotal} MAD</p>
+            <motion.p className="text-xl font-semibold text-white text-center col-span-2">
+              💰 Prix Total : {prixTotal} MAD
+            </motion.p>
 
-          <button
-            type="submit"
-            className="w-full py-3 bg-blue-600 text-white text-lg rounded-md hover:bg-blue-700 transition duration-300"
-          >
-            Réserver
-          </button>
-        </form>
+            {selectedCarDetails && (
+              <div className="text-white text-center mt-4">
+                <p><strong>Voiture sélectionnée:</strong> {selectedCarDetails.marque} {selectedCarDetails.modele}</p>
+                <p><strong>Prix par jour:</strong> {selectedCarDetails.price_per_day} MAD</p>
+                <p><strong>Transmission:</strong> {selectedCarDetails.transmission}</p>
+              </div>
+            )}
+
+            <motion.button type="submit" className="col-span-2 bg-blue-500 text-white p-4 rounded-xl hover:bg-blue-600 focus:outline-none transition duration-300 ease-in-out">
+              Réserver maintenant
+            </motion.button>
+          </motion.form>
+
+          {successMessage && (
+            <motion.p className="mt-6 text-center text-green-500">{successMessage}</motion.p>
+          )}
+        </motion.div>
       </div>
-    </div>
-<Footer/> </> );
+      <Footer />
+    </>
+  );
 };
 
 export default Reservation;
