@@ -11,12 +11,20 @@ import ForgotPassword from './Auth/ForgotPassword';
 import ResetPassword from './Auth/ResetPassword';
 import Festivals from './pages/Festivals';
 import { Routes, Route } from 'react-router-dom'
-import NavBar from './components/NavBar'
+
 import Footer from './components/Footer'
+import Reservation from './Location/Reservation'
+import Exhibitions from './pages/Exhibitions'
+import Heritages from './pages/Heritages'
+import Adventures from './pages/Adventures'
+import Marathons from './pages/Marathons'
+import Tournaments from './pages/Tournaments'
+import Feedback from './pages/Feedback'
+import Hotels from './pages/Hotels'
 
 
 
-function App() {
+const  App=()=> {
   const [categories, setCategories] = useState([]);
 
 
@@ -47,6 +55,8 @@ function App() {
       <Route path="/register" element={<Register />} />
      <Route path="/forgot-password" element={<ForgotPassword />} />
     <Route path="/reset-password" element={<ResetPassword />} />
+    <Route path='/carBooking'  element={<Reservation categories={categories} />}/>
+
       </Routes>
      <Footer/>
       

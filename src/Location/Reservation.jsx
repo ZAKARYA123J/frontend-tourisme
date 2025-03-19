@@ -64,7 +64,7 @@ const Reservation = ({ categories = [] }) => {
   const [filteredCars, setFilteredCars] = useState([]);
   const [selectedCarDetails, setSelectedCarDetails] = useState(null);
   const [successMessage, setSuccessMessage] = useState("");
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     if (categoryId) {
       axios
@@ -122,8 +122,9 @@ const Reservation = ({ categories = [] }) => {
     if (!selectedCar || selectedCar === "") {
       alert("Please select a car");
       return;
-    }
-
+     
+    } setLoading(true);
+setSuccessMessage("");
     const reservationData = {
     
       car_id: selectedCar,
@@ -138,7 +139,11 @@ const Reservation = ({ categories = [] }) => {
    axios
     .post("http://127.0.0.1:8000/api/reservations", reservationData)
     .then((response) => {
-      setSuccessMessage("  Reservation successful !");
+      setTimeout(()=>{
+        setLoading(false);
+        setSuccessMessage("  Reservation successful !");
+
+      },2000);
     })
     .catch((error) => {
       console.error("Reservation failed", error.response.data);
@@ -161,16 +166,16 @@ const Reservation = ({ categories = [] }) => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="max-w-4xl w-full p-8 mt-20 bg-white rounded-lg backdrop-blur-lg border bg-opacity-35 border-slate-950 border-opacity-30 shadow-xl z-10"
+          className="max-w-4xl w-full p-8 mt-20  bg-white rounded-lg backdrop-blur-lg border bg-opacity-35 border-slate-950 border-opacity-30 shadow-xl z-10"
         >
           <h2 className="text-4xl font-semibold text-center text-white mb-6">
-          Book your car in Agadir ✨😊
+          Book your car in Agadir 
           </h2>
 
           <motion.form className="grid grid-cols-2 gap-6  " onSubmit={handleSubmit}>
             
             <AnimatedSelect
-              label="Categories 😊"
+              label="Categories "
               options={categories.map(cat => ({ value: cat.id, label: cat.nom }))} 
               value={categoryId}
               onChange={setCategoryId}
@@ -178,7 +183,7 @@ const Reservation = ({ categories = [] }) => {
             />
 
             <AnimatedSelect
-              label="Transmission 😊"
+              label="Transmission "
               options={[{ value: "Manuelle", label: "Manuelle" }, { value: "Automatique", label: "Automatique" }]}
               value={transmission}
               onChange={setTransmission}
@@ -186,7 +191,7 @@ const Reservation = ({ categories = [] }) => {
             />
 
             <AnimatedSelect
-              label="Cars 😊🚗"
+              label="Cars 🚗"
               options={filteredCars.map(car => ({
                 value: car.id, 
                 label: `${car.marque} ${car.modele} - ${car.price_per_day} MAD/jour`
@@ -197,17 +202,17 @@ const Reservation = ({ categories = [] }) => {
             />
 
             <motion.div>
-              <label className="text-white font-semibold text-lg mb-1 block">Start Date 😊📅</label>
+              <label className="text-white font-semibold text-lg mb-1 block">Start Date 📅</label>
               <input type="date" value={dateDebut} onChange={(e) => setDateDebut(e.target.value)} className="input-style p-4 rounded-lg w-full" required />
             </motion.div>
 
             <motion.div>
-              <label className="text-white font-semibold text-lg mb-1 block">End Date 😊📅</label>
+              <label className="text-white font-semibold text-lg mb-1 block">End Date 📅</label>
               <input type="date" value={dateFin} onChange={(e) => setDateFin(e.target.value)} className="input-style p-4 rounded-lg w-full" required />
             </motion.div>
 
             <div>
-              <label className="text-white font-semibold text-lg mb-1 block">Full Name 😊</label>
+              <label className="text-white font-semibold text-lg mb-1 block">Full Name </label>
               <motion.input 
                 type="text"
                 value={nomClient}
@@ -219,7 +224,7 @@ const Reservation = ({ categories = [] }) => {
             </div>
 
             <div>
-              <label className="text-white font-semibold text-lg mb-1 block">Phone Number 😊📱</label>
+              <label className="text-white font-semibold text-lg mb-1 block">Phone Number 📱</label>
               <motion.input 
                 type="text"
                 value={num_tele}
@@ -258,9 +263,9 @@ const Reservation = ({ categories = [] }) => {
               Réserver maintenant
             </motion.button>
           </motion.form>
-
+          {loading && <p className="text-white text-center text-xl font-bold mt-6">Processing...</p>}
           {successMessage && (
-            <motion.p className="mt-6 text-center text-green-500">{successMessage}</motion.p>
+            <motion.p className="mt-6 text-center text-2xl font-extrabold  text-green-500">{successMessage}</motion.p>
           )}
         </motion.div>
       </div>
