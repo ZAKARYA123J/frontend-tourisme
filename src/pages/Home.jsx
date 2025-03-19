@@ -12,14 +12,14 @@ import Footer from "../components/Footer";
 const Home = () => {
   return (
     <>
-    <NavBar/>
+   
       <Hero />
       <Carousel />
       <Destinations />
       <Selects />
       <Categories />
       <Search />
-      <Footer/>
+      
       {/* <RouterComponent/> */}
     </>
   );
