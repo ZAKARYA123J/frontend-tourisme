@@ -17,16 +17,18 @@ const NavBar = () => {
         {
             title: "Cultural",
             items: [  
-                { name: "Festivals", link: "/festivals" , },
+                { name: "Festivals", link: "/festivals"  },
                 { name: "Exhibitions", link: "/exhibitions" },
-                { name: "Heritage Tours", link: "/heritage-tours" }
+                { name: "Heritage Tours", link: "/heritages" }
 
             ],
             link: "/cultural"
         },
         {
             title: "Sports",
-            items: ["Tournaments", "Marathons", "Adventure Sports"],
+            items: [{name:"Tournaments", link:"/tournaments"},
+                   {name:"Marathons",link:"/marathons" },
+                   { name:"Adventures",link:"/adventures"}],
             link: "/sports"
         },
         {
@@ -34,11 +36,15 @@ const NavBar = () => {
             items: ["Hotels", "Airbnb"],
             link: "/reservation"
         },
+        
         {
             title: "Review",
-            items: ["feedback"],
+            items: [
+                { name: "Feedback", link: "/feedback" }
+            ],
             link: "/review"
         }
+        
     ];
 
     useEffect(() => {
