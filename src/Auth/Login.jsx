@@ -69,7 +69,7 @@ const Login = () => {
 
   return (
     <>
-    <NavBar/>
+   
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br px-4 overflow-hidden">
       <div className={`bg-white shadow-2xl rounded-2xl flex w-full max-w-4xl transition-transform duration-1000 ease-in-out transform ${isSignUp ? 'translate-x-56' : 'translate-x-0'}`}>
         <div className={`w-1/2 p-10 flex flex-col justify-center transition-all duration-1000 ease-in-out ${isSignUp ? 'order-2' : 'order-1'}`}>
@@ -112,7 +112,7 @@ const Login = () => {
         </div>
       </div>
     </div>
- <Footer/> </> );
+ </> );
 };
 
 export default Login;

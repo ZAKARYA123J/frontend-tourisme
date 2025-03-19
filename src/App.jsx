@@ -1,20 +1,24 @@
-import React from 'react'
+import {React,useState,useEffect} from 'react'
 import NavBar from './components/NavBar'
 import Destinations from './components/Destinations'
 import Home from './pages/Home'
 import View from './pages/View'
-import Footer from './components/Footer'
+
 import Book from './pages/Book'
 import Login from './Auth/Login';
 import Register from './Auth/Register';
 import ForgotPassword from './Auth/ForgotPassword';
 import ResetPassword from './Auth/ResetPassword';
 import Festivals from './pages/Festivals';
-import Exhibitions from './pages/Exhibitions';
-import Heritages from './pages/Heritages';
-import Tournaments from './pages/Tournaments';
-import Marathons from './pages/Marathons';
+import { Routes, Route } from 'react-router-dom'
+
+import Footer from './components/Footer'
+import Reservation from './Location/Reservation'
+import Exhibitions from './pages/Exhibitions'
+import Heritages from './pages/Heritages'
 import Adventures from './pages/Adventures'
+import Marathons from './pages/Marathons'
+import Tournaments from './pages/Tournaments'
 import Feedback from './pages/Feedback'
 import Hotels from './pages/Hotels'
 
@@ -25,14 +29,20 @@ import Destination3 from './details/destination3'
 import Destination4 from './details/destination4'
 import Destination5 from './details/destination5'
 
+const  App=()=> {
+  const [categories, setCategories] = useState([]);
 
-function App() {
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:8000/api/categories')  
+      .then((response) => response.json())
+      .then((data) => setCategories(data))
+      .catch((error) => console.error('Erreur de récupération des catégories:', error));
+  }, []);
+
   return (
-    
-     <> 
-      <div className="flex flex-col min-h-screen">
-       <NavBar />
-       <main className="flex-grow">
+    <>
+      <NavBar />
        <Routes> 
         <Route path='/' element={<Home/>}/>
         <Route path='/destinations' element={<Destinations/>}/>
@@ -56,12 +66,12 @@ function App() {
       <Route path="/register" element={<Register />} />
      <Route path="/forgot-password" element={<ForgotPassword />} />
     <Route path="/reset-password" element={<ResetPassword />} />
+    <Route path='/carBooking'  element={<Reservation categories={categories} />}/>
+
       </Routes>
-      </main>
-    
-      <Footer/>
-    </div>
- </>
+     <Footer/>
+      
+    </>
   )
 }
 

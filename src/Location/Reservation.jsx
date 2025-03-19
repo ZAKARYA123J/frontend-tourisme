@@ -11,7 +11,7 @@ const AnimatedSelect = ({ label, options, value, onChange, placeholder }) => {
 
   return (
     <div className="w-full">
-      <label className="text-white font-medium mb-1 block">{label}</label>
+      <label className="text-white font-semibold text-lg mb-1 block">{label}</label>
       <div
         className="p-4 text-lg rounded-lg bg-white border border-gray-400 cursor-pointer 
                    hover:bg-gray-200 transition duration-300 ease-in-out"
@@ -64,13 +64,13 @@ const Reservation = ({ categories = [] }) => {
   const [filteredCars, setFilteredCars] = useState([]);
   const [selectedCarDetails, setSelectedCarDetails] = useState(null);
   const [successMessage, setSuccessMessage] = useState("");
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     if (categoryId) {
       axios
         .get(`http://127.0.0.1:8000/api/cars?category_id=${categoryId}`)
         .then((response) => setCars(response.data))
-        .catch((error) => console.error("Erreur de récupération des voitures:", error));
+        .catch((error) => console.error("Error retrieving cars", error));
     } else {
       setCars([]);
       setFilteredCars([]);
@@ -116,14 +116,15 @@ const Reservation = ({ categories = [] }) => {
     e.preventDefault();
 
     if (!categoryId || categoryId === "") {
-      alert("Veuillez sélectionner une catégorie.");
+      alert("Please select a category");
       return;
     }
     if (!selectedCar || selectedCar === "") {
-      alert("Veuillez sélectionner une voiture.");
+      alert("Please select a car");
       return;
-    }
-
+     
+    } setLoading(true);
+setSuccessMessage("");
     const reservationData = {
     
       car_id: selectedCar,
@@ -138,10 +139,14 @@ const Reservation = ({ categories = [] }) => {
    axios
     .post("http://127.0.0.1:8000/api/reservations", reservationData)
     .then((response) => {
-      setSuccessMessage("Réservation réussie !");
+      setTimeout(()=>{
+        setLoading(false);
+        setSuccessMessage("  Reservation successful !");
+
+      },2000);
     })
     .catch((error) => {
-      console.error("Erreur lors de la réservation:", error.response.data);
+      console.error("Reservation failed", error.response.data);
     });
   };
    
@@ -151,8 +156,8 @@ const Reservation = ({ categories = [] }) => {
 
   return (
     <>
-      <NavBar />
-      <div className="flex justify-center w-full p-10 h-screen bg-black items-center min-h-screen relative">
+     
+      <div className="flex justify-center w-full  h-screen  bg-black items-center min-h-screen relative">
         <div className="absolute inset-0">
           <img src={voitureImage} alt="Car" className="w-full h-full object-cover opacity-50" />
         </div>
@@ -161,53 +166,53 @@ const Reservation = ({ categories = [] }) => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="max-w-4xl w-full p-8 bg-white rounded-lg bg-opacity-10 backdrop-blur-lg border bg-opacity-35 border-slate-950 border-opacity-30 shadow-xl z-10"
+          className="max-w-4xl w-full p-8 mt-20  bg-white rounded-lg backdrop-blur-lg border bg-opacity-35 border-slate-950 border-opacity-30 shadow-xl z-10"
         >
           <h2 className="text-4xl font-semibold text-center text-white mb-6">
-            Réservez votre voiture à Agadir
+          Book your car in Agadir 
           </h2>
 
-          <motion.form className="grid grid-cols-2 gap-6 flex flex-col" onSubmit={handleSubmit}>
+          <motion.form className="grid grid-cols-2 gap-6  " onSubmit={handleSubmit}>
             
             <AnimatedSelect
-              label="Catégorie"
+              label="Categories "
               options={categories.map(cat => ({ value: cat.id, label: cat.nom }))} 
               value={categoryId}
               onChange={setCategoryId}
-              placeholder="Sélectionner une catégorie"
+              placeholder="Select a Category"
             />
 
             <AnimatedSelect
-              label="Transmission"
+              label="Transmission "
               options={[{ value: "Manuelle", label: "Manuelle" }, { value: "Automatique", label: "Automatique" }]}
               value={transmission}
               onChange={setTransmission}
-              placeholder="Sélectionner transmission"
+              placeholder="Select a Transmission"
             />
 
             <AnimatedSelect
-              label="Voiture"
+              label="Cars 🚗"
               options={filteredCars.map(car => ({
                 value: car.id, 
                 label: `${car.marque} ${car.modele} - ${car.price_per_day} MAD/jour`
               }))}
               value={selectedCar}
               onChange={setSelectedCar}
-              placeholder="Sélectionner une voiture"
+              placeholder="Select a Car"
             />
 
             <motion.div>
-              <label className="text-white font-medium mb-1 block">Date Début</label>
+              <label className="text-white font-semibold text-lg mb-1 block">Start Date 📅</label>
               <input type="date" value={dateDebut} onChange={(e) => setDateDebut(e.target.value)} className="input-style p-4 rounded-lg w-full" required />
             </motion.div>
 
             <motion.div>
-              <label className="text-white font-medium mb-1 block">Date Fin</label>
+              <label className="text-white font-semibold text-lg mb-1 block">End Date 📅</label>
               <input type="date" value={dateFin} onChange={(e) => setDateFin(e.target.value)} className="input-style p-4 rounded-lg w-full" required />
             </motion.div>
 
             <div>
-              <label className="text-white font-medium mb-1 block">Nom Complet</label>
+              <label className="text-white font-semibold text-lg mb-1 block">Full Name </label>
               <motion.input 
                 type="text"
                 value={nomClient}
@@ -219,7 +224,7 @@ const Reservation = ({ categories = [] }) => {
             </div>
 
             <div>
-              <label className="text-white font-medium mb-1 block">Num de télé</label>
+              <label className="text-white font-semibold text-lg mb-1 block">Phone Number 📱</label>
               <motion.input 
                 type="text"
                 value={num_tele}
@@ -231,7 +236,7 @@ const Reservation = ({ categories = [] }) => {
             </div>
 
             <div>
-              <label className="text-white font-medium mb-1 block">Email</label>
+              <label className="text-white font-semibold text-lg mb-1 block">Email 📧</label>
               <motion.input 
                 type="email"
                 value={emailClient}
@@ -246,25 +251,25 @@ const Reservation = ({ categories = [] }) => {
               💰 Prix Total : {prixTotal} MAD
             </motion.p>
 
-            {selectedCarDetails && (
+            {/* {selectedCarDetails && (
               <div className="text-white text-center mt-4">
                 <p><strong>Voiture sélectionnée:</strong> {selectedCarDetails.marque} {selectedCarDetails.modele}</p>
                 <p><strong>Prix par jour:</strong> {selectedCarDetails.price_per_day} MAD</p>
                 <p><strong>Transmission:</strong> {selectedCarDetails.transmission}</p>
               </div>
-            )}
+            )} */}
 
             <motion.button type="submit" className="col-span-2 bg-blue-500 text-white p-4 rounded-xl hover:bg-blue-600 focus:outline-none transition duration-300 ease-in-out">
               Réserver maintenant
             </motion.button>
           </motion.form>
-
+          {loading && <p className="text-white text-center text-xl font-bold mt-6">Processing...</p>}
           {successMessage && (
-            <motion.p className="mt-6 text-center text-green-500">{successMessage}</motion.p>
+            <motion.p className="mt-6 text-center text-2xl font-extrabold  text-green-500">{successMessage}</motion.p>
           )}
         </motion.div>
       </div>
-      <Footer />
+    
     </>
   );
 };
