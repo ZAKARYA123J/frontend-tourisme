@@ -22,7 +22,6 @@ import Tournaments from './pages/Tournaments'
 import Feedback from './pages/Feedback'
 import Hotels from './pages/Hotels'
 
-import { Routes, Route } from 'react-router-dom'
 import Destination1 from './details/destination1'
 import Destination2 from './details/destination2'
 import Destination3 from './details/destination3'
@@ -75,4 +74,4 @@ const  App=()=> {
   )
 }
 
-export default App
+export default App
