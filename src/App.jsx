@@ -44,6 +44,12 @@ function App() {
         <Route path="/tournaments" element={<Tournaments/>}/> 
         <Route path="/feedback" element={<Feedback/>}/> 
 
+        <Route path="/destination1" element={<Destination1/>}/> 
+        <Route path="/destination2" element={<Destination2/>}/> 
+        <Route path="/destination3" element={<Destination3/>}/> 
+        <Route path="/destination4" element={<Destination4/>}/> 
+        <Route path="/destination5" element={<Destination5/>}/> 
+
        <Route path='/view/:id' element={<View/>}/>
         <Route path='/book' element={<Book/>}/>
       <Route path="/login" element={<Login />} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import aglou from '../assets/aglou.jpg';
+import quadaga from '../assets/quadaga.jpg';
 const Destination5 = () => {
   const adventureData = {
     name: "Quad Adventure Agadir",
@@ -22,7 +22,7 @@ const Destination5 = () => {
    
       <div className="relative h-screen">
         <img 
-          src={aglou} 
+          src={quadaga} 
           alt="Quad Adventure" 
           className="absolute inset-0 w-full h-full object-cover" 
         />

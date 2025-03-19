@@ -20,7 +20,6 @@ const Destination3 = () => {
 
   return (
     <div>
-      {/* Image d'arrière-plan */}
       <div className="relative bg-cover bg-center h-screen" style={{ backgroundImage: `url(${resortData.imageUrl})` }}>
         <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 text-center text-white px-6 py-8">
@@ -29,18 +28,17 @@ const Destination3 = () => {
         </div>
       </div>
 
-      {/* Article détaillé */}
       <div className="container mx-auto px-6 py-12">
         <section className="prose lg:prose-xl text-gray-800">
-          {/* Description */}
+
           <h2 className="text-3xl font-semibold mb-4">Description du Resort</h2>
           <p className="mb-6">{resortData.description}</p>
 
-          {/* Meilleur moment pour visiter */}
+         
           <h3 className="text-2xl font-semibold mt-8">Meilleur moment pour visiter</h3>
           <p className="mb-6">{resortData.bestTimeToVisit}</p>
 
-          {/* Services disponibles */}
+
           <h3 className="text-2xl font-semibold mt-8">Services du Resort</h3>
           <ul className="list-disc pl-5 mb-6">
             {resortData.services.map((service, index) => (
@@ -48,7 +46,7 @@ const Destination3 = () => {
             ))}
           </ul>
 
-          {/* Conseils pour les visiteurs */}
+         
           <h3 className="text-2xl font-semibold mt-8">Conseils pour les visiteurs</h3>
           <p className="mb-6">{resortData.tips}</p>
         </section>
