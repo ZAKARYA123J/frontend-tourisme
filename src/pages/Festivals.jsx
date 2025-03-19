@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import timitar from '../assets/timitar.jpg';  
-import vfm from '../assets/vfm.jpg'
-import yannayer from '../assets/yannayer.jpg'
+import vfm from '../assets/vfm.jpg';
+import yannayer from '../assets/yannayer.jpg';
+
 const Festivals = () => {
     const [festivals, setFestivals] = useState([
         {
@@ -11,7 +12,7 @@ const Festivals = () => {
             date: 'july 15-16, 2025',
             description: 'One of the biggest music festivals in Morocco, Timitar celebrates Amazigh culture while incorporating diverse international musical influences. It features performances by Moroccan stars and global artists, with past lineups including Daoudia, Hindi Zahra, and Diana Haddad.',
             price: 'Free',
-            image: timitar ,
+            image: timitar,
             isFavorite: false,
         },
         {
@@ -20,7 +21,7 @@ const Festivals = () => {
             date: 'November 2025',
             description: 'A major music industry event focusing on African and Middle Eastern artists, Visa For Music brings together musicians, producers, and industry professionals for concerts, networking, and workshops.',
             price: 'varies (some free, others ticketed)',
-            image: vfm ,
+            image: vfm,
             isFavorite: false,
         },
         {
@@ -49,6 +50,7 @@ const Festivals = () => {
                         <p>{festival.description}</p>
                         <div className="flex justify-between items-start mb-4">
                             <h2 className="text-xl font-semibold text-gray-800">
+                                {festival.name}
                             </h2>
                             <button onClick={() => toggleFavorite(festival.id)} className="text-red-500 hover:text-red-600">
                                 {festival.isFavorite ? <FaHeart color="red" size={24} /> : <FaRegHeart color="gray" size={24} />}

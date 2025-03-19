@@ -4,7 +4,7 @@ import img3 from "../assets/img3.jpg";
 import img4 from "../assets/img4-4.jpg";
 import Aghroud from "../assets/Aghroud.jpg";
 import Taghazout from "../assets/Taghazout.jpg";
-import quad from "../assets/quad.jpg";
+import quadaga from "../assets/quadaga.jpg";
 
 const Destinations = () => {
     return (
@@ -12,12 +12,12 @@ const Destinations = () => {
             <h1 className="text-4xl font-bold text-gray-900"></h1>
             <p className="py-4">Agadir Best Destinations</p>
             <div className="grid grid-rows-none md:grid-cols-5 py-4 gap-2 md:gap-4">
-            {[ 
-                    { src: img3, title: "Resort View", desc: "Luxury stay with ocean view", link:'/destination1' },
-                    { src: img4, title: "Beach Escape", desc: "Golden sands and clear waters", link:'/destination2' },
-                    { src: Aghroud, title: "Aghroud Beach", desc: "Relaxing coastal experience", link:'/destination3' },
-                    { src: Taghazout, title: "Taghazout Surf", desc: "Surfing paradise in Morocco", link:'/destination4' },
-                    { src: quad, title: "Quad Adventure", desc: "Exciting desert rides", link:'/destination5' }
+            {[
+                    { src: img3, title: "Resort View", desc: "Luxury stay with ocean view" },
+                    { src: img4, title: "Beach Escape", desc: "Golden sands and clear waters" },
+                    { src: Aghroud, title: "Aghroud Beach", desc: "Relaxing coastal experience" },
+                    { src: Taghazout, title: "Taghazout Surf", desc: "Surfing paradise in Morocco" },
+                    { src: quad, title: "Quad Adventure", desc: "Exciting desert rides" }
                 ].map((item, index) => (
                     <div key={index} className="relative group">
                         <Link to={item.link}> 

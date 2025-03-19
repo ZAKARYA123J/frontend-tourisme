@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaHeart,FaRegHeart } from "react-icons/fa";
 import jetskim from '../assets/jetskim.jpg';
-import quadbiking from '../assets/quadbiking.jpg';
+import quadaga from '../assets/quadaga.jpg';
 import hiking from '../assets/hiking.jpg';
 import balloon from '../assets/balloon.jpg';
 
@@ -24,7 +24,7 @@ const Adventures = () =>{
             date:'Available daily', 
             description:' Explore Agadir’s rugged landscapes, sand dunes, and Berber villages on a quad bike. Perfect for adventure seekers.', 
             price:'for 1 hour starting at 400 ', 
-            image: quadbiking ,
+            image: quadaga ,
             isFavorite: false ,
             },
             { 
