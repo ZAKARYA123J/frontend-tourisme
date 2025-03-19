@@ -1,20 +1,34 @@
 import {React,useState,useEffect} from 'react'
-import NavBar from './components/NavBar'
+
 import Destinations from './components/Destinations'
 import Home from './pages/Home'
 import View from './pages/View'
-import Footer from './components/Footer'
+
 import Book from './pages/Book'
 import Login from './Auth/Login';
 import Register from './Auth/Register';
 import ForgotPassword from './Auth/ForgotPassword';
 import ResetPassword from './Auth/ResetPassword';
 import Festivals from './pages/Festivals';
+import Adventures from './pages/Adventures';
+import Tournaments from './pages/Tournaments';
+import Marathons from './pages/Marathons';
+import Heritages from './pages/Heritages';
+import Feedback from './pages/Feedback';
+import Exhibitions from './pages/Exhibitions';
+import Reservation from './Location/Reservation'
+
+
+
+
+
 import { Routes, Route } from 'react-router-dom'
+import NavBar from './components/NavBar'
+import Footer from './components/Footer'
 
 
 
-function App() {
+const App=()=>{
   const [categories, setCategories] = useState([]);
 
 
@@ -27,7 +41,8 @@ function App() {
 
   return (
     <>
-      <NavBar />
+    <NavBar/>
+     
        <Routes> 
         <Route path='/' element={<Home/>}/>
         <Route path='/destinations' element={<Destinations/>}/>
@@ -47,8 +62,8 @@ function App() {
     <Route path="/reset-password" element={<ResetPassword />} />
     <Route path='/reservation/airbnb'  element={<Reservation categories={categories} />}/>
       </Routes>
-     <Footer/>
-      
+    
+      <Footer/>
     </>
   )
 }
