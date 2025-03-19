@@ -17,6 +17,8 @@ import Marathons from './pages/Marathons';
 import Adventures from './pages/Adventures'
 import Feedback from './pages/Feedback'
 import Hotels from './pages/Hotels'
+import Airbnb from './pages/Airbnb'
+
 
 import { Routes, Route } from 'react-router-dom'
 
@@ -40,6 +42,7 @@ function App() {
         <Route path="/tournaments" element={<Tournaments/>}/> 
         <Route path="/feedback" element={<Feedback/>}/> 
         <Route path="/hotels" element={<Hotels/>}/> 
+        <Route path="/airbnb" element={<Airbnb/>}/> 
        <Route path='/view/:id' element={<View/>}/>
         <Route path='/book' element={<Book/>}/>
       <Route path="/login" element={<Login />} />
