@@ -33,8 +33,11 @@ const NavBar = () => {
         },
         {
             title: "Reservations",
-            items: ["Hotels", "Airbnb"],
-            link: "/reservation"
+            items: [{name:"Hotels", link:"/hotels"},
+                 {name:"Airbnb",link:"/airbnb"},
+                 {name:"carBooking", link:"/carBooking"}
+                ],
+            link: "/reservations"
         },
         
         {

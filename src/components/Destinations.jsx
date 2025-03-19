@@ -3,7 +3,7 @@ import img3 from "../assets/img3.jpg";
 import img4 from "../assets/img4-4.jpg";
 import Aghroud from "../assets/Aghroud.jpg";
 import Taghazout from "../assets/Taghazout.jpg";
-import quad from "../assets/quad.jpg";
+import quadaga from "../assets/quadaga.jpg";
 
 const Destinations = () => {
     return (
@@ -16,7 +16,7 @@ const Destinations = () => {
                     { src: img4, title: "Beach Escape", desc: "Golden sands and clear waters" },
                     { src: Aghroud, title: "Aghroud Beach", desc: "Relaxing coastal experience" },
                     { src: Taghazout, title: "Taghazout Surf", desc: "Surfing paradise in Morocco" },
-                    { src: quad, title: "Quad Adventure", desc: "Exciting desert rides" }
+                    { src: quadaga, title: "Quad Adventure", desc: "Exciting desert rides" }
                 ].map((item, index) => (
                     <div key={index} className="relative group">
                     <img 
