@@ -7,8 +7,7 @@ import Carousel from "../components/Carousel";
 import Categories from "../components/Categories";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-// import RouterComponent from "../router";
-
+import Chatbot from "../components/Chatbot";
 const Home = () => {
   return (
     <>
@@ -19,8 +18,7 @@ const Home = () => {
       <Selects />
       <Categories />
       <Search />
-      
-      {/* <RouterComponent/> */}
+      <Chatbot/>
     </>
   );
 };

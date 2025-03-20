@@ -29,6 +29,7 @@ import Destination2 from './details/destination2'
 import Destination3 from './details/destination3'
 import Destination4 from './details/destination4'
 import Destination5 from './details/destination5'
+import Chatbot from './components/Chatbot'
 
 const  App=()=> {
   const [categories, setCategories] = useState([]);
@@ -56,6 +57,7 @@ const  App=()=> {
         <Route path="/tournaments" element={<Tournaments/>}/> 
         <Route path="/feedback" element={<Feedback/>}/> 
         <Route path="/airbnb" element={<Airbnb/>}/> 
+        <Route path="/chatbot" element={<Chatbot/>}/>
 
         <Route path="/hotels" element={<Hotels/>}/> 
        <Route path='/view/:id' element={<View/>}/>
@@ -70,6 +72,7 @@ const  App=()=> {
         <Route path="/destination3" element={<Destination3/>}/> 
         <Route path="/destination4" element={<Destination4/>}/> 
         <Route path="/destination5" element={<Destination5/>}/>
+        
       </Routes>
      <Footer/>
       
