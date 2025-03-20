@@ -4,7 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
-
+import logoblue from "../assets/logoblue.png"
 const NavBar = () => {
     const [nav, setNav] = useState(false);
     const [user, setUser] = useState(null);
@@ -67,15 +67,21 @@ const NavBar = () => {
     };
 
     return (
+        
         <div className={`flex w-full justify-between items-center h-20 px-6 fixed top-0 left-0 z-50 transition-all duration-300 ${
             isLoginPage ? "bg-gray-200 text-slate-800" : 
             isScrolled ? "bg-white/90 backdrop-blur-sm text-slate-800 shadow-md" : "bg-transparent text-white"
         }`}>
             
             <div>
-                <h1 className="text-2xl font-bold tracking-wide cursor-pointer">
-                    Travel<span className="text-blue-950">Tour</span>
+                <nav  className="absolute top-4 left-4 flex items-center space-x-3 mt-[-20px]">
+            <img src={logoblue} alt="web logo"className="h-[90px] w-auto ">
+              
+            </img> <h1 className="text-2xl font-bold tracking-wide cursor-pointer mt-[-5px]">
+                    Travel<span className="text-blue-950 " >Tour</span>
                 </h1>
+        </nav>
+               
             </div>
 
             <div className="hidden md:flex h-full">
