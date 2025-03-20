@@ -4,7 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
-
+import logoblue from "../assets/logoblue.png"
 const NavBar = () => {
     const [nav, setNav] = useState(false);
     const [user, setUser] = useState(null);
@@ -67,17 +67,23 @@ const NavBar = () => {
     };
 
     return (
-        <div className={`flex w-full justify-between items-center h-20  p-14 fixed top-0 left-0 z-50 transition-all duration-300 ${
+        
+        <div className={`flex w-full justify-between items-center h-20  px-6 fixed top-0 left-0 z-50 transition-all duration-300 ${
             isLoginPage ? "bg-gray-200 text-slate-800" : 
             isScrolled ? "bg-white/90 backdrop-blur-sm text-slate-800 shadow-md" : "bg-transparent text-white"
         }`}>
             
             <div>
-                <h1 className="text-2xl font-bold tracking-wide cursor-pointer">
-                    Travel<span className="text-blue-950">Tour</span>
+                <nav  className="absolute top-4 left-4 flex items-center space-x-3 mt-[-20px]">
+            <img src={logoblue} alt="web logo"className="h-[90px] w-auto ">
+              
+            </img> <h1 className="text-2xl font-bold tracking-wide cursor-pointer mt-[-5px]">
+                    Travel<span className="text-blue-950 " >Tour</span>
                 </h1>
+        </nav>
+               
             </div>
-
+           
             <div className="hidden md:flex h-full">
                 <ul className="flex space-x-8 text-xl font-medium items-center">
                     <li>
@@ -131,28 +137,43 @@ const NavBar = () => {
                         </div>
 
                         <AnimatePresence>
-                            {menuOpen && (
-                                <motion.div 
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -10 }}
-                                    className="absolute right-0 mt-3 w-56 bg-white text-gray-700 shadow-lg rounded-lg py-3 z-20"
-                                >
-                                    <p className="px-4 py-2 font-semibold text-gray-900">{user.name}</p>
-                                    <p className="px-4 py-2 text-gray-500 border-b">{user.email}</p>
-                                    <button 
-                                        className="block w-full text-left px-4 py-2 text-red-500 hover:bg-gray-100 transition duration-300"
-                                        onClick={() => {
-                                            localStorage.removeItem("user");
-                                            localStorage.removeItem("token");
-                                            window.location.reload();
-                                        }}
-                                    >
-                                        Logout
-                                    </button>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
+    {menuOpen && (
+        <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute right-0 mt-3 w-60 bg-white shadow-lg rounded-2xl py-3 border border-gray-200 z-20"
+        >
+            <div className="flex items-center px-4 pb-3 border-b">
+                <div className="w-10 h-10 bg-blue-500 text-white flex items-center justify-center rounded-full text-lg font-semibold">
+                    {user.name.charAt(0).toUpperCase()}
+                </div>
+                <div className="ml-3">
+                    <p className="font-semibold text-gray-900">{user.name}</p>
+                    <p className="text-gray-500 text-sm">{user.email}</p>
+                </div>
+            </div>
+            <button 
+                className="flex items-center w-full text-left px-4 py-3 text-red-600 hover:bg-gray-100 transition duration-300 rounded-b-2xl"
+                onClick={() => {
+                    localStorage.removeItem("user");
+                    localStorage.removeItem("token");
+                    window.location.reload();
+                }}
+            >
+                <svg className="w-5 h-5 mr-2 opacity-80 hover:opacity-100 transition duration-300" 
+                    fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" 
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6a2 2 0 012 2v1">
+                    </path>
+                </svg>
+                Logout
+            </button>
+        </motion.div>
+    )}
+</AnimatePresence>
+
                     </div>
                 ) : (
                     <Link to='/login'>
