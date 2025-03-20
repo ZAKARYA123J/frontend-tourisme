@@ -67,7 +67,7 @@ const NavBar = () => {
     };
 
     return (
-        <div className={`flex w-full justify-between items-center h-20 px-6 fixed top-0 left-0 z-50 transition-all duration-300 ${
+        <div className={`flex w-full justify-between items-center h-20  p-14 fixed top-0 left-0 z-50 transition-all duration-300 ${
             isLoginPage ? "bg-gray-200 text-slate-800" : 
             isScrolled ? "bg-white/90 backdrop-blur-sm text-slate-800 shadow-md" : "bg-transparent text-white"
         }`}>
@@ -79,7 +79,7 @@ const NavBar = () => {
             </div>
 
             <div className="hidden md:flex h-full">
-                <ul className="flex space-x-8 text-lg font-medium items-center">
+                <ul className="flex space-x-8 text-xl font-medium items-center">
                     <li>
                         <Link to="/" className="hover:text-blue-500 transition duration-300">
                             Home
@@ -117,7 +117,7 @@ const NavBar = () => {
                 </ul>
             </div>
 
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden md:flex items-center  space-x-4">
                 {user ? (
                     <div className="relative">
                         <div 
@@ -156,7 +156,7 @@ const NavBar = () => {
                     </div>
                 ) : (
                     <Link to='/login'>
-                        <BsPerson className="cursor-pointer hover:text-blue-500 transition duration-300" size={26} />
+                        <BsPerson className="cursor-pointer hover:text-blue-500 transition duration-300" size={40} />
                     </Link>
                 )}
             </div>
