@@ -1,10 +1,10 @@
-import React from 'react';
 import Taghazout from '../assets/Taghazout.jpg';
 import qawarib from '../assets/qawarib.jpg';
 import qawarib2 from '../assets/qawarib2.jpg';
 import qawarib3 from '../assets/qawarib3.jpg';
-import qawarib4 from '../assets/qawarib4.jpg'; 
-import qawarib5 from '../assets/qawarib5.jpg'; 
+import qawarib4 from '../assets/qawarib4.jpg';
+import qawarib5 from '../assets/qawarib5.jpg';
+import { motion } from 'framer-motion';
 
 const Destination4 = () => {
   const resortData = {
@@ -28,67 +28,86 @@ const Destination4 = () => {
       { src: qawarib4, alt: "Piscine à débordement", description: "Détendez-vous au bord de la piscine à débordement." },
       { src: qawarib5, alt: "Massage sur la plage", description: "Profitez d'un massage relaxant sur la plage." },
       { src: Taghazout, alt: "Massage sur la plage", description: "Profitez d'un massage relaxant sur la plage." },
-
     ]
   };
 
   return (
-    <div>
-    
-      <div className="relative bg-cover bg-center h-screen">
-      <img 
-                  src={Taghazout} 
-                  alt="Quad Adventure" 
-                  className="absolute inset-0 w-full h-full object-cover" 
-                />
+    <div className="bg-gray-50">
+      <motion.div
+        className="relative bg-cover bg-center h-screen"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <img 
+          src={Taghazout} 
+          alt="Taghazout Surf Resort" 
+          className="absolute inset-0 w-full h-full object-cover opacity-70" 
+        />
         <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 text-center text-white px-6 py-8">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">{resortData.name}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4 hover:text-indigo-600 transition-all duration-300">{resortData.name}</h1>
           <p className="text-lg md:text-xl mb-6">{resortData.location}</p>
         </div>
-      </div>
+      </motion.div>
 
-    
-      <div className="container mx-auto px-6 py-12">
-        <section className="prose lg:prose-xl text-gray-800">
-        
-          <h2 className="text-3xl font-semibold mb-4">Description du Resort</h2>
-          <p className="mb-6">{resortData.description}</p>
+      <motion.div
+        className="container mx-auto px-6 py-12 text-gray-800"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <motion.section
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <div>
+            <h2 className="text-3xl font-semibold mb-4 text-indigo-700 hover:text-indigo-600 transition-all duration-300">Description du Resort</h2>
+            <p className="mb-6 text-gray-700 leading-relaxed text-lg hover:text-gray-800 transition-all duration-300">{resortData.description}</p>
 
-         
-          <h3 className="text-2xl font-semibold mt-8">Meilleur moment pour visiter</h3>
-          <p className="mb-6">{resortData.bestTimeToVisit}</p>
+            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Meilleur moment pour visiter</h3>
+            <p className="mb-6 text-gray-700 leading-relaxed hover:text-gray-800 transition-all duration-300">{resortData.bestTimeToVisit}</p>
 
-        
-          <h3 className="text-2xl font-semibold mt-8">Services du Resort</h3>
-          <ul className="list-disc pl-5 mb-6">
-            {resortData.services.map((service, index) => (
-              <li key={index}>{service}</li>
-            ))}
-          </ul>
+            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Services du Resort</h3>
+            <ul className="list-disc pl-5 mb-6 text-gray-700 space-y-2">
+              {resortData.services.map((service, index) => (
+                <motion.li 
+                  key={index}
+                  className="transition-all duration-300 hover:text-indigo-600"
+                >
+                  {service}
+                </motion.li>
+              ))}
+            </ul>
 
-          
-          <h3 className="text-2xl font-semibold mt-8">Conseils pour les visiteurs</h3>
-          <p className="mb-6">{resortData.tips}</p>
-        </section>
-        <div className="mt-12">
-          <h3 className="text-3xl font-semibold mb-6 text-indigo-700 hover:text-indigo-600 transition-all duration-300">Explorez notre Resort en Images</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Conseils pour les visiteurs</h3>
+            <p className="mb-6 text-gray-700 leading-relaxed hover:text-gray-800 transition-all duration-300">{resortData.tips}</p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6">
             {resortData.images.map((image, index) => (
-              <div key={index} className="relative bg-white rounded-lg shadow-lg overflow-hidden group transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+              <motion.div 
+                key={index}
+                className="relative group transition-all duration-300"
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 50 }}
+                transition={{ duration: 0.7 }}
+              >
                 <img 
                   src={image.src} 
                   alt={image.alt} 
-                  className="w-full h-72 object-cover rounded-t-lg group-hover:opacity-80 transition-opacity duration-300"
+                  className="w-full h-64 object-cover rounded-lg group-hover:opacity-80 transition-opacity duration-300"
                 />
                 <div className="p-4">
-                  <p className="text-lg text-gray-800 font-medium mb-2 group-hover:text-indigo-600 transition-all duration-300">{image.description}</p>
+                  <p className="text-sm text-gray-800 font-medium mb-2 group-hover:text-indigo-600 transition-all duration-300">{image.description}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </div>
+        </motion.section>
+      </motion.div>
     </div>
   );
 };
