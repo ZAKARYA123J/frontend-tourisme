@@ -4,7 +4,7 @@ import logoblue from "../assets/logoblue.png";
 
 const Footer = () => {
   return (
-<footer className="bg-gray-100 text-black py-10 mt-auto transition-all duration-300 hover:bg-gray-200">
+<footer className="bg-gray-100 text-black py-5  mt-auto transition-all duration-300 hover:bg-gray-200">
   <div className="max-w-[1240px] mx-auto px-6">
     <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-sm">
 
@@ -58,7 +58,7 @@ const Footer = () => {
         ))}
       </div>
 
-      <img src={logoblue} alt="Web logo" className="h-[100px] w-auto transition-transform duration-300 hover:scale-102 active:scale-98" />
+      <img src={logoblue} alt="Web logo" className="h-[60px] w-auto transition-transform duration-300 hover:scale-102 active:scale-98" />
     </div>
   </div>
 </footer>
