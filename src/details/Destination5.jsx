@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import quadaga from '../assets/quadaga.jpg';
-import raptor from '../assets/raptor.jpg';
-import raptor2 from '../assets/raptor2.jpg';
-import raptor3 from '../assets/raptor3.jpg';
+import React, { useState } from 'react'; 
+import quadaga from '../assets/quadaga.jpg'; 
+import raptor from '../assets/raptor.jpg'; 
+import raptor2 from '../assets/raptor2.jpg'; 
+import raptor3 from '../assets/raptor3.jpg'; 
 import raptor4 from '../assets/raptor4.jpg'; 
 import raptor6 from '../assets/raptor6.jpg'; 
 import quadbiking from '../assets/quadbiking.jpg'; 
@@ -37,17 +37,16 @@ const Destination5 = () => {
 
   return (
     <div className="bg-gray-50">
-      {/* Image de couverture */}
       <motion.div
         className="relative bg-cover bg-center h-screen"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <img
-          src={quadaga}
-          alt="Quad Adventure"
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
+        <img 
+          src={quadaga} 
+          alt="Quad Adventure" 
+          className="absolute inset-0 w-full h-full object-cover opacity-70" 
         />
         <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 text-center text-white px-6 py-8">
@@ -56,109 +55,128 @@ const Destination5 = () => {
         </div>
       </motion.div>
 
-      {/* Contenu principal */}
       <motion.div
         className="container mx-auto px-6 py-12"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        {/* Description de l'Aventure */}
         <motion.section
-          className="bg-blue-50 p-8 rounded-xl shadow-[0_4px_8px_0_rgba(245,225,183,0.5)] mb-8 hover:shadow-[0_6px_12px_0_rgba(245,225,183,0.7)] transition-all duration-500"
+          className="bg-blue-50 p-8 rounded-xl shadow-[0_4px_8px_0_rgba(245,225,183,0.5)] mb-8 hover:shadow-[0_6px_12px_0_rgba(245,225,183,0.7)] transition-all duration-500 grid grid-cols-1 md:grid-cols-2 gap-8"
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl font-semibold mb-4 text-indigo-700 hover:text-indigo-600 transition-all duration-300">À propos de l'Aventure</h2>
-          <p className="mb-6 text-gray-700 leading-relaxed text-lg hover:text-gray-800 transition-all duration-300">
-            {showFullDescription ? adventureData.description : `${adventureData.description.substring(0, 200)}...`}
-          </p>
-          <button
-            className="text-black hover:text-indigo-500 transition-all duration-300"
-            onClick={() => setShowFullDescription(!showFullDescription)}
-          >
-            {showFullDescription ? 'Lire moins' : 'Lire plus'}
-          </button>
-        </motion.section>
-
-        {/* Meilleur moment pour visiter */}
-        <motion.section
-          className="bg-teal-50 p-8 rounded-xl shadow-[0_4px_8px_0_rgba(245,225,183,0.5)] mb-8 hover:shadow-[0_6px_12px_0_rgba(245,225,183,0.7)] transition-all duration-500"
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 0.7 }}
-        >
-          <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Meilleur moment pour visiter</h3>
-          <p className="mb-6 text-gray-700 leading-relaxed hover:text-gray-800 transition-all duration-300">{adventureData.bestTimeToVisit}</p>
-        </motion.section>
-
-        {/* Services Disponibles */}
-        <motion.section
-          className="bg-yellow-50 p-8 rounded-xl shadow-[0_4px_8px_0_rgba(245,225,183,0.5)] mb-8 hover:shadow-[0_6px_12px_0_rgba(245,225,183,0.7)] transition-all duration-500"
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 0.7 }}
-        >
-          <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Services disponibles</h3>
-          <ul className="list-disc pl-5 mb-6 text-gray-700 space-y-2">
-            {adventureData.services.map((service, index) => (
-              <motion.li 
-                key={index}
-                className="transition-all duration-300 hover:text-indigo-600"
-                whileInView={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: 50 }}
-                transition={{ duration: 0.7 }}
-              >
-                {service}
-              </motion.li>
-            ))}
-          </ul>
-        </motion.section>
-
-        {/* Conseils pour les Visiteurs */}
-        <motion.section
-          className="bg-orange-50 p-8 rounded-xl shadow-[0_4px_8px_0_rgba(245,225,183,0.5)] mb-8 hover:shadow-[0_6px_12px_0_rgba(245,225,183,0.7)] transition-all duration-500"
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 0.7 }}
-        >
-          <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Conseils pour les visiteurs</h3>
-          <p className="mb-6 text-gray-700 leading-relaxed hover:text-gray-800 transition-all duration-300">{adventureData.tips}</p>
-        </motion.section>
-
-        {/* Galerie d'images */}
-        <motion.div
-          className="mt-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <h3 className="text-3xl font-semibold mb-6 text-indigo-700 hover:text-indigo-600 transition-all duration-300">Explorez notre Aventure en Images</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {adventureData.images.map((image, index) => (
-              <motion.div 
-                key={index}
-                className="relative bg-white rounded-lg shadow-lg overflow-hidden group transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
-                whileInView={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: 50 }}
-                transition={{ duration: 0.7 }}
-              >
-                <img 
-                  src={image.src} 
-                  alt={image.alt} 
-                  className="w-full h-72 object-cover rounded-t-lg group-hover:opacity-80 transition-opacity duration-300"
-                />
-                <div className="p-4">
-                  <p className="text-lg text-gray-800 font-medium mb-2 group-hover:text-indigo-600 transition-all duration-300">{image.description}</p>
-                </div>
-              </motion.div>
-            ))}
+          <div>
+            <h2 className="text-3xl font-semibold mb-4 text-indigo-700 hover:text-indigo-600 transition-all duration-300">À propos de l'Aventure</h2>
+            <p className="mb-6 text-gray-700 leading-relaxed text-lg hover:text-gray-800 transition-all duration-300">
+              {showFullDescription ? adventureData.description : `${adventureData.description.substring(0, 200)}...`}
+            </p>
+            <button
+              className="text-black hover:text-indigo-500 transition-all duration-300"
+              onClick={() => setShowFullDescription(!showFullDescription)}
+            >
+              {showFullDescription ? 'Lire moins' : 'Lire plus'}
+            </button>
           </div>
-        </motion.div>
+          <div className="flex justify-center items-center">
+            <img 
+              src={raptor} 
+              alt="Quad Adventure" 
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+        </motion.section>
+
+        <motion.section
+          className="bg-teal-50 p-8 rounded-xl shadow-[0_4px_8px_0_rgba(245,225,183,0.5)] mb-8 hover:shadow-[0_6px_12px_0_rgba(245,225,183,0.7)] transition-all duration-500 grid grid-cols-1 md:grid-cols-2 gap-8"
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.7 }}
+        >
+          <div>
+            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Meilleur moment pour visiter</h3>
+            <p className="mb-6 text-gray-700 leading-relaxed hover:text-gray-800 transition-all duration-300">{adventureData.bestTimeToVisit}</p>
+          </div>
+          <div className="flex justify-center items-center">
+            <img 
+              src={raptor2} 
+              alt="Vue du quad" 
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+        </motion.section>
+
+        <motion.section
+          className="bg-yellow-50 p-8 rounded-xl shadow-[0_4px_8px_0_rgba(245,225,183,0.5)] mb-8 hover:shadow-[0_6px_12px_0_rgba(245,225,183,0.7)] transition-all duration-500 grid grid-cols-1 md:grid-cols-2 gap-8"
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.7 }}
+        >
+          <div>
+            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Services disponibles</h3>
+            <ul className="list-disc pl-5 mb-6 text-gray-700 space-y-2">
+              {adventureData.services.map((service, index) => (
+                <motion.li 
+                  key={index}
+                  className="transition-all duration-300 hover:text-indigo-600"
+                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  transition={{ duration: 0.7 }}
+                >
+                  {service}
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex justify-center items-center">
+            <img 
+              src={raptor3} 
+              alt="Dune en quad" 
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+        </motion.section>
+
+        <motion.section
+          className="bg-orange-50 p-8 rounded-xl shadow-[0_4px_8px_0_rgba(245,225,183,0.5)] mb-8 hover:shadow-[0_6px_12px_0_rgba(245,225,183,0.7)] transition-all duration-500 grid grid-cols-1 md:grid-cols-2 gap-8"
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.7 }}
+        >
+          <div>
+            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Conseils pour les visiteurs</h3>
+            <p className="mb-6 text-gray-700 leading-relaxed hover:text-gray-800 transition-all duration-300">{adventureData.tips}</p>
+          </div>
+          <div className="flex justify-center items-center">
+            <img 
+              src={raptor4} 
+              alt="Quad Adventure" 
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+        </motion.section>
+
+        <motion.section
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.7 }}
+        >
+          {adventureData.images.map((image, index) => (
+            <motion.div key={index} className="rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src={image.src} 
+                alt={image.alt} 
+                className="w-full h-auto object-cover"
+              />
+              <p className="text-center text-sm text-gray-600 mt-2">{image.description}</p>
+            </motion.div>
+          ))}
+        </motion.section>
       </motion.div>
     </div>
   );
-};
+}
 
 export default Destination5;

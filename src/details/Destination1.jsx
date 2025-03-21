@@ -38,7 +38,7 @@ const Destination1 = () => {
 
   return (
     <div className="bg-gray-50">
-      {/* Image de couverture */}
+  
       <motion.div
         className="relative bg-cover bg-center h-screen"
         initial={{ opacity: 0 }}
@@ -57,78 +57,114 @@ const Destination1 = () => {
         </div>
       </motion.div>
 
-      {/* Contenu principal */}
+
       <motion.div
         className="container mx-auto px-6 py-12"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        {/* Description du resort */}
+       
         <motion.section
-          className="bg-blue-50 p-8 rounded-xl shadow-[0_4px_8px_0_rgba(245,225,183,0.5)] mb-8 hover:shadow-[0_6px_12px_0_rgba(245,225,183,0.7)] transition-all duration-500"
+          className="bg-blue-50 p-8 rounded-xl shadow-[0_4px_8px_0_rgba(245,225,183,0.5)] mb-8 hover:shadow-[0_6px_12px_0_rgba(245,225,183,0.7)] transition-all duration-500 grid grid-cols-1 md:grid-cols-2 gap-8"
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl font-semibold mb-4 text-indigo-700 hover:text-indigo-600 transition-all duration-300">À propos du Resort</h2>
-          <p className="mb-6 text-gray-700 leading-relaxed text-lg hover:text-gray-800 transition-all duration-300">
-            {showFullDescription ? resortData.description : `${resortData.description.substring(0, 200)}...`}
-          </p>
-          <button
-            className="text-black hover:text-indigo-500 transition-all duration-300"
-            onClick={() => setShowFullDescription(!showFullDescription)}
-          >
-            {showFullDescription ? 'Lire moins' : 'Lire plus'}
-          </button>
+          <div>
+            <h2 className="text-3xl font-semibold mb-4 text-indigo-700 hover:text-indigo-600 transition-all duration-300">Description du Resort</h2>
+            <p className="mb-6 text-gray-700 leading-relaxed text-lg hover:text-gray-800 transition-all duration-300">
+              {showFullDescription ? resortData.description : `${resortData.description.substring(0, 200)}...`}
+            </p>
+            <button
+              className="text-black hover:text-indigo-500 transition-all duration-300"
+              onClick={() => setShowFullDescription(!showFullDescription)}
+            >
+              {showFullDescription ? 'Lire moins' : 'Lire plus'}
+            </button>
+          </div>
+          <div className="flex justify-center items-center">
+            <img 
+              src={lacote} 
+              alt="Plage" 
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
         </motion.section>
 
-        {/* Meilleur moment pour visiter */}
+
         <motion.section
-          className="bg-teal-50 p-8 rounded-xl shadow-[0_4px_8px_0_rgba(245,225,183,0.5)] mb-8 hover:shadow-[0_6px_12px_0_rgba(245,225,183,0.7)] transition-all duration-500"
+          className="bg-teal-50 p-8 rounded-xl shadow-[0_4px_8px_0_rgba(245,225,183,0.5)] mb-8 hover:shadow-[0_6px_12px_0_rgba(245,225,183,0.7)] transition-all duration-500 grid grid-cols-1 md:grid-cols-2 gap-8"
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.7 }}
         >
-          <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Meilleur moment pour visiter</h3>
-          <p className="mb-6 text-gray-700 leading-relaxed hover:text-gray-800 transition-all duration-300">{resortData.bestTimeToVisit}</p>
+          <div>
+            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Meilleur moment pour visiter</h3>
+            <p className="mb-6 text-gray-700 leading-relaxed hover:text-gray-800 transition-all duration-300">{resortData.bestTimeToVisit}</p>
+          </div>
+          <div className="flex justify-center items-center">
+            <img 
+              src={lacote2} 
+              alt="Vue de la mer" 
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
         </motion.section>
 
-        {/* Services du Resort */}
+
         <motion.section
-          className="bg-yellow-50 p-8 rounded-xl shadow-[0_4px_8px_0_rgba(245,225,183,0.5)] mb-8 hover:shadow-[0_6px_12px_0_rgba(245,225,183,0.7)] transition-all duration-500"
+          className="bg-yellow-50 p-8 rounded-xl shadow-[0_4px_8px_0_rgba(245,225,183,0.5)] mb-8 hover:shadow-[0_6px_12px_0_rgba(245,225,183,0.7)] transition-all duration-500 grid grid-cols-1 md:grid-cols-2 gap-8"
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.7 }}
         >
-          <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Services du Resort</h3>
-          <ul className="list-disc pl-5 mb-6 text-gray-700 space-y-2">
-            {resortData.services.map((service, index) => (
-              <motion.li 
-                key={index}
-                className="transition-all duration-300 hover:text-indigo-600"
-                whileInView={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: 50 }}
-                transition={{ duration: 0.7 }}
-              >
-                {service}
-              </motion.li>
-            ))}
-          </ul>
+          <div>
+            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Services du Resort</h3>
+            <ul className="list-disc pl-5 mb-6 text-gray-700 space-y-2">
+              {resortData.services.map((service, index) => (
+                <motion.li 
+                  key={index}
+                  className="transition-all duration-300 hover:text-indigo-600"
+                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  transition={{ duration: 0.7 }}
+                >
+                  {service}
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex justify-center items-center">
+            <img 
+              src={lacote3} 
+              alt="Yoga sur la plage" 
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
         </motion.section>
 
-        {/* Conseils pour les visiteurs */}
+     
         <motion.section
-          className="bg-orange-50 p-8 rounded-xl shadow-[0_4px_8px_0_rgba(245,225,183,0.5)] mb-8 hover:shadow-[0_6px_12px_0_rgba(245,225,183,0.7)] transition-all duration-500"
+          className="bg-orange-50 p-8 rounded-xl shadow-[0_4px_8px_0_rgba(245,225,183,0.5)] mb-8 hover:shadow-[0_6px_12px_0_rgba(245,225,183,0.7)] transition-all duration-500 grid grid-cols-1 md:grid-cols-2 gap-8"
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.7 }}
         >
-          <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Conseils pour les visiteurs</h3>
-          <p className="mb-6 text-gray-700 leading-relaxed hover:text-gray-800 transition-all duration-300">{resortData.tips}</p>
+          <div>
+            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Conseils pour les visiteurs</h3>
+            <p className="mb-6 text-gray-700 leading-relaxed hover:text-gray-800 transition-all duration-300">{resortData.tips}</p>
+          </div>
+          <div className="flex justify-center items-center">
+            <img 
+              src={place3} 
+              alt="Massage sur la plage" 
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
         </motion.section>
 
-        {/* Galerie d'images */}
+      
         <motion.div
           className="mt-12"
           initial={{ opacity: 0 }}
@@ -140,18 +176,18 @@ const Destination1 = () => {
             {resortData.images.map((image, index) => (
               <motion.div 
                 key={index}
-                className="relative bg-white rounded-lg shadow-lg overflow-hidden group transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
-                whileInView={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: 50 }}
-                transition={{ duration: 0.7 }}
+                className="relative bg-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.5 }}
               >
                 <img 
                   src={image.src} 
                   alt={image.alt} 
-                  className="w-full h-72 object-cover rounded-t-lg group-hover:opacity-80 transition-opacity duration-300"
+                  className="w-full h-full object-cover"
                 />
-                <div className="p-4">
-                  <p className="text-lg text-gray-800 font-medium mb-2 group-hover:text-indigo-600 transition-all duration-300">{image.description}</p>
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2">
+                  <p className="text-sm">{image.description}</p>
                 </div>
               </motion.div>
             ))}
