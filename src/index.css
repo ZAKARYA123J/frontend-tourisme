@@ -55,3 +55,48 @@ body {
         @apply text-2xl cursor-pointer;
     }
 }
+@keyframes fadeInBottomToTop {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInLeftToRight {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInRightToLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .animate-bottom-to-top {
+    animation: fadeInBottomToTop 1s ease-out forwards;
+  }
+  
+  .animate-left-to-right {
+    animation: fadeInLeftToRight 1s ease-out forwards;
+  }
+  
+  .animate-right-to-left {
+    animation: fadeInRightToLeft 1s ease-out forwards;
+  }
+  

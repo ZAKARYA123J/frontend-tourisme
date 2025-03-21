@@ -8,7 +8,7 @@ const Chatbot = () => {
   const messages = useSelector((state) => state.chatbot.messages || []);
   const userInput = useSelector((state) => state.chatbot.userInput || "");
   const [isChatVisible, setIsChatVisible] = useState(false);
-  const chatWindowRef = useRef(null);
+
   const handleSendMessage = () => {
     if (!userInput.trim()) return;
     dispatch(addMessage({ text: userInput, sender: "user" }));
@@ -23,45 +23,31 @@ const Chatbot = () => {
   const fetchDestinationInfo = async (destination) => {
     const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${destination}`;
     try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error("Failed to fetch data");
-        }
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Failed to fetch data");
+      }
 
-        const data = await response.json();
+      const data = await response.json();
+      const placeInfo = data.extract || "I couldn't find specific information about this place, but you can check Wikipedia for more details.";
 
-        const placeInfo = data.extract 
-            ? data.extract 
-            : "I couldn't find specific information about this place, but you can check Wikipedia for more details.";
-
-        dispatch(
-            addMessage({
-                text: `I found some information about ${destination}: ${placeInfo}`,
-                sender: "bot",
-            })
-        );
+      dispatch(addMessage({ text: `I found some information about ${destination}: ${placeInfo}`, sender: "bot" }));
     } catch (error) {
-        dispatch(
-            addMessage({
-                text: `Sorry, I couldn't find any info about "${destination}". Try searching on Google or Wikipedia.`,
-                sender: "bot",
-            })
-        );
+      dispatch(addMessage({ text: `Sorry, I couldn't find any info about "${destination}". Try searching on Google or Wikipedia.`, sender: "bot" }));
     }
-};
- 
+  };
 
   return (
     <>
       <button
-        onClick={() => setIsChatVisible(!isChatVisible)} 
-        className="fixed bottom-5 right-5 bg-blue-500 text-white p-4 rounded-full shadow-lg"
+        onClick={() => setIsChatVisible(!isChatVisible)}
+        className="fixed bottom-5 left-5 bg-blue-500 text-white p-4 rounded-full shadow-lg"
       >
         <FaRobot size={24} />
       </button>
 
       {isChatVisible && (
-        <div ref={chatWindowRef} className="fixed bottom-5 right-5 w-96 h-96 bg-white border-2 border-gray-300 rounded-lg shadow-lg flex flex-col">
+        <div className="fixed bottom-20 left-5 w-96 h-96 bg-white border-2 border-gray-300 rounded-lg shadow-lg flex flex-col">
           <div className="flex-1 overflow-y-auto p-4 space-y-3">
             {messages.map((message, index) => (
               <div key={index} className={`flex ${message.sender === "bot" ? "justify-start" : "justify-end"}`}>
@@ -89,5 +75,4 @@ const Chatbot = () => {
     </>
   );
 };
-
 export default Chatbot;
