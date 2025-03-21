@@ -4,6 +4,7 @@ import Destinations from './components/Destinations'
 import Home from './pages/Home'
 import View from './pages/View'
 
+
 import Book from './pages/Book'
 import Login from './Auth/Login';
 import Register from './Auth/Register';
@@ -24,11 +25,11 @@ import Hotels from './pages/Hotels'
 import Airbnb from './pages/Airbnb'
 
 
-import Destination1 from './details/destination1'
-import Destination2 from './details/destination2'
-import Destination3 from './details/destination3'
-import Destination4 from './details/destination4'
-import Destination5 from './details/destination5'
+import Destination1 from './details/Destination1'
+import Destination2 from './details/Destination2'
+import Destination3 from './details/Destination3'
+import Destination4 from './details/Destination4'
+import Destination5 from './details/Destination5'
 import Chatbot from './components/Chatbot'
 
 const  App=()=> {
