@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -10,7 +10,7 @@ const Login = () => {
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
-  const navigate = useNavigate();
+  const navigate = useParams();
 
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
@@ -81,7 +81,7 @@ const Login = () => {
                 {error && <div className="mt-3 text-red-600 text-sm text-center">{error}</div>}
                 {success && <div className="mt-3 text-green-600 text-sm text-center">{success}</div>}
               </form>
-              <p className="text-center mt-4 text-sm">Already have an account? <span onClick={() => setIsSignUp(false)} className="text-blue-600 cursor-pointer hover:text-blue-800 transition-all duration-500">Sign In</span></p>
+           
             </>
           ) : (
             <>
