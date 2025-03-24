@@ -2,6 +2,7 @@ import map2 from "../assets/map2.png"
 import {useNavigate} from 'react-router-dom';
 import {useInView} from 'react-intersection-observer'
 import { motion } from "framer-motion";
+
 const Search = () => {
   const navigate = useNavigate();
   const handleMapClick=()=>{
