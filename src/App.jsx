@@ -30,12 +30,12 @@ import Destination3 from "./details/Destination3.jsx";
 import Destination4 from "./details/Destination4.jsx";
 import Destination5 from "./details/Destination5.jsx";
 
-import Activite1 from "./details/activite1.jsx";
-import Activite2 from "./details/activite2.jsx";
-import Activite3 from "./details/activite3.jsx";
-import Activite4 from "./details/activite4.jsx";
-import Activite5 from "./details/activite5.jsx";
-import Activite6 from "./details/activite6.jsx";
+import Activite1 from "./details/Activite1.jsx";
+import Activite2 from "./details/Activite2.jsx";
+import Activite3 from "./details/Activite3.jsx";
+import Activite4 from "./details/Activite4.jsx";
+import Activite5 from "./details/Activite5.jsx";
+import Activite6 from "./details/Activite6.jsx";
 import Chatbot from './components/Chatbot'
 
 const App = () => {
