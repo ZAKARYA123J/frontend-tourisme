@@ -9,7 +9,6 @@ import Chatbot from "../components/Chatbot";
 import Weather from "../components/Weather";
 import FadeInScroll from "../components/Fade";
 import { useLocation } from "react-router-dom";
-import Quiz from "../components/Quiz"
 
 const Home = () => {
   const location = useLocation();  
