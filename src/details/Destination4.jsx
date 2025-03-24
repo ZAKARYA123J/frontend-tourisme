@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import img4 from "../assets/img4-4.jpg";
+import Taghazout from "../assets/Taghazout.jpg";
 import surf from "../assets/surf.jpg";
 import surf2 from "../assets/surf2.jpg";
 import surf3 from "../assets/surf3.jpg";
@@ -12,10 +12,10 @@ const Destination4 = () => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
   const resortData = {
-    name: "Mountain Peak Retreat",
+    name: "Taghazout",
     description:
-      "Mountain Peak Retreat est un havre de paix situé au sommet des montagnes, offrant une vue imprenable sur les paysages montagneux. Ce refuge isolé est parfait pour les amoureux de la nature et de l'aventure. Les visiteurs peuvent explorer les sentiers de randonnée, profiter du ski ou se détendre dans le confort d'un chalet en bois. Le restaurant sur place propose des plats délicieux avec des produits locaux, et un spa de montagne pour une relaxation complète. Un lieu idéal pour les amateurs de randonnée, de ski, et pour ceux qui recherchent une escapade loin du tumulte quotidien.",
-    location: "Alpes, France",
+      "Taghazout est un havre de paix situé au sommet des montagnes, offrant une vue imprenable sur les paysages montagneux. Ce refuge isolé est parfait pour les amoureux de la nature et de l'aventure. Les visiteurs peuvent explorer les sentiers de randonnée, profiter du ski ou se détendre dans le confort d'un chalet en bois. Le restaurant sur place propose des plats délicieux avec des produits locaux, et un spa de montagne pour une relaxation complète. Un lieu idéal pour les amateurs de randonnée, de ski, et pour ceux qui recherchent une escapade loin du tumulte quotidien.",
+    location: "Taghazout, Agadir",
     services: [
       "Randonnées guidées",
       "Ski et sports d'hiver",
@@ -29,7 +29,7 @@ const Destination4 = () => {
     tips: "Portez des chaussures adaptées pour les randonnées en montagne et ne manquez pas la visite des lacs alpins à proximité.",
     images: [
       {
-        src: img4,
+        src: Taghazout,
         alt: "Randonnée en montagne",
         description: "Explorez les sentiers de montagne à couper le souffle.",
       },
@@ -76,8 +76,8 @@ const Destination4 = () => {
         transition={{ duration: 1 }}
       >
         <img
-          src={img4}
-          alt="Mountain Peak Retreat"
+          src={Taghazout}
+          alt="Taghazout"
           className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-black opacity-40"></div>

@@ -51,6 +51,19 @@ const NavBar = () => {
         { name: "Feedback", link: "/feedback" }
       ],
       link: "/review"
+    },
+    {
+      title: "About Us",
+      items: [
+        { name: "About", link: "/about" }
+      ],
+      link: "/about"
+    }, {
+      title: "Contact Us",
+      items: [
+        { name: "Contact", link: "/contact" }
+      ],
+      link: "/contact"
     }
   ];
 
@@ -88,7 +101,7 @@ const NavBar = () => {
                
             </div>
 
-            <div className="hidden md:flex h-full">
+            <div className="hidden md:flex h-full ">
                 <ul className="flex space-x-8 text-lg font-medium items-center">
                     <li>
                         <Link to="/" className="hover:text-blue-500 transition duration-300">

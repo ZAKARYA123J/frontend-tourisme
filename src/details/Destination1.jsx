@@ -12,16 +12,19 @@ const Destination1 = () => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
   const resortData = {
-    name: "Ocean Breeze Resort",
+    name: " Marina",
     description:
-      "Ocean Breeze Resort est un complexe hôtelier de luxe offrant une vue imprenable sur l'océan. Idéal pour une escapade relaxante, il propose une piscine à débordement, un spa haut de gamme et une cuisine gastronomique. Des activités nautiques telles que le jet-ski et le surf sont également disponibles. Les visiteurs peuvent profiter d'un cadre paradisiaque avec des chambres spacieuses et des panoramas exceptionnels.",
-    location: "Plage de Los Angeles, Californie",
+      "Situé sur la magnifique Plage de la Marine à Agadir,Marina est un havre de paix où luxe et nature se rencontrent. Offrant une vue imprenable sur l’océan Atlantique, ce complexe d’exception est idéal pour une escapade relaxante ou une aventure balnéaire inoubliable. Plongez dans une piscine à débordement surplombant l’horizon, laissez-vous choyer dans un spa haut de gamme, et régalez vos papilles dans nos restaurants gastronomiques proposant des saveurs raffinées. Que vous souhaitiez vous détendre ou vivre des sensations fortes avec nos activités nautiques, chaque instant passé ici promet une expérience mémorable",
+    location: "Plage de la marine , Agadir",
     services: [
-      "Piscine à débordement",
-      "Spa et centre de bien-être",
-      "Restaurants gastronomiques",
-      "Activités nautiques",
-      "Salle de sport moderne",
+      "Piscine à débordement avec vue sur l’océan" ,
+      "Spa et centre de bien-être pour une relaxation ultime ",
+      "Restaurants gastronomiques aux saveurs exquises" ,
+     " Activités nautiques : jet-ski, surf, plongée et bien plus ",
+     "Salle de sport moderne avec équipements de pointe ",
+     "Service de conciergerie pour un séjour sur mesure",
+     "Accès privé à la plage pour une expérience exclusive",
+
     ],
     bestTimeToVisit:
       "Le meilleur moment pour visiter est de mai à octobre, lorsque le climat est idéal pour profiter des activités extérieures.",
