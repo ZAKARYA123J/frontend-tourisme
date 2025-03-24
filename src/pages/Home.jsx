@@ -4,13 +4,12 @@ import Destinations from "../components/Destinations";
 import Selects from "../components/Selects";
 import Search from "../components/Search";
 import Carousel from "../components/Carousel";
-import Categories from "../components/Categories";
 import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
 import Chatbot from "../components/Chatbot";
 import Weather from "../components/Weather";
 import FadeInScroll from "../components/Fade";
 import { useLocation } from "react-router-dom";
+
 const Home = () => {
   const location = useLocation();  
   return (
@@ -42,9 +41,8 @@ const Home = () => {
 
       <FadeInScroll id="weather" delay={2100} animationType="bottom">
         <Weather />
-      </FadeInScroll>
-
-    
+        </FadeInScroll>
+     
     </>
   );
 };

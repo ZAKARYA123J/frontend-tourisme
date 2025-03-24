@@ -1,12 +1,21 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// Création de l'action asynchrone pour récupérer la météo
 export const fetchWeather = createAsyncThunk(
   "weather/fetchWeather",
-  async () => {
-    const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=30.42&longitude=-9.60&current_weather=true");
-    const data = await response.json();
-    return data.current_weather; // On récupère seulement les données nécessaires
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await fetch(
+        "https://api.open-meteo.com/v1/forecast?latitude=51.5085&longitude=-0.1257&current=temperature_2m,weather_code,wind_speed_10m"
+      );
+      const data = await response.json();
+      return {
+        temperature: data.current.temperature_2m,
+        windspeed: data.current.wind_speed_10m,
+        weathercode: data.current.weather_code
+      };
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
   }
 );
 
@@ -15,7 +24,7 @@ const weatherSlice = createSlice({
   initialState: {
     weatherData: null,
     status: "idle",
-    error: null,
+    error: null
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -29,9 +38,9 @@ const weatherSlice = createSlice({
       })
       .addCase(fetchWeather.rejected, (state, action) => {
         state.status = "failed";
-        state.error = action.error.message;
+        state.error = action.payload;
       });
-  },
+  }
 });
 
 export default weatherSlice.reducer;

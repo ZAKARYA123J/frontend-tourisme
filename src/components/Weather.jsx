@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import { FaCloudSun } from "react-icons/fa"; 
+import React, { useState, useEffect } from "react";
+import { FaCloudSun } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchWeather } from "../redux/WeatherSlice";
+import { fetchWeather } from "../redux/WeatherSlice"; 
 
 const Weather = () => {
   const dispatch = useDispatch();
@@ -14,22 +14,22 @@ const Weather = () => {
 
   const getWeatherIcon = (weatherCode) => {
     const icons = {
-      1: "01d", 
-      2: "02d", 
+      1: "01d",
+      2: "02d",
       3: "03d",
-      4: "04d", 
-      5: "09d", 
-      6: "13d", 
-      7: "11d", 
+      4: "04d",
+      5: "09d",
+      6: "13d",
+      7: "11d",
     };
-    return icons[weatherCode] || "03d"; 
+    return icons[weatherCode] || "03d";
   };
 
   return (
     <>
       <button
         onClick={() => setIsWeatherVisible(!isWeatherVisible)}
-        className="fixed bottom-5 right-5 bg-blue-500 text-white p-4 rounded-full shadow-lg  hover:translate-x-0"
+        className="fixed bottom-5 right-5 bg-blue-500 text-white p-4 rounded-full shadow-lg hover:translate-x-0"
       >
         <FaCloudSun size={24} />
       </button>
@@ -42,9 +42,15 @@ const Weather = () => {
 
             {weatherData && (
               <div>
-                <p className="text-xl font-semibold text-center">Temperature: {weatherData.temperature}°C</p>
-                <p className="text-lg font-medium text-center">Wind Speed: {weatherData.windspeed} km/h</p>
-                <p className="text-lg font-medium text-center">Condition: {weatherData.weathercode === 3 ? "Cloudy" : "Clear"}</p>
+                <p className="text-xl font-semibold text-center">
+                  Temperature: {weatherData.temperature}°C
+                </p>
+                <p className="text-lg font-medium text-center">
+                  Wind Speed: {weatherData.windspeed} km/h
+                </p>
+                <p className="text-lg font-medium text-center">
+                  Condition: {weatherData.weathercode === 3 ? "Cloudy" : "Clear"}
+                </p>
                 <div className="text-center mt-4">
                   <img
                     src={`https://openweathermap.org/img/wn/${getWeatherIcon(weatherData.weathercode)}.png`}
@@ -69,4 +75,5 @@ const Weather = () => {
     </>
   );
 };
+
 export default Weather;
