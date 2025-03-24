@@ -24,10 +24,12 @@ import Hotels from "./pages/Hotels";
 import Airbnb from "./pages/Airbnb";
 
 import Activite1 from "./details/activite1";
-import Activite2 from "./details/destination2";
-import Activite3 from "./details/destination3";
-import Activite4 from "./details/destination4";
-import Activite5 from "./details/destination5";
+import Activite2 from "./details/Activite2";
+import Activite3 from "./details/Activite3";
+import Activite4 from "./details/Activite4";
+import Activite5 from "./details/Activite5";
+import Activite6 from "./details/Activite6";
+
 
 import Destination1 from './details/Destination1'
 import Destination2 from './details/Destination2'
