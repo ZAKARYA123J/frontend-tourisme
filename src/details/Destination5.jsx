@@ -6,7 +6,7 @@ import raptor3 from '../assets/raptor3.jpg';
 import raptor4 from '../assets/raptor4.jpg'; 
 import raptor6 from '../assets/raptor6.jpg'; 
 import quadbiking from '../assets/quadbiking.jpg'; 
-import { motion } from 'framer-motion';
+import {motion} from 'framer-motion'
 
 const Destination5 = () => {
   const [showFullDescription, setShowFullDescription] = useState(false);
