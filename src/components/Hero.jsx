@@ -23,10 +23,11 @@ const Hero = () => {
             className="  "
           >
             <h2 className="text-3xl font-extrabold uppercase mb-4">
-              Welcome to the Souss Massa region
+            Discover Souss Massa
+            
             </h2>
             <h1 className="text-7xl font-bold">
-              A <span className="italic ">dynamic</span> region welcomes you
+              A <span className="italic ">region</span> full of life, culture, and adventure!
             </h1>
           </motion.div>
         </div>
