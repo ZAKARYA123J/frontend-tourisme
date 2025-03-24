@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Views1 from "../assets/Views1.jpg";
+
 import Views2 from "../assets/Views2.jpg";
 import Views3 from "../assets/Views3.jpg";
 import Views4 from "../assets/Views4.jpg";
@@ -13,7 +13,7 @@ import Views10 from "../assets/Views10.jpg";
 import Views11 from "../assets/Views11.jpg";
 import Views12 from "../assets/Views12.jpg";
 import upview from "../assets/upview.jpg";
-
+import Views1 from "../assets/Views1.jpg";
 
 const images = [
   { src: Views1, alt: "Vue sur tradition decors", description: "Un panorama magnifique sur les decors enneigées a cotee de mur marron" },

@@ -2,6 +2,7 @@ import map2 from "../assets/map2.png"
 import {useNavigate} from 'react-router-dom';
 import {useInView} from 'react-intersection-observer'
 import { motion } from "framer-motion";
+import Quiz from "./Quiz";
 
 const Search = () => {
   const navigate = useNavigate();
@@ -24,9 +25,9 @@ const Search = () => {
               we know Agadir well. Let us show your clients the best of this amazing city, 
               where every day feels special and relaxing.
           </p>
-     
+    
         </div>
-        
+         <Quiz/>
       
       </div>
   <div className='relative group p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow'>
