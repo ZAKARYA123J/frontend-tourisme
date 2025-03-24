@@ -24,11 +24,11 @@ import Feedback from "./pages/Feedback";
 import Hotels from "./pages/Hotels";
 import Airbnb from "./pages/Airbnb";
 
-import Destination1 from "./details/destination1.jsx";
-import Destination2 from "./details/destination2.jsx";
-import Destination3 from "./details/destination3.jsx";
-import Destination4 from "./details/destination4.jsx";
-import Destination5 from "./details/destination5.jsx";
+import Destination1 from "./details/Destination1.jsx";
+import Destination2 from "./details/Destination2.jsx";
+import Destination3 from "./details/Destination3.jsx";
+import Destination4 from "./details/Destination4.jsx";
+import Destination5 from "./details/Destination5.jsx";
 
 import Activite1 from "./details/activite1.jsx";
 import Activite2 from "./details/activite2.jsx";
