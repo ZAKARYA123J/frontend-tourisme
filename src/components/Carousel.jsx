@@ -9,7 +9,21 @@ import paradisevalley from '../assets/paradisevalley.jpg'
 import nationalpark from '../assets/nationalpark.jpg'
 import aglou from '../assets/aglou.jpg'
 import concert from '../assets/concert.jpg'
-
+import marina from '../assets/marina.jpg'
+import AgaBeach from '../assets/AgaBeach.jpg'
+import Agacolor from '../assets/Agacolor.jpg'
+import Aganight from '../assets/Aganight.jpg'
+import Akchour from '../assets/Akchour.jpg'
+import CROCOPARC from '../assets/CROCOPARC.jpg'
+import Horses from '../assets/Horses.jpg'
+import ouflaview from '../assets/ouflaview.jpg'
+import ouzoud from '../assets/ouzoud.jpg'
+import Rocks from '../assets/Rocks.jpg'
+import Upview from '../assets/Upview.jpg'
+import t from '../assets/t.jpg'
+import SOUK from '../assets/SOUK.jpg'
+import sitting from '../assets/sitting.jpg'
+import srf from '../assets/srf.jpg'
 
 
 const CarouselComponent = () => {
@@ -18,8 +32,22 @@ const CarouselComponent = () => {
     paradisevalley,
     nationalpark,
     aglou,
-    concert
-  
+    concert,
+    marina,
+    AgaBeach,
+    Agacolor,
+    Aganight,
+    Akchour,
+    CROCOPARC,
+    Horses,
+    ouflaview,
+    ouzoud,
+    Rocks,
+    sitting,
+    SOUK,
+    srf,
+    t ,
+    Upview,
   ];
   return (
     <div className="max-w-5xl mx-auto py-8">
