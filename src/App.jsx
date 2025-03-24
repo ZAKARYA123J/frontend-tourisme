@@ -12,7 +12,6 @@ import ForgotPassword from './Auth/ForgotPassword';
 import ResetPassword from './Auth/ResetPassword';
 import Festivals from './pages/Festivals';
 import { Routes, Route } from 'react-router-dom'
-
 import Footer from "./components/Footer";
 import Reservation from "./Location/Reservation";
 import Exhibitions from "./pages/Exhibitions";
