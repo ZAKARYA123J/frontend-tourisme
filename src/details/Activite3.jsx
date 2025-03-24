@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import souk from "../assets/souk.jpg";
+
 import souk2 from "../assets/souk2.jpg";
 import souk3 from "../assets/souk3.jpg";
 import souk4 from "../assets/souk4.jpg";
@@ -8,7 +8,7 @@ import souk5 from "../assets/souk5.jpg";
 import souk6 from "../assets/souk6.jpg";
 import souk7 from "../assets/souk7.jpg";
 import soukalhad from "../assets/soukalhad.jpg";
-
+import souk from "../assets/souk.jpg";
 
 const images = [
   { src: souk, alt: "Marché coloré", description: "Un marché animé avec des étals de tissus colorés et des épices exotiques." },
