@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 
@@ -12,7 +13,7 @@ const Login = () => {
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
-  const navigate = useParams();
+  const navigate = useNavigate();
 
   const handleSubmitLogin = async (e) => {
     e.preventDefault();

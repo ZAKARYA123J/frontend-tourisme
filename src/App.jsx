@@ -4,6 +4,7 @@ import Destinations from "./components/Destinations";
 import Home from "./pages/Home";
 import View from "./pages/View";
 
+
 import Book from "./pages/Book";
 import Login from "./Auth/Login";
 import Register from "./Auth/Register";
@@ -11,6 +12,9 @@ import ForgotPassword from "./Auth/ForgotPassword";
 import ResetPassword from "./Auth/ResetPassword";
 import Festivals from "./pages/Festivals";
 import { Routes, Route } from "react-router-dom";
+
+import Contact from "./components/Contact";
+import About from "./components/About";
 
 import Footer from "./components/Footer";
 import Reservation from "./Location/Reservation";
@@ -50,15 +54,7 @@ const App = () => {
       );
   }, []);
 
-  // const { i18n } = useTranslation();
-
-  // useEffect(() => {
  
-  //   const currentLang = window.location.pathname.split('/')[1];  
-  //   if (currentLang && currentLang !== i18n.language) {
-  //     i18n.changeLanguage(currentLang);
-  //   }
-  // }, [i18n]);
 
   return (
     <>
@@ -93,20 +89,17 @@ const App = () => {
 
 
 
-
-      
-        <Route path="/chatbot" element={<Chatbot/>}/>
-
-        <Route path="/hotels" element={<Hotels/>}/> 
-        <Route path='/view/:id' element={<View/>}/>
-        <Route path='/book' element={<Book/>}/>
+        <Route path="/contact" element={<Contact/>}/> 
+        <Route path="/about" element={<About/>}/> 
+        <Route path="/carbooking" element={<Reservation/>}/>
+        <Route path="/book" element={<Book />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path='/carBooking'  element={<Reservation categories={categories} />}/>
-        
-        
+        <Route path="/chatbot" element={<Chatbot />} />
+
+       
       </Routes>
  
      
