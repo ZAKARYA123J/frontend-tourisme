@@ -52,6 +52,19 @@ const NavBar = () => {
         { name: "Feedback", link: "/feedback" }
       ],
       link: "/review"
+    },
+    {
+      title: "About Us",
+      items: [
+        { name: "About", link: "/about" }
+      ],
+      link: "/about"
+    }, {
+      title: "Contact Us",
+      items: [
+        { name: "Contact", link: "/contact" }
+      ],
+      link: "/contact"
     }
   ];
 
@@ -90,41 +103,44 @@ const NavBar = () => {
         </nav>
       </div>
 
-      <div className="hidden md:flex h-full">
-        <ul className="flex space-x-8 text-lg font-medium items-center">
-          <li>
-            <Link to="/" className="hover:text-blue-500 transition duration-300">
-              Home
-            </Link>
-          </li>
-          {menuSections.map((section) => (
-            <li key={section.title} className="group relative py-2">
-              <span className="hover:text-blue-500 transition duration-300 flex items-center">
-                {section.title}
-                <span className="ml-1 transform transition-transform group-hover:rotate-180">▾</span>
-              </span>
-              <div className="absolute top-full left-0 hidden group-hover:block w-48 bg-white text-gray-700 shadow-lg rounded-lg py-2">
-                {section.items.map((item, index) => {
-                  const itemName = typeof item === "string" ? item : item.name;
-                  const itemLink =
-                    typeof item === "string"
-                      ? `${section.link}/${item.toLowerCase().replace(/\s+/g, '-')}`
-                      : item.link;
-                  return (
-                    <Link
-                      key={`${section.title}-${index}`}
-                      to={itemLink}
-                      className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600"
-                    >
-                      {itemName}
-                    </Link>
-                  );
-                })}
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+            <div className="hidden md:flex h-full">
+                <ul className="flex space-x-8 text-lg font-medium items-center">
+                    <li>
+                        <Link to="/" className="hover:text-blue-500 transition duration-300">
+                            Home
+                        </Link>
+                    </li>
+                    {menuSections.map((section) => (
+                        <li key={section.title} className="group relative py-2">
+                            <span className="hover:text-blue-500 transition duration-300 flex items-center">
+                                {section.title}
+                                <span className="ml-1 transform transition-transform group-hover:rotate-180">▾</span>
+                            </span>
+                            <div className="absolute top-full left-0 hidden group-hover:block w-48 bg-white text-gray-700 shadow-lg rounded-lg py-2">
+                                {section.items.map((item, index) => {
+                                    const itemName = typeof item === "string" ? item : item.name;
+                                    const itemLink = typeof item === "string" 
+                                        ? `${section.link}/${item.toLowerCase().replace(/\s+/g, '-')}` 
+                                        : item.link;
+                                    return (
+                                        <Link
+                                            key={`${section.title}-${index}`}
+                                            to={itemLink}
+                                            className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600"
+                                        >
+                                            {itemName}
+                                        </Link>
+                                    );
+                                })}
+                            </div>
+                        </li>
+                       
+                       
+                        
+                    ))}
+                   
+                </ul>
+            </div>
 
       <div className="hidden md:flex items-center space-x-4">
         {user ? (

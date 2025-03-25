@@ -21,13 +21,13 @@ const images = [
 
 const Activite1 = () => {
   return (
-    <div className="bg-green-600 min-h-screen py-10 px-5 text-white flex flex-col items-center">
+    <div className="bg-green-700 min-h-screen py-10 px-5 text-white flex flex-col items-center">
       <h2 className="text-3xl font-bold text-center mb-8 mt-12">Découverte des Crocodiles et Serpents</h2>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 justify-center mt-8">
         {images.map((image, index) => (
           <motion.div
             key={index}
-            className="bg-green-700 p-4 rounded-xl shadow-lg"
+            className="bg-white p-4 rounded-xl shadow-lg"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
@@ -36,8 +36,8 @@ const Activite1 = () => {
               alt={image.alt}
               className="w-full h-64 object-cover rounded-lg"
             />
-            <h3 className="text-xl font-semibold mt-3">{image.alt}</h3>
-            <p className="text-sm mt-2">{image.description}</p>
+            <h3 className="text-xl text-black font-semibold mt-3">{image.alt}</h3>
+            <p className="text-sm text-gray-800 mt-2">{image.description}</p>
           </motion.div>
         ))}
       </div>
