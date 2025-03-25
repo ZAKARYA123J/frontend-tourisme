@@ -12,9 +12,9 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-3">Cultural:</h3>
             <ul className="space-y-2">
-              <li><Link to="/festivals" className="hover:text-blue-400">Festivals</Link></li>
-              <li><Link to="/exhibitions" className="hover:text-blue-400">Exhibitions</Link></li>
-              <li><Link to="/heritage" className="hover:text-blue-400">Heritage Tours</Link></li>
+              <li><Link to="/festivals" className="hover:text-blue-400 text-lg">Festivals</Link></li>
+              <li><Link to="/exhibitions" className="hover:text-blue-400 text-lg">Exhibitions</Link></li>
+              <li><Link to="/heritage" className="hover:text-blue-400 text-lg">Heritage Tours</Link></li>
             </ul>
           </div>
 
@@ -22,9 +22,9 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-3">Sports:</h3>
             <ul className="space-y-2">
-              <li><Link to="/tournaments" className="hover:text-blue-400">Tournaments</Link></li>
-              <li><Link to="/marathons" className="hover:text-blue-400">Marathons</Link></li>
-              <li><Link to="/adventures" className="hover:text-blue-400">Adventures</Link></li>
+              <li><Link to="/tournaments" className="hover:text-blue-400 text-lg">Tournaments</Link></li>
+              <li><Link to="/marathons" className="hover:text-blue-400 text-lg">Marathons</Link></li>
+              <li><Link to="/adventures" className="hover:text-blue-400 text-lg">Adventures</Link></li>
             </ul>
           </div>
 
@@ -32,9 +32,9 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-3">Reservations:</h3>
             <ul className="space-y-2">
-              <li><Link to="/hotels" className="hover:text-blue-400">Hotels</Link></li>
-              <li><Link to="/airbnb" className="hover:text-blue-400">Airbnb</Link></li>
-              <li><Link to="/carBooking" className="hover:text-blue-400">Car Booking</Link></li>
+              <li><Link to="/hotels" className="hover:text-blue-400 text-lg">Hotels</Link></li>
+              <li><Link to="/airbnb" className="hover:text-blue-400 text-lg">Airbnb</Link></li>
+              <li><Link to="/carBooking" className="hover:text-blue-400 text-lg">Car Booking</Link></li>
             </ul>
           </div>
 
@@ -42,9 +42,9 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-3">Contact:</h3>
             <ul className="space-y-2">
-              <li><Link to="/feedback" className="hover:text-blue-400">Feedback</Link></li>
-              <li><Link to="/about" className="hover:text-blue-400">About Us</Link></li>
-              <li><Link to="/contact" className="hover:text-blue-400">Contact Us</Link></li>
+              <li><Link to="/feedback" className="hover:text-blue-400 text-lg">Feedback</Link></li>
+              <li><Link to="/about" className="hover:text-blue-400 text-lg">About Us</Link></li>
+              <li><Link to="/contact" className="hover:text-blue-400 text-lg">Contact Us</Link></li>
 
             </ul>
           </div>
