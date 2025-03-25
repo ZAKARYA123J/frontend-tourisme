@@ -1,11 +1,8 @@
 import map2 from "../assets/map2.png"
-import {useNavigate} from 'react-router-dom';
-import {useInView} from 'react-intersection-observer'
-import { motion } from "framer-motion";
 import Quiz from "./Quiz";
 
 const Search = () => {
-  const navigate = useNavigate();
+  
   const handleMapClick=()=>{
     window.open("https://map.proxi.co/r/C4R1g03KTxSCBtvaS5wE",'_blank');
   };

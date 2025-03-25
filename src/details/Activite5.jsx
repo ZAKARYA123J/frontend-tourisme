@@ -22,13 +22,13 @@ const images = [
 
 const Activite5 = () => {
   return (
-    <div className="bg-yellow-100 min-h-screen py-10 px-5 text-gray flex flex-col items-center">
+    <div className="bg-yellow-200 min-h-screen py-10 px-5 text-gray flex flex-col items-center">
       <h2 className="text-3xl font-bold text-center mb-8 mt-12">Découverte des Saveurs Traditionnelles</h2>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 justify-center mt-8">
         {images.map((image, index) => (
           <motion.div
             key={index}
-            className="bg-yellow-200 p-4 rounded-xl shadow-lg"
+            className="bg-white p-4 rounded-xl shadow-lg"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >

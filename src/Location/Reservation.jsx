@@ -166,9 +166,9 @@ setSuccessMessage("");
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="max-w-4xl w-full p-8 mt-20  bg-white rounded-lg backdrop-blur-lg border bg-opacity-35 border-slate-950 border-opacity-30 shadow-xl z-10"
+          className="max-w-4xl w-full p-8 mt-20   bg-white rounded-lg backdrop-blur-lg border bg-opacity-35 border-slate-950 border-opacity-30 shadow-xl z-10"
         >
-          <h2 className="text-4xl font-semibold text-center text-white mb-6">
+          <h2 className="text-4xl font-semibold text-center text-white mb-1">
           Book your car in Agadir 
           </h2>
 

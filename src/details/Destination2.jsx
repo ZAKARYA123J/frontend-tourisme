@@ -12,17 +12,16 @@ const Destination2 = () => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
   const resortData = {
-    name: "Mountain Peak Retreat",
+    name: "Plage Imsouane",
     description:
-      "Mountain Peak Retreat est un havre de paix situé au sommet des montagnes, offrant une vue imprenable sur les paysages montagneux. Ce refuge isolé est parfait pour les amoureux de la nature et de l'aventure. Les visiteurs peuvent explorer les sentiers de randonnée, profiter du ski ou se détendre dans le confort d'un chalet en bois. Le restaurant sur place propose des plats délicieux avec des produits locaux, et un spa de montagne pour une relaxation complète. Un lieu idéal pour les amateurs de randonnée, de ski, et pour ceux qui recherchent une escapade loin du tumulte quotidien.",
-    location: "Alpes, France",
+   "Plage Imsounae est un véritable coin de paradis caché entre les montagnes d’Imsouane et l'océan Atlantique, offrant un panorama exceptionnel sur des paysages à couper le souffle. Ce lieu isolé est parfait pour ceux qui cherchent à s’évader de la vie quotidienne, à se ressourcer dans un cadre naturel et à vivre des aventures en pleine nature. Explorez les sentiers de randonnée qui serpentent à travers la montagne, défiez les vagues avec le surf ou détendez-vous dans le confort de nos chalets en bois. Après une journée active, offrez-vous une expérience de détente totale dans notre spa de montagne ou profitez des délices gastronomiques du restaurant, qui privilégie des produits locaux. Un séjour à Plage Imsounae est l’occasion rêvée pour les amoureux de la nature, du sport et du bien-être.",    location: "Imsouane, Agadir",
     services: [
-      "Randonnées guidées",
-      "Ski et sports d'hiver",
-      "Restaurant gastronomique de montagne",
-      "Spa et massages",
-      "Séances de bien-être et méditation",
-      "Chalets privés",
+      "Randonnées guidées pour explorer les sentiers montagneux",
+      "Ski et sports d'hiver en hiver pour les amateurs de sensations fortes",
+      "Restaurant gastronomique de montagne avec une cuisine savoureuse et locale",
+      "Spa et massages pour une relaxation totale dans un cadre naturel",
+      "Séances de bien-être et méditation pour se ressourcer en pleine nature",
+      "Chalets privés offrant confort et intimité avec vue imprenable",
     ],
     bestTimeToVisit:
       "Le meilleur moment pour visiter est entre décembre et mars pour les sports d'hiver, ou entre juin et septembre pour les randonnées estivales.",
@@ -77,7 +76,7 @@ const Destination2 = () => {
       >
         <img
           src={img4}
-          alt="Mountain Peak Retreat"
+          alt="plage Imsounae"
           className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-black opacity-40"></div>

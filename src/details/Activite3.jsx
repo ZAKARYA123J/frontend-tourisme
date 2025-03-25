@@ -30,7 +30,7 @@ const Activite3 = () => {
         {images.map((image, index) => (
           <motion.div
             key={index}
-            className="bg-orange-600 p-4 rounded-xl shadow-lg"
+            className="bg-white p-4 rounded-xl shadow-lg"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
@@ -39,8 +39,8 @@ const Activite3 = () => {
               alt={image.alt}
               className="w-full h-64 object-cover rounded-lg"
             />
-            <h3 className="text-xl font-semibold mt-3">{image.alt}</h3>
-            <p className="text-sm mt-2">{image.description}</p>
+            <h3 className="text-xl text-black font-semibold mt-3">{image.alt}</h3>
+            <p className="text-sm text-gray-700 mt-2">{image.description}</p>
           </motion.div>
         ))}
       </div>
