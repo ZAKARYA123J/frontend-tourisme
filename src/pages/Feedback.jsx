@@ -112,6 +112,7 @@ const Feedback = () => {
             <motion.input
               id="name"
               type="text"
+              placeholder="Enter Name Of Place"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -124,6 +125,7 @@ const Feedback = () => {
           <div>
             <motion.label
               htmlFor="content"
+             
               className="block text-gray-700 font-medium"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -134,6 +136,7 @@ const Feedback = () => {
             <motion.textarea
               id="content"
               value={content}
+               placeholder="Enter Your Feedback"
               onChange={(e) => setContent(e.target.value)}
               required
               className="w-full p-2 border mt-6 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -148,6 +151,7 @@ const Feedback = () => {
    
             <AnimatedSelect
               label="Rate the place"
+             
               options={[
                 { value: 1, label: "⭐ 1" },
                 { value: 2, label: "⭐⭐ 2" },

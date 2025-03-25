@@ -6,7 +6,6 @@ import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import logoblue from "../assets/logoblue.png";
-
 const NavBar = () => {
   const { t } = useTranslation();
   const [nav, setNav] = useState(false);

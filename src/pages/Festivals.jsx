@@ -3,6 +3,12 @@ import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import timitar from '../assets/timitar.jpg';  
 import vfm from '../assets/vfm.jpg';
 import yannayer from '../assets/yannayer.jpg';
+import boujloud from '../assets/boujloud.jpg';
+import filmfestival from '../assets/filmfestival.jpg';
+import festival from '../assets/festival.jpg';
+import tiznitfest from '../assets/tiznitfest.jpg';
+import nationalday from '../assets/nationalday.jpg';
+import gnaoua from '../assets/gnaoua.jpg';
 
 const Festivals = () => {
     const [festivals, setFestivals] = useState([
@@ -31,6 +37,60 @@ const Festivals = () => {
             description: 'A cultural celebration of the Amazigh New Year with music, food, and traditional performances.',
             price: 'Free',
             image: yannayer,
+            isFavorite: false,
+        },
+        {
+            id: 4,
+            name: 'Festival of the Atlantic Coast ',
+            date: 'seasonally',
+            description: ' A celebration of the region’s coastal heritage, arts, and maritime activities. This festival typically features seafood tastings, music, and community activities',
+            price: 'Free',
+            image: festival,
+            isFavorite: false,
+        },
+        {
+            id: 5,
+            name: 'Eid al-Adha',
+            date: 'June 6–10, 2025',
+            description: 'This significant Islamic festival is celebrated with family gatherings, prayers, and feasts. It’s a great time to experience the local culture, as many businesses close for the event​.',
+            price: 'free',
+            image: boujloud,
+            isFavorite: false,
+        },
+        {
+            id: 6,
+            name: 'Festival of Tiznit',
+            date:  '2025',
+            description: ' Though slightly further from Agadir, the Tiznit Festival celebrates the regions crafts, especially silver jewelry and Berber culture, often involving cultural exchanges and performances',
+            price: 'Free',
+            image: tiznitfest,
+            isFavorite: false,
+        },
+        {
+            id: 7,
+            name: 'Agadir International Film Festival',
+            date: 'july 15-16, 2025',
+            description: 'This film festival focuses on African cinema and brings filmmakers and movie enthusiasts together​',
+            price: 'Free',
+            image: filmfestival,
+            isFavorite: false,
+        },
+        {
+            id: 8,
+            name: 'Moroccan National Day',
+            date: 'July 30',
+            description: 'The countrys independence is celebrated across Morocco, including Agadir, with public events, parades, and fireworks​.',
+            price: 'free',
+            image: nationalday,
+            isFavorite: false,
+        },
+        {
+            id: 9,
+            name: 'Gnaoua World Music Festival ',
+            date: 'June 19–21, 2025',
+            description: 'Although this festival takes place in nearby Essaouira, it’s just a short drive from Agadir. It celebrates Gnaoua music, an essential part of Moroccan heritage, and draws a variety of international artists​',
+            price: 'Free',
+            image: gnaoua,
             isFavorite: false,
         },
     ]);
