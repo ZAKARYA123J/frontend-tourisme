@@ -4,6 +4,7 @@ import Destinations from "./components/Destinations";
 import Home from "./pages/Home";
 import View from "./pages/View";
 
+
 import Book from "./pages/Book";
 import Login from "./Auth/Login";
 import Register from "./Auth/Register";
@@ -11,6 +12,9 @@ import ForgotPassword from "./Auth/ForgotPassword";
 import ResetPassword from "./Auth/ResetPassword";
 import Festivals from "./pages/Festivals";
 import { Routes, Route } from "react-router-dom";
+
+import Contact from "./components/Contact";
+import About from "./components/About";
 
 import Footer from "./components/Footer";
 import Reservation from "./Location/Reservation";
@@ -91,33 +95,10 @@ const App = () => {
 
 
 
+        <Route path="/contact" element={<Contact/>}/> 
+        <Route path="/about" element={<About/>}/> 
 
-        <Route path='/' element={<Home/>}/>
-        <Route path='/destinations' element={<Destinations/>}/>
-        <Route path="/festivals" element={<Festivals/>}/>  
-        <Route path="/exhibitions" element={<Exhibitions/>}/>    
-        <Route path="/heritages" element={<Heritages/>}/> 
-        <Route path="/adventures" element={<Adventures/>}/> 
-        <Route path="/marathons" element={<Marathons/>}/> 
-        <Route path="/tournaments" element={<Tournaments/>}/> 
-        <Route path="/feedback" element={<Feedback/>}/> 
-        <Route path="/airbnb" element={<Airbnb/>}/> 
-        <Route path="/chatbot" element={<Chatbot/>}/>
-
-        <Route path="/hotels" element={<Hotels/>}/> 
-        <Route path='/view/:id' element={<View/>}/>
-        <Route path='/book' element={<Book/>}/>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path='/carBooking'  element={<Reservation categories={categories} />}/>
-        <Route path="/destination1" element={<Destination1/>}/> 
-        <Route path="/destination2" element={<Destination2/>}/> 
-        <Route path="/destination3" element={<Destination3/>}/> 
-        <Route path="/destination4" element={<Destination4/>}/> 
-        <Route path="/destination5" element={<Destination5/>}/>
-        
+       
       </Routes>
       <Footer />
     </>
