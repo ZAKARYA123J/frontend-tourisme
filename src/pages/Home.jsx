@@ -42,7 +42,6 @@ const Home = () => {
       <FadeInScroll id="weather" delay={2100} animationType="bottom">
         <Weather />
         </FadeInScroll>
-     
     </>
   );
 };

@@ -5,7 +5,6 @@ import { Link, useLocation } from "react-router-dom";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 import logoblue from "../assets/logoblue.png";
-
 const NavBar = () => {
   const [nav, setNav] = useState(false);
   const [user, setUser] = useState(null);

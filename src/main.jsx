@@ -7,7 +7,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import './index.css';
 import { store } from "./redux/store";
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Provider store={store}>
+ <Provider store={store}>
   <BrowserRouter> 
     <App />
   </BrowserRouter></Provider>

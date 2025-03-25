@@ -4,6 +4,13 @@ import sofitel from '../assets/sofitel.jpg';
 import riu from '../assets/riu.jpg';
 import dunes from '../assets/dunes.jpg';
 import riad from '../assets/riad.jpg';
+import zephyr from '../assets/zephyr.jpg';
+import dominium from '../assets/dominium.jpg';
+import argana from '../assets/argana.jpg';
+import sahara from '../assets/sahara.jpg';
+import mabrouk from '../assets/mabrouk.jpg';
+import theview from '../assets/theview.jpg';
+
 
 const Hotels = () =>{
  const [Hotels,setHotels] = useState([
@@ -45,7 +52,61 @@ const Hotels = () =>{
         image: riad ,
         isFavorite: false ,
         },
-            
+        {
+            id: 5,
+        name:'Zephyr AgadirOpens in new window', 
+        date:': Open year-round', 
+        description:' deally set in the Founty district of Agadir, Zephyr Agadir is set 1.8 km from Agadir Beach, 3.2 km from Amazighe Heritage Museum and 3.4 km from Medina Polizzi..',
+        price:'per night 1,800 ', 
+        image:zephyr ,
+        isFavorite: false ,
+
+        },
+        { 
+            id: 6,
+            name:'The View Agadir', 
+            date:'Open year-round', 
+            description:'Luxury hotel on the beach, with outdoor pool', 
+            price:'per night 2520 ', 
+            image: theview ,
+            isFavorite: false ,
+            },
+            { 
+                id: 7,
+                name: 'Hotel Argana', 
+                date:' Open year-round', 
+                description:'private beach and outdoor pool, near Royal Palace',
+                price:'per night 2830', 
+                image: argana,
+                isFavorite: false 
+                },
+                {
+        id: 8,
+        name:'dominium Hotel', 
+        date:' Open year-round', 
+        description:'Hotel with 2 restaurants, near Agadir Beach',
+        price:'per day 980 ', 
+        image: dominium ,
+        isFavorite: false ,
+        },
+        {
+            id: 9,
+            name:'Sahara Hotel Agadir', 
+            date:' Open year-round', 
+            description:'Elegant adults-only beach hotel with outdoor pool',
+            price:'per day 1320', 
+            image: sahara ,
+            isFavorite: false ,
+            }, 
+            {
+                id: 10,
+                name:'Mabrouk Hotel And Suites', 
+                date:' Open year-round', 
+                description:' Beach fun in outdoor pool, near Souk El Had',
+                price:'per night 1010 ', 
+                image: mabrouk ,
+                isFavorite: false ,
+                }, 
 
  ])
  const toggleFavorite = (id) => {
