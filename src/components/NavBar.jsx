@@ -4,8 +4,10 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import logoblue from "../assets/logoblue.png";
 const NavBar = () => {
+  const { t } = useTranslation();
   const [nav, setNav] = useState(false);
   const [user, setUser] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,56 +15,51 @@ const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const isLoginPage = location.pathname === "/login";
-  const isHomePage = location.pathname === "/"; 
+  const isHomePage = location.pathname === "/";
 
   const menuSections = [
     {
-      title: "Cultural",
+      title: t("cultural"),
       items: [
         { name: "Festivals", link: "/festivals" },
         { name: "Exhibitions", link: "/exhibitions" },
-        { name: "Heritage Tours", link: "/heritages" }
+        { name: "Heritage Tours", link: "/heritages" },
       ],
-      link: "/cultural"
+      link: "/cultural",
     },
     {
-      title: "Sports",
+      title: t("sports"),
       items: [
         { name: "Tournaments", link: "/tournaments" },
         { name: "Marathons", link: "/marathons" },
-        { name: "Adventures", link: "/adventures" }
+        { name: "Adventures", link: "/adventures" },
       ],
-      link: "/sports"
+      link: "/sports",
     },
     {
-      title: "Reservations",
+      title: t("reservation"),
       items: [
         { name: "Hotels", link: "/hotels" },
         { name: "Airbnb", link: "/airbnb" },
-        { name: "Car Booking", link: "/carBooking" }
+        { name: "Car Booking", link: "/carBooking" },
       ],
-      link: "/reservations"
+      link: "/reservations",
     },
     {
-      title: "Review",
-      items: [
-        { name: "Feedback", link: "/feedback" }
-      ],
-      link: "/review"
+      title: t("review"),
+      items: [{ name: "Feedback", link: "/feedback" }],
+      link: "/review",
     },
     {
       title: "About Us",
-      items: [
-        { name: "About", link: "/about" }
-      ],
-      link: "/about"
-    }, {
+      items: [{ name: "About", link: "/about" }],
+      link: "/about",
+    },
+    {
       title: "Contact Us",
-      items: [
-        { name: "Contact", link: "/contact" }
-      ],
-      link: "/contact"
-    }
+      items: [{ name: "Contact", link: "/contact" }],
+      link: "/contact",
+    },
   ];
 
   useEffect(() => {
@@ -83,13 +80,13 @@ const NavBar = () => {
 
   return (
     <div
-    className={`flex w-full justify-between items-center h-20 px-6 fixed top-0 left-0 z-50 transition-all duration-300 ${
-      isLoginPage ? "bg-gray-200 text-slate-800" : 
-      isScrolled ? "bg-white/90 backdrop-blur-sm text-slate-800 shadow-md" : 
-      "bg-white text-slate-800" 
-  }`}
-  
-  
+      className={`flex w-full justify-between items-center h-20 px-6 fixed top-0 left-0 z-50 transition-all duration-300 ${
+        isLoginPage
+          ? "bg-gray-200 text-slate-800"
+          : isScrolled
+          ? "bg-white/90 backdrop-blur-sm text-slate-800 shadow-md"
+          : "bg-white text-slate-800"
+      }`}
     >
       <div>
         <nav className="absolute top-4 left-4 flex items-center space-x-3 mt-[-20px]">
@@ -100,44 +97,48 @@ const NavBar = () => {
         </nav>
       </div>
 
-            <div className="hidden md:flex h-full">
-                <ul className="flex space-x-8 text-lg font-medium items-center">
-                    <li>
-                        <Link to="/" className="hover:text-blue-500 transition duration-300">
-                            Home
-                        </Link>
-                    </li>
-                    {menuSections.map((section) => (
-                        <li key={section.title} className="group relative py-2">
-                            <span className="hover:text-blue-500 transition duration-300 flex items-center">
-                                {section.title}
-                                <span className="ml-1 transform transition-transform group-hover:rotate-180">▾</span>
-                            </span>
-                            <div className="absolute top-full left-0 hidden group-hover:block w-48 bg-white text-gray-700 shadow-lg rounded-lg py-2">
-                                {section.items.map((item, index) => {
-                                    const itemName = typeof item === "string" ? item : item.name;
-                                    const itemLink = typeof item === "string" 
-                                        ? `${section.link}/${item.toLowerCase().replace(/\s+/g, '-')}` 
-                                        : item.link;
-                                    return (
-                                        <Link
-                                            key={`${section.title}-${index}`}
-                                            to={itemLink}
-                                            className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600"
-                                        >
-                                            {itemName}
-                                        </Link>
-                                    );
-                                })}
-                            </div>
-                        </li>
-                       
-                       
-                        
-                    ))}
-                   
-                </ul>
-            </div>
+      <div className="hidden md:flex h-full">
+        <ul className="flex space-x-8 text-lg font-medium items-center">
+          <li>
+            <Link
+              to="/"
+              className="hover:text-blue-500 transition duration-300"
+            >
+              Home
+            </Link>
+          </li>
+          {menuSections.map((section) => (
+            <li key={section.title} className="group relative py-2">
+              <span className="hover:text-blue-500 transition duration-300 flex items-center">
+                {section.title}
+                <span className="ml-1 transform transition-transform group-hover:rotate-180">
+                  ▾
+                </span>
+              </span>
+              <div className="absolute top-full left-0 hidden group-hover:block w-48 bg-white text-gray-700 shadow-lg rounded-lg py-2">
+                {section.items.map((item, index) => {
+                  const itemName = typeof item === "string" ? item : item.name;
+                  const itemLink =
+                    typeof item === "string"
+                      ? `${section.link}/${item
+                          .toLowerCase()
+                          .replace(/\s+/g, "-")}`
+                      : item.link;
+                  return (
+                    <Link
+                      key={`${section.title}-${index}`}
+                      to={itemLink}
+                      className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600"
+                    >
+                      {itemName}
+                    </Link>
+                  );
+                })}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <div className="hidden md:flex items-center space-x-4">
         {user ? (
@@ -160,14 +161,20 @@ const NavBar = () => {
                   exit={{ opacity: 0, y: -10 }}
                   className="absolute right-0 mt-3 w-56 bg-white text-gray-700 shadow-lg rounded-lg py-3 z-20"
                 >
-                  <p className="px-4 py-2 font-semibold text-gray-900">{user.name}</p>
-                  <p className="px-4 py-2 text-gray-500 border-b">{user.email}</p>
+                  <p className="px-4 py-2 font-semibold text-gray-900">
+                    {user.name}
+                  </p>
+                  <p className="px-4 py-2 text-gray-500 border-b">
+                    {user.email}
+                  </p>
                   <button
-                    className="block w-full text-left px-4 py-2 text-red-500 hover:bg-gray-100 transition duration-300"
+                    className="w-full px-4 py-2 text-white bg-red-500 rounded-lg shadow-md hover:bg-red-600 active:scale-95 transition-all duration-300"
                     onClick={() => {
-                      localStorage.removeItem("user");
-                      localStorage.removeItem("token");
-                      window.location.reload();
+                      if (confirm("Are you sure you want to log out?")) {
+                        localStorage.removeItem("user");
+                        localStorage.removeItem("token");
+                        window.location.reload();
+                      }
                     }}
                   >
                     Logout
@@ -178,7 +185,10 @@ const NavBar = () => {
           </div>
         ) : (
           <Link to="/login">
-            <BsPerson className="cursor-pointer hover:text-blue-500 transition duration-300" size={26} />
+            <BsPerson
+              className="cursor-pointer hover:text-blue-500 transition duration-300"
+              size={26}
+            />
           </Link>
         )}
       </div>
@@ -186,58 +196,6 @@ const NavBar = () => {
       <div onClick={() => setNav(!nav)} className="md:hidden z-50">
         {nav ? <AiOutlineClose size={22} /> : <HiOutlineMenuAlt4 size={22} />}
       </div>
-
-      <AnimatePresence>
-        {nav && (
-          <motion.div
-            initial={{ y: "-100vh" }}
-            animate={{ y: 0 }}
-            exit={{ y: "-100vh" }}
-            transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            className="fixed top-0 left-0 w-full h-screen bg-gray-800 z-40 overflow-y-auto"
-          >
-            <div className="container mx-auto px-4 py-8">
-              <div className="mb-8">
-                <h2 className="text-2xl font-bold mb-4 border-b border-gray-700 pb-2">
-                  Home
-                </h2>
-                <ul className="space-y-3 pl-4">
-                  <li>
-                    <Link
-                      to="/"
-                      className="text-lg hover:text-blue-400 block py-2"
-                      onClick={() => setNav(false)}
-                    >
-                      Home
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
-              {menuSections.map((section) => (
-                <div key={section.title} className="mb-8">
-                  <h2 className="text-2xl font-bold mb-4 border-b border-gray-700 pb-2">
-                    {section.title}
-                  </h2>
-                  <ul className="space-y-3 pl-4">
-                    {section.items.map((item, index) => (
-                      <li key={`${section.title}-${index}`}>
-                        <Link
-                          to={`${section.link}/${typeof item === "string" ? item.toLowerCase().replace(' ', '-') : item.name.toLowerCase().replace(' ', '-')}`}
-                          className="text-lg hover:text-blue-400 block py-2"
-                          onClick={() => setNav(false)}
-                        >
-                          {typeof item === "string" ? item : item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };

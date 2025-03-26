@@ -54,9 +54,12 @@ const App = () => {
       );
   }, []);
 
+ 
+
   return (
     <>
       <NavBar />
+     
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/destinations" element={<Destinations />} />
@@ -71,15 +74,6 @@ const App = () => {
 
         <Route path="/hotels" element={<Hotels />} />
         <Route path="/view/:id" element={<View />} />
-        <Route path="/book" element={<Book />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-        <Route
-          path="/carBooking"
-          element={<Reservation categories={categories} />}
-        />
         <Route path="/destination1" element={<Destination1 />} />
         <Route path="/destination2" element={<Destination2 />} />
         <Route path="/destination3" element={<Destination3 />} />
@@ -97,9 +91,18 @@ const App = () => {
 
         <Route path="/contact" element={<Contact/>}/> 
         <Route path="/about" element={<About/>}/> 
+        <Route path="/carbooking" element={<Reservation/>}/>
+        <Route path="/book" element={<Book />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/chatbot" element={<Chatbot />} />
 
        
       </Routes>
+ 
+     
       <Footer />
     </>
   );
