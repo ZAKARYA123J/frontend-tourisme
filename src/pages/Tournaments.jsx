@@ -4,6 +4,12 @@ import footb from '../assets/footb.jpg';
 import volleyball from '../assets/volleyball.jpg';
 import golf from '../assets/golf.jpg';
 import Basketball from '../assets/Basketball.jpg';
+import football25 from '../assets/football25.jpg';
+import tennis from '../assets/tennis.jpg';
+import golf25 from '../assets/golf25.jpg';
+import fairment from '../assets/fairment.jpg';
+import yoga from '../assets/yoga.jpg';
+import poker from '../assets/poker.jpg';
 
 const tournaments = () =>{
  const [tournaments,settournaments] = useState([
@@ -38,12 +44,72 @@ const tournaments = () =>{
                 },
                 {
         id: 4,
-        name:'Beach Volleyball Tournament', 
-        date:' Typically held in July or August ', 
-        description:'A competitive beach volleyball tournament held on Agadir’s sandy beaches. Open to both amateur and professional teams.',
+        name:'Agadir International Football Tournament', 
+        date:' February 15-16, 2025. ', 
+        description:'This event features eight teams (four from Morocco and four from Europe) competing for the Agadir Cup. Matches will be played over the weekend, with teams staying at Hotel Allegro near the beach ',
         price:'Free to watch; team registration starts at 500 MAD.', 
         image: volleyball ,
         isFavorite: false ,
+        },
+        {
+            id: 5,
+        name:' Football Tournament, Agadir City Football Cup', 
+        date:'Typically held in May', 
+        description:'A local football (soccer) tournament featuring teams from Agadir and surrounding regions. Held at a local stadium, it’s a great event for football fans.',
+        price:' Free to watch; team registration starts at 1,000 MAD.', 
+        image: football25 ,
+        isFavorite: false ,
+
+        },
+        {
+            id: 6,
+        name:' MT200 Agadir Tennis Tournament', 
+        date:'March 24-30, 2025', 
+        description:'Hosted by the ITF, this clay-court event will take place in Morocco, with players competing in various categories ',
+        price:' Free to watch; team registration starts at 1,000 MAD.', 
+        image: tennis ,
+        isFavorite: false ,
+
+        },
+        {
+            id: 7,
+        name:'Open Golf Agadir 2025', 
+        date:'April 2-6, 2025', 
+        description:'This tournament includes multiple rounds across different golf courses in Agadir, such as Golf du Soleil, Golf Océan, and Golf des Dunes. Open to both amateurs and professionals',
+        price:' Free to watch; team registration starts at 1,000 MAD.', 
+        image: golf25,
+        isFavorite: false ,
+
+        },
+        {
+            id: 8,
+        name:'Poker Tournaments at Casino Atlantic Agadir', 
+        date:'february and june', 
+        description:' The casino hosts several poker events throughout the year, including high-stakes tournaments with guaranteed prize pools of up to 1,000,000 Dh. Key tournaments occur in February and June',
+        price:' Free to watch; team registration starts at 1,000 MAD.', 
+        image: poker ,
+        isFavorite: false ,
+
+        },
+        {
+            id: 9,
+        name:'Fairmont Golf Cup de Taghazout ', 
+        date:'Typically held in May', 
+        description:' A golf tournament taking place from May 2-4 at the Tazegzout Bay Resort near Agadir【25】',
+        price:' Free to watch; team registration starts at 1,000 MAD.', 
+        image: fairment ,
+        isFavorite: false ,
+
+        },
+        {
+            id: 10,
+        name:'Stage Yoga & Golf au Maroc', 
+        date:' April 16-23', 
+        description:'A unique sports event combining yoga and golf, scheduled at the Agadir Golf Training Center from April 16-23【25】',
+        price:' Free to watch; team registration starts at 1,000 MAD.', 
+        image: yoga ,
+        isFavorite: false ,
+
         },
             
 

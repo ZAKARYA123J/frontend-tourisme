@@ -4,20 +4,22 @@ import intermarath from '../assets/intermarath.jpg';
 import nightrun from '../assets/nightrun.jpg';
 import halfmarath from '../assets/halfmarath.jpg';
 import valleymarath from '../assets/valleymarath.jpg';
+import semi from '../assets/semi.jpg';
+import marathon25 from '../assets/marathon25.jpg';
+import ultra from '../assets/ultra.jpg';
 
 const marathons = () =>{
  const [marathons,setmarathons] = useState([
     
-        {
-            id: 1,
-        name:' Agadir International Marathon', 
-        date:'Usually held in December', 
-        description:'A popular annual marathon that attracts runners from around the world. Choose from full marathon, half marathon, or 10K races. The route offers stunning views of Agadir’s coastline and landscapes.',
-        price:' Registration starts at 200 ', 
-        image: intermarath ,
+               {
+        id: 4,
+        name:'Agadir Night Runn', 
+        date:'Usually held in August', 
+        description:' A unique nighttime running event along Agadir’s illuminated beaches and promenades. Choose from 5K, 10K, or half marathon distances.',
+        price:'Registration starts at 150 MAD', 
+        image: nightrun ,
         isFavorite: false ,
-
-        },
+        }, 
         { 
             id: 2,
             name:'Agadir Half Marathon', 
@@ -36,15 +38,45 @@ const marathons = () =>{
                 image: valleymarath,
                 isFAvorite: false 
                 },
+        
+        {
+            id: 5,
+            name: "Semi-Marathon Agadir",
+            date: "May 11, 2025",
+            description: "A popular half-marathon event in Agadir featuring a 10 km and a 21.1 km race. The event promotes sports tourism and highlights local culture with a scenic route.",
+            price: "Varies, usually around 100-200 MAD depending on registration time",
+            image: semi,
+            isFavorite: false
+          },
+          {
+            id: 1,
+        name:' Agadir International Marathon', 
+        date:'Usually held in December', 
+        description:'A popular annual marathon that attracts runners from around the world. Choose from full marathon, half marathon, or 10K races. The route offers stunning views of Agadir’s coastline and landscapes.',
+        price:' Registration starts at 200 ', 
+        image: intermarath ,
+        isFavorite: false ,
+
+        },
+          {
+            id: 6,
+            name: "Agadir International Marathon 2025",
+            date: "Fall 2025 (exact date TBD)",
+            description: "The Agadir International Marathon is an annual marathon event attracting runners from around the world. The event also includes a 10 km race and a 5 km fun run.",
+            price: "Varies, typically around 150-300 MAD depending on race category",
+            image: marathon25,
+            isFavorite: false
+          },
                 {
-        id: 4,
-        name:'Agadir Night Runn', 
-        date:'Usually held in August', 
-        description:' A unique nighttime running event along Agadir’s illuminated beaches and promenades. Choose from 5K, 10K, or half marathon distances.',
-        price:'Registration starts at 150 MAD', 
-        image: nightrun ,
+        id: 7,
+        name:'Agadir Ultra Marathon', 
+        date:'November 2025', 
+        description:'This ultra marathon will challenge runners with long-distance endurance across diverse terrains including coastal roads and paths through nature reserves.',
+        price:' Registration typically opens in the months leading to the race', 
+        image: ultra ,
         isFavorite: false ,
         },
+           
             
 
  ])

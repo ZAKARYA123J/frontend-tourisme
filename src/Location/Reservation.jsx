@@ -157,7 +157,7 @@ setSuccessMessage("");
   return (
     <>
      
-      <div className="flex justify-center w-full  h-screen  bg-black items-center min-h-screen relative">
+      <div className="flex justify-center  min-h-screen  bg-black items-center relative pt-24">
         <div className="absolute inset-0">
           <img src={voitureImage} alt="Car" className="w-full h-full object-cover opacity-50" />
         </div>
@@ -166,14 +166,14 @@ setSuccessMessage("");
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="max-w-4xl w-full p-8 mt-20   bg-white rounded-lg backdrop-blur-lg border bg-opacity-35 border-slate-950 border-opacity-30 shadow-xl z-10"
+          className="max-w-2xl w-full p-6 mx-4  bg-white rounded-lg backdrop-blur-lg border border-slate-950 bg-opacity-35 border-opacity-30 shadow-xl z-10"
         >
-          <h2 className="text-4xl font-semibold text-center text-white mb-1">
+          <h2 className="text-2xl font-semibold text-center text-white mb-4">
           Book your car in Agadir 
           </h2>
 
-          <motion.form className="grid grid-cols-2 gap-6  " onSubmit={handleSubmit}>
-            
+          <motion.form className="grid grid-cols-2  gap-3  " onSubmit={handleSubmit}>
+            <div className="col-span-1">
             <AnimatedSelect
               label="Categories "
               options={categories.map(cat => ({ value: cat.id, label: cat.nom }))} 
@@ -181,7 +181,8 @@ setSuccessMessage("");
               onChange={setCategoryId}
               placeholder="Select a Category"
             />
-
+            </div>
+           <div  className="col-span">
             <AnimatedSelect
               label="Transmission "
               options={[{ value: "Manuelle", label: "Manuelle" }, { value: "Automatique", label: "Automatique" }]}
@@ -189,7 +190,8 @@ setSuccessMessage("");
               onChange={setTransmission}
               placeholder="Select a Transmission"
             />
-
+            </div>
+<div className="col-span-1" >
             <AnimatedSelect
               label="Cars 🚗"
               options={filteredCars.map(car => ({
@@ -200,18 +202,18 @@ setSuccessMessage("");
               onChange={setSelectedCar}
               placeholder="Select a Car"
             />
-
-            <motion.div>
+</div>
+            <motion.div className="col-span-1">
               <label className="text-white font-semibold text-lg mb-1 block">Start Date 📅</label>
               <input type="date" value={dateDebut} onChange={(e) => setDateDebut(e.target.value)} className="input-style p-4 rounded-lg w-full" required />
             </motion.div>
 
-            <motion.div>
+            <motion.div className="col-span-1">
               <label className="text-white font-semibold text-lg mb-1 block">End Date 📅</label>
               <input type="date" value={dateFin} onChange={(e) => setDateFin(e.target.value)} className="input-style p-4 rounded-lg w-full" required />
-            </motion.div>
+           </motion.div>
 
-            <div>
+            <div className="col-span-1">
               <label className="text-white font-semibold text-lg mb-1 block">Full Name </label>
               <motion.input 
                 type="text"
@@ -223,8 +225,8 @@ setSuccessMessage("");
               />
             </div>
 
-            <div>
-              <label className="text-white font-semibold text-lg mb-1 block">Phone Number 📱</label>
+            <div className="col-span-1">
+              <label className="text-white font-semibold text-sm mb-1 block">Phone Number 📱</label>
               <motion.input 
                 type="text"
                 value={num_tele}
@@ -235,8 +237,8 @@ setSuccessMessage("");
               />
             </div>
 
-            <div>
-              <label className="text-white font-semibold text-lg mb-1 block">Email 📧</label>
+            <div className="col-span-1">
+              <label className="text-white font-semibold text-sm mb-1 block">Email 📧</label>
               <motion.input 
                 type="email"
                 value={emailClient}
@@ -246,10 +248,11 @@ setSuccessMessage("");
                 whileFocus={{ scale: 1.05 }}
               />
             </div>
-
-            <motion.p className="text-xl font-semibold text-white text-center col-span-2">
+          <div className="col-span-2 mt-2">
+            <motion.p className="text-lg font-semibold text-white text-center">
               💰 Prix Total : {prixTotal} MAD
             </motion.p>
+            </div>
 
             {/* {selectedCarDetails && (
               <div className="text-white text-center mt-4">
@@ -259,7 +262,7 @@ setSuccessMessage("");
               </div>
             )} */}
 
-            <motion.button type="submit" className="col-span-2 bg-blue-500 text-white p-4 rounded-xl hover:bg-blue-600 focus:outline-none transition duration-300 ease-in-out">
+            <motion.button type="submit" className="col-span-2 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600  transition-colors text-sm ">
               Réserver maintenant
             </motion.button>
           </motion.form>
