@@ -6,9 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-12 mt-auto">
       <div className="max-w-7xl mx-auto px-6">
-    
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
-
           <div>
             <h3 className="font-bold text-lg mb-3">Cultural:</h3>
             <ul className="space-y-2">
@@ -17,8 +15,6 @@ const Footer = () => {
               <li><Link to="/heritage" className="hover:text-blue-400 text-lg">Heritage Tours</Link></li>
             </ul>
           </div>
-
-    
           <div>
             <h3 className="font-bold text-lg mb-3">Sports:</h3>
             <ul className="space-y-2">
@@ -27,8 +23,6 @@ const Footer = () => {
               <li><Link to="/adventures" className="hover:text-blue-400 text-lg">Adventures</Link></li>
             </ul>
           </div>
-
-       
           <div>
             <h3 className="font-bold text-lg mb-3">Reservations:</h3>
             <ul className="space-y-2">
@@ -37,24 +31,19 @@ const Footer = () => {
               <li><Link to="/carBooking" className="hover:text-blue-400 text-lg">Car Booking</Link></li>
             </ul>
           </div>
-
-         
           <div>
             <h3 className="font-bold text-lg mb-3">Contact:</h3>
             <ul className="space-y-2">
               <li><Link to="/feedback" className="hover:text-blue-400 text-lg">Feedback</Link></li>
               <li><Link to="/about" className="hover:text-blue-400 text-lg">About Us</Link></li>
               <li><Link to="/contact" className="hover:text-blue-400 text-lg">Contact Us</Link></li>
-
             </ul>
           </div>
         </div>
 
-
-        <div className="border-t border-gray-700 mt-12 pt-6">
-
-        
-          <div className="flex justify-center md:justify-start space-x-6 mb-6">
+        <div className="flex justify-between items-center mt-12 pt-6 border-t border-gray-700">
+          {/* Social Media Icons */}
+          <div className="flex space-x-6">
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-2xl text-blue-600 hover:text-blue-500 transition duration-300">
               <FaFacebook />
             </a>
@@ -72,10 +61,15 @@ const Footer = () => {
             </a>
           </div>
 
-      
-          <div className="text-center text-sm">
+          {/* Paragraph in the middle */}
+          <div className="text-center text-sm mx-6">
             <p>© 2025 - Tous droits réservés</p>
             <p>Site géré par le Conseil Régional du Tourisme Agadir Souss-Massa</p>
+          </div>
+
+          {/* Logo */}
+          <div>
+            <img src={logoblue} alt="logo" className="w-40" />
           </div>
         </div>
       </div>
@@ -83,4 +77,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;

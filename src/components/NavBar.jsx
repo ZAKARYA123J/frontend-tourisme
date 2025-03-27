@@ -75,6 +75,14 @@ const NavBar = () => {
     setNav(!nav);
   };
 
+  const handleLogout = () => {
+    if (window.confirm("Are you sure you want to log out?")) {
+      localStorage.removeItem("user");
+      localStorage.removeItem("token");
+      window.location.reload();
+    }
+  };
+
   return (
     <div
       className={`flex items-center justify-between w-full h-20 px-4 fixed top-0 left-0 z-50 transition-all duration-300 ${
