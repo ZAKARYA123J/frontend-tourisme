@@ -21,7 +21,6 @@ const Adventures = () => {
       price: 'for 15 min 300',
       image: jetskim,
       isFavorite: false,
-      link: '/sports/jet-ski-adventure',  
     },
     {
       id: 2,
@@ -31,7 +30,6 @@ const Adventures = () => {
       price: 'for 1 hour starting at 400',
       image: quadaga,
       isFavorite: false,
-      link: '/sports/quad-biking', 
     },
     {
       id: 3,
@@ -41,7 +39,6 @@ const Adventures = () => {
       price: 'per person 500',
       image: hiking,
       isFavorite: false,
-      link: '/sports/hiking-atlas-mountains',  
     },
     {
       id: 4,
@@ -51,7 +48,6 @@ const Adventures = () => {
       price: 'per person 1,500',
       image: balloon,
       isFavorite: false,
-      link: '/sports/balloon-ride',  
     },
     {
       id: 5,
@@ -61,7 +57,6 @@ const Adventures = () => {
       price: "for a guided horseback ride,Approx. 300-600",
       image: horseridin,
       isFavorite: false,
-      link: '/sports/horseback-riding',  
     },
     {
       id: 6,
@@ -71,7 +66,6 @@ const Adventures = () => {
       price: "for a dive trip,Approx. 600-1000 MAD",
       image: diving,
       isFavorite: false,
-      link: '/sports/diving', 
     },
     {
       id: 7,
@@ -81,7 +75,6 @@ const Adventures = () => {
       price: "for lessons or rentals,Approx. 500-1000",
       image: kitesurfing,
       isFavorite: false,
-      link: '/sports/kitesurfing',  
     },
     {
       id: 8,
@@ -91,7 +84,6 @@ const Adventures = () => {
       price: "per day (guided tours),Approx. 1000-1500",
       image: bashing,
       isFavorite: false,
-      link: '/sports/dune-bashing',  
     },
     {
       id: 9,
@@ -101,7 +93,6 @@ const Adventures = () => {
       price: "for a guided tour,Approx. 800-1200",
       image: canyoning,
       isFavorite: false,
-      link: '/sports/canyoning', 
     },
   ]);
 

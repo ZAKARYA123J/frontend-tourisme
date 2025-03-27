@@ -119,7 +119,7 @@ return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {Hotels.map((Hotel) => (
                 <div key={Hotel.id} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                    <img src={Hotel.image} alt={Hotel.name} className="Hotel-image" />
+                    <img src={Hotel.image} alt={Hotel.name} className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
                     <h3>{Hotel.name}</h3>
                     <p>{Hotel.description}</p>
                     <div className="flex justify-between items-start mb-4">

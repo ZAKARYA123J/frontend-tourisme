@@ -14,54 +14,54 @@ const Destination2 = () => {
   const resortData = {
     name: "Plage Imsouane",
     description:
-   "Plage Imsounae est un véritable coin de paradis caché entre les montagnes d’Imsouane et l'océan Atlantique, offrant un panorama exceptionnel sur des paysages à couper le souffle. Ce lieu isolé est parfait pour ceux qui cherchent à s’évader de la vie quotidienne, à se ressourcer dans un cadre naturel et à vivre des aventures en pleine nature. Explorez les sentiers de randonnée qui serpentent à travers la montagne, défiez les vagues avec le surf ou détendez-vous dans le confort de nos chalets en bois. Après une journée active, offrez-vous une expérience de détente totale dans notre spa de montagne ou profitez des délices gastronomiques du restaurant, qui privilégie des produits locaux. Un séjour à Plage Imsounae est l’occasion rêvée pour les amoureux de la nature, du sport et du bien-être.",    location: "Imsouane, Agadir",
+      "Plage Imsouane is a true hidden paradise nestled between the Imsouane mountains and the Atlantic Ocean, offering breathtaking panoramic views of stunning landscapes. This secluded spot is perfect for those seeking to escape from daily life, recharge in a natural setting, and experience outdoor adventures. Explore the hiking trails winding through the mountains, challenge the waves with surfing, or relax in the comfort of our wooden chalets. After an active day, indulge in a total relaxation experience at our mountain spa or enjoy the gourmet delights of our restaurant that focuses on local products. A stay at Plage Imsouane is the perfect opportunity for nature, sport, and wellness lovers.",
+    location: "Imsouane, Agadir",
     services: [
-      "Randonnées guidées pour explorer les sentiers montagneux",
-      "Ski et sports d'hiver en hiver pour les amateurs de sensations fortes",
-      "Restaurant gastronomique de montagne avec une cuisine savoureuse et locale",
-      "Spa et massages pour une relaxation totale dans un cadre naturel",
-      "Séances de bien-être et méditation pour se ressourcer en pleine nature",
-      "Chalets privés offrant confort et intimité avec vue imprenable",
+      "Guided hikes to explore mountain trails",
+      "Skiing and winter sports for thrill seekers",
+      "Gourmet mountain restaurant with delicious, local cuisine",
+      "Spa and massages for total relaxation in a natural setting",
+      "Wellness and meditation sessions to recharge in nature",
+      "Private chalets offering comfort and privacy with stunning views",
     ],
     bestTimeToVisit:
-      "Le meilleur moment pour visiter est entre décembre et mars pour les sports d'hiver, ou entre juin et septembre pour les randonnées estivales.",
-    tips: "Portez des chaussures adaptées pour les randonnées en montagne et ne manquez pas la visite des lacs alpins à proximité.",
+      "The best time to visit is between December and March for winter sports, or between June and September for summer hiking.",
+    tips: "Wear appropriate shoes for mountain hiking and don't miss the nearby alpine lakes.",
     images: [
       {
         src: img4,
-        alt: "Randonnée en montagne",
-        description: "Explorez les sentiers de montagne à couper le souffle.",
+        alt: "Mountain hiking",
+        description: "Explore breathtaking mountain trails.",
       },
       {
         src: surf,
-        alt: "Ski en hiver",
-        description: "Vivez l'expérience du ski dans un cadre spectaculaire.",
+        alt: "Skiing in winter",
+        description: "Experience skiing in a spectacular setting.",
       },
       {
         src: surf2,
-        alt: "Détente au spa",
-        description:
-          "Offrez-vous un massage relaxant après une journée d'aventure.",
+        alt: "Relaxing at the spa",
+        description: "Treat yourself to a relaxing massage after a day of adventure.",
       },
       {
         src: surf3,
-        alt: "Vue depuis le chalet",
-        description: "Admirez les paysages montagneux depuis votre chalet.",
+        alt: "View from the chalet",
+        description: "Admire mountain landscapes from your chalet.",
       },
       {
         src: surf4,
-        alt: "Repas gastronomique",
-        description: "Savourez des plats locaux préparés avec soin.",
+        alt: "Gourmet meal",
+        description: "Savor locally prepared dishes.",
       },
       {
         src: surf5,
-        alt: "Méditation en pleine nature",
-        description: "Détendez-vous avec une séance de méditation en montagne.",
+        alt: "Meditation in nature",
+        description: "Relax with a meditation session in the mountains.",
       },
       {
         src: surf6,
-        alt: "Méditation en pleine nature",
-        description: "Détendez-vous avec une séance de méditation en montagne.",
+        alt: "Meditation in nature",
+        description: "Relax with a meditation session in the mountains.",
       },
     ],
   };
@@ -76,7 +76,7 @@ const Destination2 = () => {
       >
         <img
           src={img4}
-          alt="plage Imsounae"
+          alt="Plage Imsouane"
           className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-black opacity-40"></div>
@@ -107,12 +107,12 @@ const Destination2 = () => {
             transition={{ duration: 0.7 }}
           >
             <h2 className="text-3xl font-semibold mb-4 text-indigo-700 hover:text-indigo-600 transition-all duration-300">
-              Description du Refuge
+              Refuge Description
             </h2>
             <div className="flex flex-col md:flex-row items-center">
               <img
                 src={surf}
-                alt="Randonnée"
+                alt="Hiking"
                 className="w-full md:w-1/3 h-72 object-cover rounded-lg mr-4 mb-4 md:mb-0"
               />
               <p className="text-gray-700 leading-relaxed text-lg hover:text-gray-800 transition-all duration-300">
@@ -125,7 +125,7 @@ const Destination2 = () => {
               className="text-black hover:text-indigo-500 transition-all duration-300"
               onClick={() => setShowFullDescription(!showFullDescription)}
             >
-              {showFullDescription ? "Lire moins" : "Lire plus"}
+              {showFullDescription ? "Read Less" : "Read More"}
             </button>
           </motion.section>
 
@@ -136,7 +136,7 @@ const Destination2 = () => {
             transition={{ duration: 0.7 }}
           >
             <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">
-              Meilleur moment pour visiter
+              Best Time to Visit
             </h3>
             <div className="flex flex-col md:flex-row items-center">
               <img
@@ -157,12 +157,12 @@ const Destination2 = () => {
             transition={{ duration: 0.7 }}
           >
             <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">
-              Services du Refuge
+              Refuge Services
             </h3>
             <div className="flex flex-col md:flex-row items-center">
               <img
                 src={surf3}
-                alt="Détente"
+                alt="Relaxation"
                 className="w-full md:w-1/3 h-72 object-cover rounded-lg mr-4 mb-4 md:mb-0"
               />
               <ul className="list-disc pl-5 mb-6 text-gray-700 space-y-2">
@@ -188,51 +188,11 @@ const Destination2 = () => {
             transition={{ duration: 0.7 }}
           >
             <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">
-              Conseils pour les visiteurs
+              Visitor Tips
             </h3>
             <div className="flex flex-col md:flex-row items-center">
               <img
-                src={surf4} 
-                alt="Chalet"
-                className="w-full md:w-1/3 h-72 object-cover rounded-lg mr-4 mb-4 md:mb-0"
-              />
-              <p className="text-gray-700 leading-relaxed hover:text-gray-800 transition-all duration-300">
-                {resortData.tips}
-              </p>
-            </div>
-          </motion.section>
-          <motion.section
-            className="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-500"
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.7 }}
-          >
-            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">
-              Conseils pour les visiteurs
-            </h3>
-            <div className="flex flex-col md:flex-row items-center">
-              <img
-                src={surf5}
-                alt="Chalet"
-                className="w-full md:w-1/3 h-72 object-cover rounded-lg mr-4 mb-4 md:mb-0"
-              />
-              <p className="text-gray-700 leading-relaxed hover:text-gray-800 transition-all duration-300">
-                {resortData.tips}
-              </p>
-            </div>
-          </motion.section>
-          <motion.section
-            className="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-500"
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.7 }}
-          >
-            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">
-              Conseils pour les visiteurs
-            </h3>
-            <div className="flex flex-col md:flex-row items-center">
-              <img
-                src={surf6}
+                src={surf4}
                 alt="Chalet"
                 className="w-full md:w-1/3 h-72 object-cover rounded-lg mr-4 mb-4 md:mb-0"
               />
@@ -250,13 +210,13 @@ const Destination2 = () => {
           transition={{ duration: 1 }}
         >
           <h3 className="text-3xl font-semibold mb-6 text-indigo-700 hover:text-indigo-600 transition-all duration-300">
-            Explorez notre Refuge en Images
+            Explore Our Refuge in Pictures
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {resortData.images.map((image, index) => (
               <motion.div
                 key={index}
-                className="relative bg-white rounded-lg shadow-lg overflow-hidden group transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+                className="relative bg-white rounded-lg shadow-xl hover:shadow-2xl transition-all duration-500"
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 50 }}
                 transition={{ duration: 0.7 }}
@@ -264,12 +224,10 @@ const Destination2 = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-72 object-cover rounded-t-lg group-hover:opacity-80 transition-opacity duration-300"
+                  className="w-full h-64 object-cover rounded-t-lg"
                 />
-                <div className="p-4">
-                  <p className="text-lg text-gray-800 font-medium mb-2 text-center group-hover:text-indigo-600 transition-all duration-300">
-                    {image.description}
-                  </p>
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white">
+                  <p className="text-lg">{image.description}</p>
                 </div>
               </motion.div>
             ))}

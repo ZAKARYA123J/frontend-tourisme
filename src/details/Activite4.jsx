@@ -16,26 +16,25 @@ import upview from "../assets/upview.jpg";
 import Views1 from "../assets/Views1.jpg";
 
 const images = [
-  { src: Views1, alt: "Vue sur tradition decors", description: "Un panorama magnifique sur les decors enneigées a cotee de mur marron" },
-  { src: Views2, alt: "Coucher de soleil", description: "Un coucher de soleil spectaculaire, illuminant le ciel de teintes orange et rouges." },
-  { src: Views3, alt: "Forêt dense", description: "Une vue tranquille de la mer s'étendant à l'horizon, avec des vagues douces et des couleurs apaisantes." },
-  { src: Views4, alt: "Paysage désertique", description: "Des dunes de sable doré, avec un ciel dégagé et un paysage désertique à couper le souffle." },
-  { src: Views5, alt: "Vue sur la mer", description: "Une forêt luxuriante avec des arbres verts et une lumière filtrant à travers le feuillage." },
-  { src: Views6, alt: "La Corniche en soir", description: "Une vallée verdoyante entourée de montagnes, offrant un paysage paisible et magnifique." },
-  { src: Views7, alt: "Vue dans la corniche", description: "Une vue panoramique sur une ville vibrante, avec des bâtiments modernes et des rues animées." },
-  { src: Views8, alt: "Montagnes au lever du soleil", description: "Les premières lueurs du soleil éclatant derrière des montagnes majestueuses." },
-  { src: Views9, alt: "Plage paradisiaque", description: "Une plage de sable blanc, bordée de palmiers, avec des eaux turquoise scintillantes." },
-  { src: Views10, alt: "Vue sur la plage", description: "Un lac tranquille entouré de montagnes, avec des eaux cristallines reflétant le ciel." },
-  { src: Views11, alt: "Vue panoramique de fleur", description: "Une vue spectaculaire sur une vallée luxuriante, entourée de collines verdoyantes." },
-  { src: Views12, alt: "Vue sur la plage privee", description: "Des champs verdoyants et des collines douces s'étendant à perte de vue sous un ciel bleu clair." },
-  { src: upview, alt: "Vue sur la ville", description: "Des champs verdoyants et des collines douces s'étendant à perte de vue sous un ciel bleu clair." },
-
+  { src: Views1, alt: "View of traditional decor", description: "A stunning panorama of snowy decor next to a brown wall." },
+  { src: Views2, alt: "Sunset", description: "A spectacular sunset lighting up the sky with orange and red hues." },
+  { src: Views3, alt: "Dense forest", description: "A peaceful view of the sea extending to the horizon, with soft waves and calming colors." },
+  { src: Views4, alt: "Desert landscape", description: "Golden sand dunes, with a clear sky and a breathtaking desert landscape." },
+  { src: Views5, alt: "View of the sea", description: "A lush forest with green trees and light filtering through the foliage." },
+  { src: Views6, alt: "The Corniche in the evening", description: "A verdant valley surrounded by mountains, offering a peaceful and beautiful landscape." },
+  { src: Views7, alt: "View in the corniche", description: "A panoramic view of a vibrant city, with modern buildings and bustling streets." },
+  { src: Views8, alt: "Mountains at sunrise", description: "The first light of the sun shining behind majestic mountains." },
+  { src: Views9, alt: "Paradise beach", description: "A white sand beach, lined with palm trees, with sparkling turquoise waters." },
+  { src: Views10, alt: "View of the beach", description: "A tranquil lake surrounded by mountains, with crystal clear waters reflecting the sky." },
+  { src: Views11, alt: "Panoramic view of flowers", description: "A spectacular view of a lush valley, surrounded by green hills." },
+  { src: Views12, alt: "View of the private beach", description: "Green fields and gentle hills stretching endlessly under a clear blue sky." },
+  { src: upview, alt: "View of the city", description: "Green fields and gentle hills stretching endlessly under a clear blue sky." },
 ];
 
 const Activite4 = () => {
   return (
     <div className="bg-blue-800 min-h-screen py-10 px-5 text-white flex flex-col items-center">
-      <h2 className="text-3xl font-bold text-center mb-8 mt-12">Découverte des Vues Spectaculaires</h2>
+      <h2 className="text-3xl font-bold text-center mb-8 mt-12">Discovery of Spectacular Views</h2>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 justify-center mt-8">
         {images.map((image, index) => (
           <motion.div

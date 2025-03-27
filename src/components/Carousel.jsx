@@ -53,7 +53,6 @@ const CarouselComponent = () => {
     <div className="max-w-5xl mx-auto py-8">
         <h1 className="text-3xl font-bold text-center mb-2">must-see places</h1>
         <p className="text-center mb-6 text-gray-500 text-xl font-bold">Best Places In Agadir</p>
-        <p className="text-black text-lg md:text-xl font-bold mb-5">Places are specific locations, either natural or man-made, that people visit for different purposes like tourism, history, or leisure. They can be cities, landmarks, parks, or beaches. Each place has unique characteristics that define its atmosphere and significance.</p>
         <Swiper
             modules={[Navigation, Pagination]}
             navigation

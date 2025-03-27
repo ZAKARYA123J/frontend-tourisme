@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
-import voitureImage from "../Location/voiture.jpg";
+import XPeng from "../Location/XPeng.jpg";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
@@ -159,7 +159,7 @@ setSuccessMessage("");
      
       <div className="flex justify-center  min-h-screen  bg-black items-center relative pt-24">
         <div className="absolute inset-0">
-          <img src={voitureImage} alt="Car" className="w-full h-full object-cover opacity-50" />
+          <img src={XPeng} alt="Car" className="w-full h-full object-cover opacity-50" />
         </div>
 
         <motion.div 

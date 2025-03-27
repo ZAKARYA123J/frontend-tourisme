@@ -11,21 +11,20 @@ import soukalhad from "../assets/soukalhad.jpg";
 import souk from "../assets/souk.jpg";
 
 const images = [
-  { src: souk, alt: "Marché coloré", description: "Un marché animé avec des étals de tissus colorés et des épices exotiques." },
-  { src: souk2, alt: "Épices du souk", description: "Un étal rempli de magnifiques épices aux couleurs vibrantes et aux arômes envoûtants." },
-  { src: souk3, alt: "Artisanat local", description: "Des artisans locaux créant des objets d'art faits main dans un atelier du souk." },
-  { src: souk4, alt: "ails", description:"Magnifique design de textiles au souk, une véritable œuvre d'art qui reflète la richesse et la diversité de l'artisanat local."},
-  { src: souk5, alt: "Vendeurs au souk", description: "Des vendeurs discutent avec des clients dans une rue bondée, entourée de stands colorés." },
-  { src: souk6, alt: "Souk en soirée", description: "Le souk illuminé par des lanternes, créant une ambiance magique et chaleureuse." },
-  { src: souk7, alt: "vetements traditionnel", description: "vetements traditionnels, tissés à la main et remplis de motifs fascinants" },
-    { src: soukalhad, alt: "Marchand de tapis", description: "Un souk animé avec des gens marchant parmi les étals de fruits, légumes et produits artisanaux." },
-
+  { src: souk, alt: "Colorful market", description: "A lively market with stalls of colorful fabrics and exotic spices." },
+  { src: souk2, alt: "Spices in the market", description: "A stall filled with beautiful spices of vibrant colors and enchanting aromas." },
+  { src: souk3, alt: "Local crafts", description: "Local artisans creating handmade art pieces in a market workshop." },
+  { src: souk4, alt: "Textiles", description: "A beautiful textile design in the market, a true work of art reflecting the richness and diversity of local craftsmanship." },
+  { src: souk5, alt: "Vendors at the market", description: "Vendors talking with customers in a busy street, surrounded by colorful stalls." },
+  { src: souk6, alt: "Market at night", description: "The market illuminated by lanterns, creating a magical and warm atmosphere." },
+  { src: souk7, alt: "Traditional clothes", description: "Traditional clothes, handwoven and filled with fascinating patterns." },
+  { src: soukalhad, alt: "Carpet merchant", description: "A lively market with people walking among stalls selling fruits, vegetables, and handmade products." },
 ];
 
 const Activite3 = () => {
   return (
     <div className="bg-orange-700 min-h-screen py-10 px-5 text-white flex flex-col items-center">
-      <h2 className="text-3xl font-bold text-center mb-8 mt-12">Découverte des Souks Traditionnels</h2>
+      <h2 className="text-3xl font-bold text-center mb-8 mt-12">Discovery of Traditional Souks</h2>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 justify-center mt-8">
         {images.map((image, index) => (
           <motion.div

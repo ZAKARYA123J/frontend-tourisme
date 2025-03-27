@@ -124,7 +124,7 @@ return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tournaments.map((tournament) => (
                 <div key={tournament.id} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                    <img src={tournament.image} alt={tournament.name} className="tournament-image" />
+                    <img src={tournament.image} alt={tournament.name} className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
                     <h3>{tournament.name}</h3>
                     <p>{tournament.description}</p>
                     <div className="flex justify-between items-start mb-4">

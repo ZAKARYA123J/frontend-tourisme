@@ -8,21 +8,20 @@ import cro5 from "../assets/crocoparc5.jpg";
 import cro6 from "../assets/crocoparc6.jpg";
 import cro7 from "../assets/crocoparc7.jpg";
 
-
 const images = [
-  { src: cro1, alt: "Crocodile au soleil", description: "Un crocodile se prélassant sous le soleil." },
-  { src: cro2, alt: "deux crocodile", description: "Gros plan d’un crocodile imposant." },
-  { src: cro3, alt: "Serpent Couleureux", description: "des adorable serpents découvrant son environnement." },
-  { src: cro4, alt: "Serpent enroulé", description: "Un serpent majestueux enroulé autour d'une branche." },
-  { src: cro5, alt: "grenouille dans l'eau", description: "Un grenouille nageant discrètement dans l'eau." },
-  { src: cro6, alt: "Serpent en mouvement", description: "Un serpent se déplaçant gracieusement sur le sol." },
-  { src: cro7, alt: "Crocodile avec gueule ouverte", description: "Un crocodile impressionnant montrant ses dents acérées." },
+  { src: cro1, alt: "Crocodile in the sun", description: "A crocodile basking in the sun." },
+  { src: cro2, alt: "Two crocodiles", description: "Close-up of an imposing crocodile." },
+  { src: cro3, alt: "Colorful snake", description: "Adorable snakes discovering their surroundings." },
+  { src: cro4, alt: "Coiled snake", description: "A majestic snake coiled around a branch." },
+  { src: cro5, alt: "Frog in the water", description: "A frog swimming discreetly in the water." },
+  { src: cro6, alt: "Moving snake", description: "A snake moving gracefully on the ground." },
+  { src: cro7, alt: "Crocodile with mouth open", description: "An impressive crocodile showing its sharp teeth." },
 ];
 
 const Activite1 = () => {
   return (
     <div className="bg-green-700 min-h-screen py-10 px-5 text-white flex flex-col items-center">
-      <h2 className="text-3xl font-bold text-center mb-8 mt-12">Découverte des Crocodiles et Serpents</h2>
+      <h2 className="text-3xl font-bold text-center mb-8 mt-12">Discovery of Crocodiles and Snakes</h2>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 justify-center mt-8">
         {images.map((image, index) => (
           <motion.div

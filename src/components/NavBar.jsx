@@ -3,14 +3,11 @@ import { BsPerson } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
-import { motion, AnimatePresence } from "framer-motion";
-import { useTranslation } from "react-i18next";
 import logoblue from "../assets/logoblue.png";
+
 const NavBar = () => {
-  const { t } = useTranslation();
   const [nav, setNav] = useState(false);
   const [user, setUser] = useState(null);
-  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -19,7 +16,7 @@ const NavBar = () => {
 
   const menuSections = [
     {
-      title: t("cultural"),
+      title: "Cultural",
       items: [
         { name: "Festivals", link: "/festivals" },
         { name: "Exhibitions", link: "/exhibitions" },
@@ -28,7 +25,7 @@ const NavBar = () => {
       link: "/cultural",
     },
     {
-      title: t("sports"),
+      title: "Sports",
       items: [
         { name: "Tournaments", link: "/tournaments" },
         { name: "Marathons", link: "/marathons" },
@@ -37,7 +34,7 @@ const NavBar = () => {
       link: "/sports",
     },
     {
-      title: t("reservation"),
+      title: "Reservation",
       items: [
         { name: "Hotels", link: "/hotels" },
         { name: "Airbnb", link: "/airbnb" },
@@ -46,7 +43,7 @@ const NavBar = () => {
       link: "/reservations",
     },
     {
-      title: t("review"),
+      title: "Review",
       items: [{ name: "Feedback", link: "/feedback" }],
       link: "/review",
     },
@@ -75,87 +72,85 @@ const NavBar = () => {
   }, []);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setNav(!nav);
   };
 
   return (
     <div
-  className={`flex items-center justify-between w-full h-24 px-6 fixed top-0 left-0 z-50 transition-all duration-300 ${
-    isLoginPage
-      ? "bg-gray-200 text-slate-800"
-      : isScrolled
-      ? "bg-white/90 backdrop-blur-sm text-slate-800 shadow-md"
-      : "bg-white text-slate-800"
-  }`}
->
-  {/* Logo + Brand */}
-  <div className="flex items-center gap-8 flex-shrink-0">
-    <div className="flex items-center gap-4">
-    <img src={logoblue} alt="web logo" className="h-[90px] w-auto" />
-    <h1 className="text-2xl font-bold tracking-wide">
-      Travel<span className="text-blue-950">Tour</span>
-    </h1>
-  </div></div>
-
-  {/* Desktop Navigation */}
-  <div className="hidden md:flex flex-grow justify-center">
-    <ul className="hidden md:flex items-center space-x-6 text-lg font-medium">
-      <li>
-        <Link to="/" className="hover:text-blue-500 transition duration-300">
-          Home
-        </Link>
-      </li>
-      {menuSections.map((section) => (
-        <li key={section.title} className="group relative py-2">
-          <span className="hover:text-blue-500 transition duration-300 flex items-center">
-            {section.title}
-            <span className="ml-1 transform transition-transform group-hover:rotate-180">
-              ▾
-            </span>
-          </span>
-          <div className="absolute top-full left-0 hidden group-hover:block w-48 bg-white text-gray-700 shadow-lg rounded-lg py-2">
-            {section.items.map((item, index) => (
-              <Link
-                key={`${section.title}-${index}`}
-                to={item.link}
-                className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        </li>
-      ))}
-    </ul>
-  </div>
-
-  {/* User Icon / Login */}
-  <div className="hidden md:flex items-center space-x-4">
-    {user ? (
-      <div className="relative">
-        <div
-          className="flex items-center space-x-3 cursor-pointer bg-white text-gray-700 px-3 py-2 rounded-full shadow-md hover:shadow-lg transition duration-300"
-          onClick={toggleMenu}
-        >
-          <div className="w-10 h-10 bg-blue-500 text-white flex items-center justify-center rounded-full text-lg font-semibold">
-            {user.name.charAt(0)}
-          </div>
-          <span className="text-lg font-medium">{user.name}</span>
-        </div>
+      className={`flex items-center justify-between w-full h-20 px-4 fixed top-0 left-0 z-50 transition-all duration-300 ${
+        isLoginPage
+          ? "bg-gray-200 text-slate-800"
+          : isScrolled
+          ? "bg-white/90 backdrop-blur-sm text-slate-800 shadow-md"
+          : "bg-white text-slate-800"
+      }`}
+    >
+      {/* Logo + Brand */}
+      <div className="flex items-center gap-4">
+        <img src={logoblue} alt="web logo" className="h-[60px] w-auto" />
+        <h1 className="text-xl font-bold tracking-wide">
+          Travel<span className="text-blue-950">Tour</span>
+        </h1>
       </div>
-    ) : (
-      <Link to="/login">
-        <BsPerson className="cursor-pointer hover:text-blue-500 transition duration-300" size={26} />
-      </Link>
-    )}
-  </div>
 
-  {/* Mobile Menu Button */}
-  <div onClick={() => setNav(!nav)} className="md:hidden ml-auto">
-    {nav ? <AiOutlineClose size={22} /> : <HiOutlineMenuAlt4 size={22} />}
-  </div>
-</div>
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex flex-grow justify-center">
+        <ul className="flex items-center space-x-4 text-lg font-medium">
+          <li>
+            <Link to="/" className="hover:text-blue-500 transition duration-300">
+              Home
+            </Link>
+          </li>
+          {menuSections.map((section) => (
+            <li key={section.title} className="group relative py-2">
+              <span className="hover:text-blue-500 transition duration-300 flex items-center">
+                {section.title}
+                <span className="ml-1 transform transition-transform group-hover:rotate-180">
+                  ▾
+                </span>
+              </span>
+              <div className="absolute top-full left-0 hidden group-hover:block w-48 bg-white text-gray-700 shadow-lg rounded-lg py-2">
+                {section.items.map((item, index) => (
+                  <Link
+                    key={`${section.title}-${index}`}
+                    to={item.link}
+                    className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
 
+      {/* User Icon / Login */}
+      <div className="hidden md:flex items-center space-x-4">
+        {user ? (
+          <div className="relative">
+            <div
+              className="flex items-center space-x-3 cursor-pointer bg-white text-gray-700 px-3 py-2 rounded-full shadow-md hover:shadow-lg transition duration-300"
+              onClick={toggleMenu}
+            >
+              <div className="w-8 h-8 bg-blue-500 text-white flex items-center justify-center rounded-full text-lg font-semibold">
+                {user.name.charAt(0)}
+              </div>
+              <span className="text-lg font-medium">{user.name}</span>
+            </div>
+          </div>
+        ) : (
+          <Link to="/login">
+            <BsPerson className="cursor-pointer hover:text-blue-500 transition duration-300" size={22} />
+          </Link>
+        )}
+      </div>
+
+      {/* Mobile Menu Button */}
+      <div onClick={() => setNav(!nav)} className="md:hidden ml-auto">
+        {nav ? <AiOutlineClose size={22} /> : <HiOutlineMenuAlt4 size={22} />}
+      </div>
+    </div>
   );
 };
 
