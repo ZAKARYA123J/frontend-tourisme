@@ -96,7 +96,7 @@ const NavBar = () => {
           : "bg-white text-slate-800"
       }`}
     >
-      {/* Logo + Brand */}
+      
       <div className="flex items-center gap-8 flex-shrink-0">
         <div className="flex items-center gap-4">
           <img src={logoblue} alt="web logo" className="h-[90px] w-auto" />
@@ -106,7 +106,7 @@ const NavBar = () => {
         </div>
       </div>
 
-      {/* Desktop Navigation */}
+     
       <div className="hidden md:flex flex-grow justify-center">
         <ul className="hidden md:flex items-center space-x-6 text-lg font-medium">
           <li>
@@ -138,7 +138,7 @@ const NavBar = () => {
         </ul>
       </div>
 
-      {/* User Icon / Login */}
+    
       <div className="hidden md:flex items-center space-x-4 relative">
         {user ? (
           <div>
@@ -152,7 +152,7 @@ const NavBar = () => {
               <span className="text-lg font-medium">{user.name}</span>
             </div>
 
-            {/* Dropdown Menu */}
+           
             {menuOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-white text-gray-700 shadow-lg rounded-lg py-2">
                 <div className="px-4 py-2 text-sm">{user.email}</div>
@@ -178,7 +178,7 @@ const NavBar = () => {
         )}
       </div>
 
-      {/* Mobile Menu Button */}
+    
       <div onClick={() => setNav(!nav)} className="md:hidden ml-auto">
         {nav ? <AiOutlineClose size={22} /> : <HiOutlineMenuAlt4 size={22} />}
       </div>
