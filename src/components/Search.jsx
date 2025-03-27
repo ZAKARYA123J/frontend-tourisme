@@ -13,7 +13,7 @@ const Search = () => {
     <div className="max-w-[1240px] mx-auto grid lg:grid-cols-3 gap-4 px-4 py-16">
       <div className="lg:col-span-2 flex flex-col justify-evenly">
         <div>
-          <h2 className="text-2xl font-bold text-center " >WHY CHOOSE AGADIR</h2>
+          <h2 className="text-2xl font-bold text-center text-gray-500" >WHY CHOOSE AGADIR</h2>
           <p className="py-4 text-lg font-semibold">
           Agadir is a city of beauty and calm. With its long,
            sandy beaches and the peaceful Atlas Mountains in the distance, it offers a perfect mix of nature and culture.

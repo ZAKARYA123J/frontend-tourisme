@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const SelectCard = (props) => {
   return (
-    <Link to={props.link} className="relative">  {/* Use props.link here */}
+    <Link to={props.link} className="relative"> 
       <img
         className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
         src={props.bg}
