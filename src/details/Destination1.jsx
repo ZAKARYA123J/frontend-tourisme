@@ -12,31 +12,30 @@ const Destination1 = () => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
   const resortData = {
-    name: " Marina",
+    name: "Marina",
     description:
-      "Situé sur la magnifique Plage de la Marine à Agadir,Marina est un havre de paix où luxe et nature se rencontrent. Offrant une vue imprenable sur l’océan Atlantique, ce complexe d’exception est idéal pour une escapade relaxante ou une aventure balnéaire inoubliable. Plongez dans une piscine à débordement surplombant l’horizon, laissez-vous choyer dans un spa haut de gamme, et régalez vos papilles dans nos restaurants gastronomiques proposant des saveurs raffinées. Que vous souhaitiez vous détendre ou vivre des sensations fortes avec nos activités nautiques, chaque instant passé ici promet une expérience mémorable",
-    location: "Plage de la marine , Agadir",
+      "Located on the beautiful Marine Beach in Agadir, Marina is a peaceful haven where luxury meets nature. Offering stunning views of the Atlantic Ocean, this exceptional resort is perfect for a relaxing getaway or an unforgettable beach adventure. Dive into an infinity pool overlooking the horizon, pamper yourself in a top-tier spa, and indulge your taste buds at our gourmet restaurants serving refined flavors. Whether you want to relax or experience thrilling water activities, every moment here promises a memorable experience.",
+    location: "Marine Beach, Agadir",
     services: [
-      "Piscine à débordement avec vue sur l’océan" ,
-      "Spa et centre de bien-être pour une relaxation ultime ",
-      "Restaurants gastronomiques aux saveurs exquises" ,
-     " Activités nautiques : jet-ski, surf, plongée et bien plus ",
-     "Salle de sport moderne avec équipements de pointe ",
-     "Service de conciergerie pour un séjour sur mesure",
-     "Accès privé à la plage pour une expérience exclusive",
-
+      "Infinity pool with ocean view",
+      "Spa and wellness center for ultimate relaxation",
+      "Gourmet restaurants with exquisite flavors",
+      "Water activities: jet-ski, surfing, diving, and more",
+      "Modern gym with state-of-the-art equipment",
+      "Concierge service for a customized stay",
+      "Private beach access for an exclusive experience",
     ],
     bestTimeToVisit:
-      "Le meilleur moment pour visiter est de mai à octobre, lorsque le climat est idéal pour profiter des activités extérieures.",
-    tips: "Pensez à réserver vos activités en avance et profitez des magnifiques couchers de soleil au bord de la plage.",
+      "The best time to visit is from May to October when the weather is ideal for outdoor activities.",
+    tips: "Make sure to book your activities in advance and enjoy the breathtaking sunsets by the beach.",
     images: [
-      { src: lacote, alt: "Plage paradisiaque", description: "Admirez la beauté de la plage et ses eaux cristallines." },
-      { src: lacote2, alt: "Kayak sur l'eau", description: "Explorez l'océan en kayak et vivez une expérience unique." },
-      { src: lacote3, alt: "Cours de yoga", description: "Détendez-vous avec un cours de yoga face à la mer." },
-      { src: lacote4, alt: "Piscine luxueuse", description: "Profitez d'un moment de détente dans une piscine à débordement." },
-      { src: viewplage2, alt: "Vue panoramique", description: "Contemplez la vue magnifique sur l'océan depuis le resort." },
-      { src: place3, alt: "Coin détente", description: "Un espace parfait pour se relaxer après une journée bien remplie." },
-    ]
+      { src: lacote, alt: "Paradisiacal beach", description: "Admire the beauty of the beach and its crystal-clear waters." },
+      { src: lacote2, alt: "Kayaking on the water", description: "Explore the ocean by kayak and have a unique experience." },
+      { src: lacote3, alt: "Yoga class", description: "Relax with a yoga class facing the sea." },
+      { src: lacote4, alt: "Luxurious pool", description: "Enjoy a moment of relaxation in an infinity pool." },
+      { src: viewplage2, alt: "Panoramic view", description: "Admire the magnificent view of the ocean from the resort." },
+      { src: place3, alt: "Relaxation corner", description: "A perfect spot to unwind after a busy day." },
+    ],
   };
 
   const renderSection = (title, content, imageSrc, imageAlt) => (
@@ -90,19 +89,19 @@ const Destination1 = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        {renderSection("Description du Refuge", showFullDescription ? resortData.description : `${resortData.description.substring(0, 200)}...`, lacote, "Plage paradisiaque")}
+        {renderSection("Resort Description", showFullDescription ? resortData.description : `${resortData.description.substring(0, 200)}...`, lacote, "Paradisiacal beach")}
         <button
           className="text-black hover:text-indigo-500 transition-all duration-300"
           onClick={() => setShowFullDescription(!showFullDescription)}
         >
-          {showFullDescription ? "Lire moins" : "Lire plus"}
+          {showFullDescription ? "Read Less" : "Read More"}
         </button>
 
-        {renderSection("Meilleur moment pour visiter", resortData.bestTimeToVisit, lacote2, "Kayak sur l'eau")}
+        {renderSection("Best Time to Visit", resortData.bestTimeToVisit, lacote2, "Kayaking on the water")}
 
-        {renderSection("Services du Refuge", resortData.services.map(service => <motion.li key={service} className="transition-all duration-300 hover:text-indigo-600">{service}</motion.li>), lacote3, "Cours de yoga")}
+        {renderSection("Resort Services", resortData.services.map(service => <motion.li key={service} className="transition-all duration-300 hover:text-indigo-600">{service}</motion.li>), lacote3, "Yoga class")}
 
-        {renderSection("Conseils pour les visiteurs", resortData.tips, lacote4, "Relaxation")}
+        {renderSection("Visitor Tips", resortData.tips, lacote4, "Relaxation")}
       </motion.div>
 
       <motion.div
@@ -112,7 +111,7 @@ const Destination1 = () => {
         transition={{ duration: 1 }}
       >
         <h3 className="text-3xl font-semibold mb-6 text-indigo-700 hover:text-indigo-600 transition-all duration-300">
-          Explorez notre Refuge en Images
+          Explore Our Resort in Pictures
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {resortData.images.map((image, index) => (

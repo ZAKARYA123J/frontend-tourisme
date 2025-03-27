@@ -10,20 +10,20 @@ import food7 from "../assets/food7.jpg";
 import food8 from "../assets/food8.jpg";
 
 const images = [
-  { src: food1, alt: "Tajine de poulet", description: "Un tajine de poulet aux olives et citrons confits, cuit lentement pour un goût riche." },
-  { src: food2, alt: "Plat de couscous", description: "Un plat traditionnel de couscous, garni de légumes frais et savoureux." },
-  { src: food3, alt: "Pâtisserie marocaine Traditionel", description: "Des pâtisseries marocaines sucrées, préparées à base de miel et d'amandes." },
-  { src: food4, alt: "Plat de Refissa", description: "Refissa de Poulet delicieus avec une sauce magnifique." },
-  { src: food5, alt: "Pain Marrocain", description: "Des pain marocaines salee, préparées à base de main." },
-  { src: food6, alt: "Gateau Traditionel", description: "Des Gateaux marocaines sucrées, préparées à base de miel et d'amandes." },
-  { src: food7, alt: "Thé à la menthe", description: "Un thé à la menthe fraîche, infusé avec des feuilles de menthe et du sucre." },
-  { src: food8, alt: "Tajine de poisson", description: "Un tajine de poisson aux pomme et citrons confits, cuit lentement pour un goût riche" },
+  { src: food1, alt: "Chicken tajine", description: "A chicken tajine with olives and preserved lemons, slowly cooked for a rich taste." },
+  { src: food2, alt: "Couscous dish", description: "A traditional couscous dish, garnished with fresh and flavorful vegetables." },
+  { src: food3, alt: "Traditional Moroccan pastry", description: "Sweet Moroccan pastries, made with honey and almonds." },
+  { src: food4, alt: "Refissa dish", description: "Delicious Refissa with chicken and a wonderful sauce." },
+  { src: food5, alt: "Moroccan bread", description: "Moroccan bread, prepared with salt and handmade." },
+  { src: food6, alt: "Traditional cake", description: "Sweet Moroccan cakes, made with honey and almonds." },
+  { src: food7, alt: "Mint tea", description: "Fresh mint tea, brewed with mint leaves and sugar." },
+  { src: food8, alt: "Fish tajine", description: "A fish tajine with apples and preserved lemons, slowly cooked for a rich taste." },
 ];
 
 const Activite5 = () => {
   return (
     <div className="bg-yellow-200 min-h-screen py-10 px-5 text-gray flex flex-col items-center">
-      <h2 className="text-3xl font-bold text-center mb-8 mt-12">Découverte des Saveurs Traditionnelles</h2>
+      <h2 className="text-3xl font-bold text-center mb-8 mt-12">Discovery of Traditional Flavors</h2>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 justify-center mt-8">
         {images.map((image, index) => (
           <motion.div

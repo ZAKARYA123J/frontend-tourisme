@@ -16,6 +16,12 @@ import diving from '../assets/diving.jpg';
 import kitesurfing from '../assets/kitesurfing.jpg';
 import bashing from '../assets/bashing.jpg';
 import canyoning from '../assets/canyoning.jpg';
+import crocodile from "../assets/crocodile.jpg";
+import camelride from "../assets/camelride.jpg";
+import soukalhad from "../assets/soukalhad.jpg";
+import telefrique from "../assets/telefrique.jpg";
+import breakfast from "../assets/breakfast.jpg";
+import sandboard from "../assets/sandboard.jpg";
 
 const Hero = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -28,39 +34,27 @@ const Hero = () => {
     { src: Aghroud, title: "Aghroud Beach", desc: "Relaxing coastal experience", link: "/destination3" },
     { src: Taghazout, title: "Taghazout Surf", desc: "Surfing paradise in Morocco", link: "/destination4" },
     { src: quad, title: "Quad Adventure", desc: "Exciting desert rides", link: "/destination5" },
-    { 
-      id: 1, name: 'Jet Ski Adventure', description: 'Ride the waves on a jet ski along Agadir’s beaches.', image: jetskim, price: '300 MAD (15 min)', link: '/jetski-adventure' 
-    },
-    { 
-      id: 2, name: 'Quad Biking in the Desert', description: 'Explore Agadir’s rugged landscapes on a quad bike.', image: quadaga, price: '400 MAD (1 hour)', link: '/quad-biking' 
-    },
-    { 
-      id: 3, name: 'Hiking in the Atlas Mountains', description: 'Explore scenic trails with breathtaking views.', image: hiking, price: '500 MAD', link: '/hiking-atlas-mountains' 
-    },
-    { 
-      id: 4, name: 'Hot Air Balloon Ride', description: 'Enjoy panoramic views of Agadir from a hot air balloon.', image: balloon, price: '1500 MAD', link: '/hot-air-balloon' 
-    },
-    { 
-      id: 5, name: 'Horse Riding in Souss-Massa National Park', description: 'Explore coastal areas and forests on horseback.', image: horseridin, price: '300-600 MAD', link: '/horse-riding-souss-massa' 
-    },
-    { 
-      id: 6, name: 'Diving in Agadir', description: 'Explore Agadir’s rich underwater life.', image: diving, price: '600-1000 MAD', link: '/diving-agadir' 
-    },
-    { 
-      id: 7, name: 'Kitesurfing in Agadir', description: 'Perfect wind conditions for kitesurfing in Agadir.', image: kitesurfing, price: '500-1000 MAD', link: '/kitesurfing-agadir' 
-    },
-    { 
-      id: 8, name: 'Dune Bashing in the Sahara', description: 'Exciting off-road adventure in the Sahara desert.', image: bashing, price: '1000-1500 MAD', link: '/dune-bashing-sahara' 
-    },
-    { 
-      id: 9, name: 'Canyoning in the Atlas Mountains', description: 'Explore narrow canyons and waterfalls.', image: canyoning, price: '800-1200 MAD', link: '/canyoning-atlas-mountains' 
-    }
+    { id: 1, name: 'Jet Ski Adventure', description: 'Ride the waves on a jet ski along Agadir’s beaches.', image: jetskim, price: '300 MAD (15 min)', link: 'adventures/jetski-adventure' },
+    { id: 2, name: 'Quad Biking in the Desert', description: 'Explore Agadir’s rugged landscapes on a quad bike.', image: quadaga, price: '400 MAD (1 hour)', link: 'adventures/quad-biking' },
+    { id: 3, name: 'Hiking in the Atlas Mountains', description: 'Explore scenic trails with breathtaking views.', image: hiking, price: '500 MAD', link: 'adventures/hiking-atlas-mountains' },
+    { id: 4, name: 'Hot Air Balloon Ride', description: 'Enjoy panoramic views of Agadir from a hot air balloon.', image: balloon, price: '1500 MAD', link: 'adventures/hot-air-balloon' },
+    { id: 5, name: 'Horse Riding in Souss-Massa National Park', description: 'Explore coastal areas and forests on horseback.', image: horseridin, price: '300-600 MAD', link: 'adventures/horse-riding-souss-massa' },
+    { id: 6, name: 'Diving in Agadir', description: 'Explore Agadir’s rich underwater life.', image: diving, price: '600-1000 MAD', link: 'adventures/diving-agadir' },
+    { id: 7, name: 'Kitesurfing in Agadir', description: 'Perfect wind conditions for kitesurfing in Agadir.', image: kitesurfing, price: '500-1000 MAD', link: 'adventures/kitesurfing-agadir' },
+    { id: 8, name: 'Dune Bashing in the Sahara', description: 'Exciting off-road adventure in the Sahara desert.', image: bashing, price: '1000-1500 MAD', link: 'adventures/dune-bashing-sahara' },
+    { id: 9, name: 'Canyoning in the Atlas Mountains', description: 'Explore narrow canyons and waterfalls.', image: canyoning, price: '800-1200 MAD', link: 'adventures/canyoning-atlas-mountains' },
+    { name: 'Crocopark', description: 'Visit the Crocopark and learn about crocodiles.', image: crocodile, link: '/activite1' },
+    { name: 'Camel Ride', description: 'Try a camel ride for a desert adventure.', image: camelride, link: '/activite2' },
+    { name: 'Souk El Had', description: 'Explore the vibrant market of Agadir.', image: soukalhad, link: '/activite3' },
+    { name: 'Telefrique', description: 'Watch the city from above with a cable car ride.', image: telefrique, link: '/activite4' },
+    { name: 'Moroccan Breakfast', description: 'Taste a traditional Moroccan breakfast.', image: breakfast, link: '/activite5' },
+    { name: 'Tamri\'s Dunes', description: 'Sandboard on the famous Tamri dunes.', image: sandboard, link: '/activite6' },
   ];
 
   const handleSearch = (event) => {
     event.preventDefault();
 
-    const filteredResults = experiences.filter((experience) => 
+    const filteredResults = experiences.filter((experience) =>
       (experience.title || experience.name).toLowerCase().includes(searchQuery.toLowerCase())
     );
 

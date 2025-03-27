@@ -125,7 +125,7 @@ return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {Airbnbs.map((Airbnb) => (
                 <div key={Airbnb.id} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                    <img src={Airbnb.image} alt={Airbnb.name} className="Airbnb-image" />
+                    <img src={Airbnb.image} alt={Airbnb.name} className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
                     <h3>{Airbnb.name}</h3>
                     <p>{Airbnb.description}</p>
                     <div className="flex justify-between items-start mb-4">

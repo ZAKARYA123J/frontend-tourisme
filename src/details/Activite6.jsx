@@ -8,18 +8,18 @@ import desert5 from "../assets/desert5.jpg";
 import desert6 from "../assets/desert6.jpg";
 
 const images = [
-  { src: desert, alt: "Dunes de sable", description: "Les vastes dunes de sable du désert, créant un paysage majestueux et sans fin." },
-  { src: desert2, alt: "Coucher de soleil sur le désert", description: "Un coucher de soleil spectaculaire sur le désert, avec des teintes orange et rouge sur l'horizon." },
-  { src: desert3, alt: "adorable vue desertique", description: "Un paysage désertique à couper le souffle, avec des dunes dorées s'étendant à perte de vue, offrant une vue sereine et magnifique au cœur du désert." },
-  { src: desert4, alt: "Tempête de sable", description: "Des animaux résistant à la chaleur du désert, se camouflant dans les paysages secs." },
-  { src: desert5, alt: "Végétation désertique", description: "Quelques plantes et cactus robustes qui parviennent à survivre dans l'aridité du désert." },
-  { src: desert6, alt: "Faune du désert", description: "Une tempête de sable balayant le désert, réduisant la visibilité et créant une atmosphère mystérieuse." },
+  { src: desert, alt: "Sand dunes", description: "The vast sand dunes of the desert, creating a majestic and endless landscape." },
+  { src: desert2, alt: "Sunset over the desert", description: "A spectacular sunset over the desert, with orange and red hues on the horizon." },
+  { src: desert3, alt: "Adorable desert view", description: "A breathtaking desert landscape, with golden dunes stretching as far as the eye can see, offering a serene and beautiful view at the heart of the desert." },
+  { src: desert4, alt: "Sandstorm", description: "Animals enduring the desert heat, camouflaging into the dry landscape." },
+  { src: desert5, alt: "Desert vegetation", description: "Some hardy plants and cacti managing to survive in the desert's aridity." },
+  { src: desert6, alt: "Desert wildlife", description: "A sandstorm sweeping across the desert, reducing visibility and creating a mysterious atmosphere." },
 ];
 
 const Activite6 = () => {
   return (
     <div className="bg-yellow-800 min-h-screen py-10 px-5 text-white flex flex-col items-center">
-      <h2 className="text-3xl font-bold text-center mb-8 mt-12">Découverte du Désert et ses Merveilles</h2>
+      <h2 className="text-3xl font-bold text-center mb-8 mt-12">Discovery of the Desert and Its Wonders</h2>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 justify-center mt-8">
         {images.map((image, index) => (
           <motion.div

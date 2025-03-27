@@ -3,14 +3,11 @@ import { BsPerson } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
-import { useTranslation } from "react-i18next";
 import logoblue from "../assets/logoblue.png";
 
 const NavBar = () => {
-  const { t } = useTranslation();
   const [nav, setNav] = useState(false);
   const [user, setUser] = useState(null);
-  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -19,7 +16,7 @@ const NavBar = () => {
 
   const menuSections = [
     {
-      title: t("cultural"),
+      title: "Cultural",
       items: [
         { name: "Festivals", link: "/festivals" },
         { name: "Exhibitions", link: "/exhibitions" },
@@ -28,7 +25,7 @@ const NavBar = () => {
       link: "/cultural",
     },
     {
-      title: t("sports"),
+      title: "Sports",
       items: [
         { name: "Tournaments", link: "/tournaments" },
         { name: "Marathons", link: "/marathons" },
@@ -37,7 +34,7 @@ const NavBar = () => {
       link: "/sports",
     },
     {
-      title: t("reservation"),
+      title: "Reservation",
       items: [
         { name: "Hotels", link: "/hotels" },
         { name: "Airbnb", link: "/airbnb" },
@@ -46,7 +43,7 @@ const NavBar = () => {
       link: "/reservations",
     },
     {
-      title: t("review"),
+      title: "Review",
       items: [{ name: "Feedback", link: "/feedback" }],
       link: "/review",
     },
@@ -75,7 +72,7 @@ const NavBar = () => {
   }, []);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setNav(!nav);
   };
 
   const handleLogout = () => {
@@ -88,7 +85,7 @@ const NavBar = () => {
 
   return (
     <div
-      className={`flex items-center justify-between w-full h-24 px-6 fixed top-0 left-0 z-50 transition-all duration-300 ${
+      className={`flex items-center justify-between w-full h-20 px-4 fixed top-0 left-0 z-50 transition-all duration-300 ${
         isLoginPage
           ? "bg-gray-200 text-slate-800"
           : isScrolled
@@ -108,7 +105,7 @@ const NavBar = () => {
 
      
       <div className="hidden md:flex flex-grow justify-center">
-        <ul className="hidden md:flex items-center space-x-6 text-lg font-medium">
+        <ul className="flex items-center space-x-4 text-lg font-medium">
           <li>
             <Link to="/" className="hover:text-blue-500 transition duration-300">
               Home
@@ -141,12 +138,12 @@ const NavBar = () => {
     
       <div className="hidden md:flex items-center space-x-4 relative">
         {user ? (
-          <div>
+          <div className="relative">
             <div
               className="flex items-center space-x-3 cursor-pointer bg-white text-gray-700 px-3 py-2 rounded-full shadow-md hover:shadow-lg transition duration-300"
               onClick={toggleMenu}
             >
-              <div className="w-10 h-10 bg-blue-500 text-white flex items-center justify-center rounded-full text-lg font-semibold">
+              <div className="w-8 h-8 bg-blue-500 text-white flex items-center justify-center rounded-full text-lg font-semibold">
                 {user.name.charAt(0)}
               </div>
               <span className="text-lg font-medium">{user.name}</span>
@@ -173,7 +170,7 @@ const NavBar = () => {
           </div>
         ) : (
           <Link to="/login">
-            <BsPerson className="cursor-pointer hover:text-blue-500 transition duration-300" size={26} />
+            <BsPerson className="cursor-pointer hover:text-blue-500 transition duration-300" size={22} />
           </Link>
         )}
       </div>

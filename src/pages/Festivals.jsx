@@ -105,7 +105,7 @@ const Festivals = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {festivals.map((festival) => (
                     <div key={festival.id} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                        <img src={festival.image} alt={festival.name} className="festival-image" />
+                        <img src={festival.image} alt={festival.name} className="w-full h-48 md:h-64 object-cover rounded-t-lg" />
                         <h3>{festival.name}</h3>
                         <p>{festival.description}</p>
                         <div className="flex justify-between items-start mb-4">
