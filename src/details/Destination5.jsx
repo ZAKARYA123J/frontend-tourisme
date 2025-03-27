@@ -6,32 +6,32 @@ import raptor3 from '../assets/raptor3.jpg';
 import raptor4 from '../assets/raptor4.jpg'; 
 import raptor6 from '../assets/raptor6.jpg'; 
 import quadbiking from '../assets/quadbiking.jpg'; 
-import {motion} from 'framer-motion'
+import {motion} from 'framer-motion';
 
 const Destination5 = () => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
   const adventureData = {
     name: "Quad Adventure Agadir",
-    description: "Quad Adventure Agadir propose des excursions passionnantes à travers le désert et les montagnes de l'Atlas, à bord de quads puissants et faciles à piloter. Les aventuriers peuvent choisir parmi différentes options de parcours, allant des balades relaxantes en famille aux aventures plus extrêmes pour les amateurs de sensations fortes. Les guides expérimentés vous emmèneront à travers des paysages spectaculaires, entre dunes de sable, vallées verdoyantes et villages berbères. Après une journée pleine d'adrénaline, vous pourrez vous détendre avec un repas traditionnel marocain dans un cadre authentique.",
-    location: "Agadir, Maroc",
+    description: "Quad Adventure Agadir offers exciting excursions through the desert and the Atlas Mountains, aboard powerful and easy-to-ride quads. Adventurers can choose from various course options, from relaxing family rides to more extreme adventures for thrill-seekers. Experienced guides will take you through spectacular landscapes, between sand dunes, green valleys, and Berber villages. After a day full of adrenaline, you can relax with a traditional Moroccan meal in an authentic setting.",
+    location: "Agadir, Morocco",
     services: [
-      "Excursions en quad guidées",
-      "Parcours pour tous les niveaux",
-      "Visite des villages berbères",
-      "Repas traditionnels marocains",
-      "Sécurité et équipements fournis",
-      "Guide local expérimenté"
+      "Guided quad excursions",
+      "Courses for all levels",
+      "Visit to Berber villages",
+      "Traditional Moroccan meals",
+      "Safety and equipment provided",
+      "Experienced local guide"
     ],
-    bestTimeToVisit: "Le meilleur moment pour participer à une aventure en quad est de mars à novembre, lorsque les températures sont modérées.",
-    tips: "Portez des vêtements légers, des lunettes de protection et de la crème solaire. Ne partez jamais sans votre guide et assurez-vous que votre quad est bien préparé avant le départ.",
+    bestTimeToVisit: "The best time to participate in a quad adventure is from March to November, when temperatures are moderate.",
+    tips: "Wear light clothing, protective goggles, and sunscreen. Never go without your guide and make sure your quad is well-prepared before departure.",
     images: [
-      { src: raptor, alt: "Plage avec quad", description: "Explorez la plage avec des quads." },
-      { src: raptor2, alt: "Kayak sur la mer", description: "Faites du kayak dans des eaux cristallines." },
-      { src: raptor3, alt: "Cours de yoga sur la plage", description: "Participez à un cours de yoga au lever du soleil." },
-      { src: raptor4, alt: "Piscine à débordement", description: "Détendez-vous au bord de la piscine à débordement." },
-      { src: raptor6, alt: "Massage sur la plage", description: "Profitez d'un massage relaxant sur la plage." },
-      { src: quadbiking, alt: "Quad sur les dunes", description: "Faites une aventure en quad à travers les dunes." },
+      { src: raptor, alt: "Beach with quad", description: "Explore the beach with quads." },
+      { src: raptor2, alt: "Kayak on the sea", description: "Kayak in crystal-clear waters." },
+      { src: raptor3, alt: "Yoga class on the beach", description: "Participate in a sunrise yoga class." },
+      { src: raptor4, alt: "Infinity pool", description: "Relax by the infinity pool." },
+      { src: raptor6, alt: "Massage on the beach", description: "Enjoy a relaxing massage on the beach." },
+      { src: quadbiking, alt: "Quad on the dunes", description: "Take a quad adventure through the dunes." },
     ]
   };
 
@@ -68,7 +68,7 @@ const Destination5 = () => {
           transition={{ duration: 0.7 }}
         >
           <div>
-            <h2 className="text-3xl font-semibold mb-4 text-indigo-700 hover:text-indigo-600 transition-all duration-300">À propos de l'Aventure</h2>
+            <h2 className="text-3xl font-semibold mb-4 text-indigo-700 hover:text-indigo-600 transition-all duration-300">About the Adventure</h2>
             <p className="mb-6 text-gray-700 leading-relaxed text-lg hover:text-gray-800 transition-all duration-300">
               {showFullDescription ? adventureData.description : `${adventureData.description.substring(0, 200)}...`}
             </p>
@@ -76,7 +76,7 @@ const Destination5 = () => {
               className="text-black hover:text-indigo-500 transition-all duration-300"
               onClick={() => setShowFullDescription(!showFullDescription)}
             >
-              {showFullDescription ? 'Lire moins' : 'Lire plus'}
+              {showFullDescription ? 'Read less' : 'Read more'}
             </button>
           </div>
           <div className="flex justify-center items-center">
@@ -95,13 +95,13 @@ const Destination5 = () => {
           transition={{ duration: 0.7 }}
         >
           <div>
-            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Meilleur moment pour visiter</h3>
+            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Best Time to Visit</h3>
             <p className="mb-6 text-gray-700 leading-relaxed hover:text-gray-800 transition-all duration-300">{adventureData.bestTimeToVisit}</p>
           </div>
           <div className="flex justify-center items-center">
             <img 
               src={raptor2} 
-              alt="Vue du quad" 
+              alt="Quad view" 
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </div>
@@ -114,7 +114,7 @@ const Destination5 = () => {
           transition={{ duration: 0.7 }}
         >
           <div>
-            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Services disponibles</h3>
+            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Available Services</h3>
             <ul className="list-disc pl-5 mb-6 text-gray-700 space-y-2">
               {adventureData.services.map((service, index) => (
                 <motion.li 
@@ -132,7 +132,7 @@ const Destination5 = () => {
           <div className="flex justify-center items-center">
             <img 
               src={raptor3} 
-              alt="Dune en quad" 
+              alt="Quad dunes" 
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </div>
@@ -145,7 +145,7 @@ const Destination5 = () => {
           transition={{ duration: 0.7 }}
         >
           <div>
-            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Conseils pour les visiteurs</h3>
+            <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">Tips for Visitors</h3>
             <p className="mb-6 text-gray-700 leading-relaxed hover:text-gray-800 transition-all duration-300">{adventureData.tips}</p>
           </div>
           <div className="flex justify-center items-center">

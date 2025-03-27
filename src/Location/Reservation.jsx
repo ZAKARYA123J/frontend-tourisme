@@ -254,13 +254,7 @@ setSuccessMessage("");
             </motion.p>
             </div>
 
-            {/* {selectedCarDetails && (
-              <div className="text-white text-center mt-4">
-                <p><strong>Voiture sélectionnée:</strong> {selectedCarDetails.marque} {selectedCarDetails.modele}</p>
-                <p><strong>Prix par jour:</strong> {selectedCarDetails.price_per_day} MAD</p>
-                <p><strong>Transmission:</strong> {selectedCarDetails.transmission}</p>
-              </div>
-            )} */}
+            
 
             <motion.button type="submit" className="col-span-2 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600  transition-colors text-sm ">
               Réserver maintenant

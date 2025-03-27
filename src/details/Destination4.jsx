@@ -14,55 +14,54 @@ const Destination4 = () => {
   const resortData = {
     name: "Taghazout",
     description:
-      "Taghazout est un havre de paix situé au sommet des montagnes, offrant une vue imprenable sur les paysages montagneux. Ce refuge isolé est parfait pour les amoureux de la nature et de l'aventure. Les visiteurs peuvent explorer les sentiers de randonnée, profiter du ski ou se détendre dans le confort d'un chalet en bois. Le restaurant sur place propose des plats délicieux avec des produits locaux, et un spa de montagne pour une relaxation complète. Un lieu idéal pour les amateurs de randonnée, de ski, et pour ceux qui recherchent une escapade loin du tumulte quotidien.",
+      "Taghazout is a peaceful haven located at the top of the mountains, offering breathtaking views of the mountainous landscapes. This secluded refuge is perfect for nature and adventure lovers. Visitors can explore hiking trails, enjoy skiing, or relax in the comfort of a wooden chalet. The on-site restaurant serves delicious dishes with local products, and there is a mountain spa for complete relaxation. An ideal place for hiking enthusiasts, skiing, and those seeking an escape from the daily hustle and bustle.",
     location: "Taghazout, Agadir",
     services: [
-      "Randonnées guidées",
-      "Ski et sports d'hiver",
-      "Restaurant gastronomique de montagne",
-      "Spa et massages",
-      "Séances de bien-être et méditation",
-      "Chalets privés",
+      "Guided hikes",
+      "Skiing and winter sports",
+      "Mountain gourmet restaurant",
+      "Spa and massages",
+      "Wellness and meditation sessions",
+      "Private chalets",
     ],
     bestTimeToVisit:
-      "Le meilleur moment pour visiter est entre décembre et mars pour les sports d'hiver, ou entre juin et septembre pour les randonnées estivales.",
-    tips: "Portez des chaussures adaptées pour les randonnées en montagne et ne manquez pas la visite des lacs alpins à proximité.",
+      "The best time to visit is between December and March for winter sports, or between June and September for summer hiking.",
+    tips: "Wear suitable shoes for mountain hiking and don't miss visiting the nearby alpine lakes.",
     images: [
       {
         src: Taghazout,
-        alt: "Randonnée en montagne",
-        description: "Explorez les sentiers de montagne à couper le souffle.",
+        alt: "Mountain hiking",
+        description: "Explore breathtaking mountain trails.",
       },
       {
         src: surf,
-        alt: "Ski en hiver",
-        description: "Vivez l'expérience du ski dans un cadre spectaculaire.",
+        alt: "Winter skiing",
+        description: "Experience skiing in a spectacular setting.",
       },
       {
         src: surf2,
-        alt: "Détente au spa",
-        description:
-          "Offrez-vous un massage relaxant après une journée d'aventure.",
+        alt: "Spa relaxation",
+        description: "Treat yourself to a relaxing massage after a day of adventure.",
       },
       {
         src: surf3,
-        alt: "Vue depuis le chalet",
-        description: "Admirez les paysages montagneux depuis votre chalet.",
+        alt: "View from the chalet",
+        description: "Admire the mountain landscapes from your chalet.",
       },
       {
         src: surf4,
-        alt: "Repas gastronomique",
-        description: "Savourez des plats locaux préparés avec soin.",
+        alt: "Gourmet meal",
+        description: "Savor local dishes prepared with care.",
       },
       {
         src: surf5,
-        alt: "Méditation en pleine nature",
-        description: "Détendez-vous avec une séance de méditation en montagne.",
+        alt: "Meditation in nature",
+        description: "Relax with a meditation session in the mountains.",
       },
       {
         src: surf6,
-        alt: "Méditation en pleine nature",
-        description: "Détendez-vous avec une séance de méditation en montagne.",
+        alt: "Meditation in nature",
+        description: "Relax with a meditation session in the mountains.",
       },
     ],
   };
@@ -108,12 +107,12 @@ const Destination4 = () => {
             transition={{ duration: 0.7 }}
           >
             <h2 className="text-3xl font-semibold mb-4 text-indigo-700 hover:text-indigo-600 transition-all duration-300">
-              Description du Refuge
+              Refuge Description
             </h2>
             <div className="flex flex-col md:flex-row items-center">
               <img
                 src={surf}
-                alt="Randonnée"
+                alt="Hiking"
                 className="w-full md:w-1/3 h-72 object-cover rounded-lg mr-4 mb-4 md:mb-0"
               />
               <p className="text-gray-700 leading-relaxed text-lg hover:text-gray-800 transition-all duration-300">
@@ -126,7 +125,7 @@ const Destination4 = () => {
               className="text-black hover:text-indigo-500 transition-all duration-300"
               onClick={() => setShowFullDescription(!showFullDescription)}
             >
-              {showFullDescription ? "Lire moins" : "Lire plus"}
+              {showFullDescription ? "Read less" : "Read more"}
             </button>
           </motion.section>
 
@@ -137,12 +136,12 @@ const Destination4 = () => {
             transition={{ duration: 0.7 }}
           >
             <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">
-              Meilleur moment pour visiter
+              Best time to visit
             </h3>
             <div className="flex flex-col md:flex-row items-center">
               <img
                 src={surf2}
-                alt="Ski"
+                alt="Skiing"
                 className="w-full md:w-1/3 h-72 object-cover rounded-lg mr-4 mb-4 md:mb-0"
               />
               <p className="text-gray-700 leading-relaxed hover:text-gray-800 transition-all duration-300">
@@ -158,12 +157,12 @@ const Destination4 = () => {
             transition={{ duration: 0.7 }}
           >
             <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">
-              Services du Refuge
+              Resort Services
             </h3>
             <div className="flex flex-col md:flex-row items-center">
               <img
                 src={surf3}
-                alt="Détente"
+                alt="Relaxation"
                 className="w-full md:w-1/3 h-72 object-cover rounded-lg mr-4 mb-4 md:mb-0"
               />
               <ul className="list-disc pl-5 mb-6 text-gray-700 space-y-2">
@@ -189,7 +188,7 @@ const Destination4 = () => {
             transition={{ duration: 0.7 }}
           >
             <h3 className="text-2xl font-semibold mb-4 text-indigo-600 hover:text-indigo-500 transition-all duration-300">
-              Conseils pour les visiteurs
+              Tips for visitors
             </h3>
             <div className="flex flex-col md:flex-row items-center">
               <img
@@ -211,7 +210,7 @@ const Destination4 = () => {
           transition={{ duration: 1 }}
         >
           <h3 className="text-3xl font-semibold mb-6 text-indigo-700 hover:text-indigo-600 transition-all duration-300">
-            Explorez notre Refuge en Images
+            Explore our Resort in Images
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {resortData.images.map((image, index) => (

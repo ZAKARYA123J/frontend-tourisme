@@ -58,6 +58,14 @@ const Destination1 = () => {
           {content}
         </p>
       </div>
+      {title === "Resort Description" && (
+        <button
+          className="text-black hover:text-indigo-500 transition-all duration-300 mt-4"
+          onClick={() => setShowFullDescription(!showFullDescription)}
+        >
+          {showFullDescription ? "Read Less" : "Read More"}
+        </button>
+      )}
     </motion.section>
   );
 
@@ -90,12 +98,6 @@ const Destination1 = () => {
         transition={{ duration: 1 }}
       >
         {renderSection("Resort Description", showFullDescription ? resortData.description : `${resortData.description.substring(0, 200)}...`, lacote, "Paradisiacal beach")}
-        <button
-          className="text-black hover:text-indigo-500 transition-all duration-300"
-          onClick={() => setShowFullDescription(!showFullDescription)}
-        >
-          {showFullDescription ? "Read Less" : "Read More"}
-        </button>
 
         {renderSection("Best Time to Visit", resortData.bestTimeToVisit, lacote2, "Kayaking on the water")}
 
