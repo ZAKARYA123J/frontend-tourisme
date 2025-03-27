@@ -52,10 +52,15 @@ const Hero = () => {
   ];
 
   const handleSearch = (event) => {
-    event.preventDefault();
+    setSearchQuery(event.target.value);
+
+    if (event.target.value === "") {
+      setResults([]);
+      return;
+    }
 
     const filteredResults = experiences.filter((experience) =>
-      (experience.title || experience.name).toLowerCase().includes(searchQuery.toLowerCase())
+      (experience.title || experience.name).toLowerCase().includes(event.target.value.toLowerCase())
     );
 
     setResults(filteredResults);
@@ -113,7 +118,7 @@ const Hero = () => {
                   type="text"
                   placeholder="Search experiences..."
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={handleSearch}
                   className="w-full py-4 pl-6 pr-14 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder:text-white/80 text-lg"
                 />
                 <button
@@ -122,35 +127,32 @@ const Hero = () => {
                 >
                   <BiSearch className="w-6 h-6" />
                 </button>
-              </div>
-            </motion.div>
 
-            {results.length > 0 && (
-              <div className="mt-6 text-white">
-                <h3 className="text-xl font-semibold">Search Results:</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-                  {results.map((item, index) => (
-                    <div
-                      key={index}
-                      className="cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg rounded-lg"
-                      onClick={() => handleResultClick(item.link)}
-                    >
-                      <div className="relative w-full h-64 rounded-lg overflow-hidden group">
-                        <img
-                          src={item.src || item.image}
-                          alt={item.title || item.name}
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        />
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-                          <h4 className="text-xl font-semibold text-white">{item.title || item.name}</h4>
-                          <p className="text-sm text-white">{item.desc || item.description}</p>
+                {results.length > 0 && (
+                  <div className="absolute z-10 mt-2 w-full bg-white rounded-lg shadow-md max-h-60 overflow-y-auto text-black">
+                    {results.map((item, index) => (
+                      <div
+                        key={index}
+                        className="cursor-pointer p-4 hover:bg-gray-200 transition-colors"
+                        onClick={() => handleResultClick(item.link)}
+                      >
+                        <div className="flex items-center">
+                          <img
+                            src={item.src || item.image}
+                            alt={item.title || item.name}
+                            className="w-12 h-12 object-cover rounded-full mr-4"
+                          />
+                          <div>
+                            <h4 className="font-semibold">{item.title || item.name}</h4>
+                            <p className="text-sm">{item.desc || item.description}</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
               </div>
-            )}
+            </motion.div>
           </motion.div>
         </div>
       </div>
