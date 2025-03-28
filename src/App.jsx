@@ -27,7 +27,7 @@ import Feedback from "./pages/Feedback";
 import Hotels from "./pages/Hotels";
 import Airbnb from "./pages/Airbnb";
 
-import Activite1 from "./details/activite1";
+import Activite1 from "./details/Activite1";
 import Activite2 from "./details/Activite2";
 import Activite3 from "./details/Activite3";
 import Activite4 from "./details/Activite4";
