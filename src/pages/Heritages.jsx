@@ -5,7 +5,7 @@ import Tiznit from '../assets/Tiznit.jpg';
 import natpark from '../assets/natpark.jpg';
 import polizzi from '../assets/polizzi.jpg';
 import taroudant from '../assets/taroudant.jpg';
-import tafraoute from '../assets/tafraoute.jpg';
+import tafraoute from '../assets/Tafraoute.jpg';
 import amazigh from '../assets/amazigh.jpg';
 
 const Heritages = () => {
