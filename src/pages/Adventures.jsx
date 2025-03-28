@@ -9,7 +9,7 @@ import horseridin from '../assets/balloon.jpg';
 import diving from '../assets/diving.jpg';
 import kitesurfing from '../assets/Kitesurfing.jpg';
 import bashing from '../assets/bashing.jpg';
-import canyoning from '../assets/canyoning.jpg';
+import canyoning from '../assets/Canyoning.jpg';
 
 const Adventures = () => {
   const [adventures, setAdventures] = useState([
