@@ -11,7 +11,7 @@ import Views8 from "../assets/views8.jpg";
 import Views9 from "../assets/views9.jpg";
 import Views10 from "../assets/views10.jpg";
 import Views11 from "../assets/views11.jpg";
-import Views12 from "../assets/vews12.jpg";
+import Views12 from "../assets/views12.jpg";
 import upview from "../assets/upview.jpg";
 import Views1 from "../assets/views1.jpg";
 
