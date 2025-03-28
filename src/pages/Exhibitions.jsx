@@ -7,7 +7,7 @@ import artaga from '../assets/artaga.jpg';
 import craft from '../assets/craft.jpg';
 import photograph from '../assets/photograph.jpg';
 import heritage from '../assets/heritage.jpg';
-import fair from '../assets/fair.jpg';
+import fair from '../assets/Fair.jpg';
 import marine from '../assets/marine.jpg';
 
 const Exhibitions = () => {
