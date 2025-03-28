@@ -1,19 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import Views2 from "../assets/Views2.jpg";
-import Views3 from "../assets/Views3.jpg";
-import Views4 from "../assets/Views4.jpg";
-import Views5 from "../assets/Views5.jpg";
-import Views6 from "../assets/Views6.jpg";
-import Views7 from "../assets/Views7.jpg";
-import Views8 from "../assets/Views8.jpg";
-import Views9 from "../assets/Views9.jpg";
-import Views10 from "../assets/Views10.jpg";
-import Views11 from "../assets/Views11.jpg";
-import Views12 from "../assets/Views12.jpg";
+import Views2 from "../assets/views2.jpg";
+import Views3 from "../assets/views3.jpg";
+import Views4 from "../assets/views4.jpg";
+import Views5 from "../assets/views5.jpg";
+import Views6 from "../assets/views6.jpg";
+import Views7 from "../assets/views7.jpg";
+import Views8 from "../assets/views8.jpg";
+import Views9 from "../assets/views9.jpg";
+import Views10 from "../assets/views10.jpg";
+import Views11 from "../assets/views11.jpg";
+import Views12 from "../assets/vews12.jpg";
 import upview from "../assets/upview.jpg";
-import Views1 from "../assets/Views1.jpg";
+import Views1 from "../assets/views1.jpg";
 
 const images = [
   { src: Views1, alt: "View of traditional decor", description: "A stunning panorama of snowy decor next to a brown wall." },
