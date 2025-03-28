@@ -13,7 +13,7 @@ import hiking from '../assets/hiking.jpg';
 import balloon from '../assets/balloon.jpg';
 import horseridin from '../assets/balloon.jpg';
 import diving from '../assets/diving.jpg';
-import kitesurfing from '../assets/kitesurfing.jpg';
+import kitesurfing from '../assets/Kitesurfing.jpg';
 import bashing from '../assets/bashing.jpg';
 import canyoning from '../assets/canyoning.jpg';
 import crocodile from "../assets/crocodile.jpg";
