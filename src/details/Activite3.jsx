@@ -8,7 +8,7 @@ import souk5 from "../assets/souk5.jpg";
 import souk6 from "../assets/souk6.jpg";
 import souk7 from "../assets/souk7.jpg";
 import soukalhad from "../assets/soukalhad.jpg";
-import souk from "../assets/souk.jpg";
+import souk from "../assets/SOUK.jpg";
 
 const images = [
   { src: souk, alt: "Colorful market", description: "A lively market with stalls of colorful fabrics and exotic spices." },
